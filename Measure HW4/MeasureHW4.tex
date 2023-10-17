@@ -1,0 +1,85 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lachaise Assignment
+% LaTeX Template
+% Version 1.0 (26/6/2018)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Marion Lachaise & François Févotte
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Homework 4 Measure Theor} % Title of the assignment
+
+\author{Gandhar Kulkarni (mmat2304)} % Author name and email address
+
+\date{} % University, school and/or department name(s) and a date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title
+\section{} %Problem 1
+Let $(X, \mathcal{S}, \mu)$ be a measure space, and let $f:X \rightarrow \mathbb{R}$ be a measurable function. Suppose $$\mu(\{x \in X: |f(x)|\geq \varepsilon\})=0, $$ for all $\varepsilon>0.$ Prove that $f=0$ a.e.
+
+\emph{Solution:} For all $n \in  \mathbb{N},$ we can say that $\mu(\{x \in X: |f(x)|\geq 1/n\})=0.$ Define $\{x \in X: |f(x)|\geq 1/n\}$ as $N_n.$
+See that $N_n \subseteq N_{n+1}.$ Consider $\mu(\cap_{n=1}^{\infty}N_n)=\mu(\lim_{n \to \infty}N_n)=\lim_{n \to \infty} \mu(N_n)=0.$ See that $\lim_{n \to \infty}N_n=\{x \in X: |f(x)| >0\}.$
+This is precisely the definition of $f=0$ a.e., proving the statement. 
+\section{} %Problem 2
+Let $f:\mathbb{R} \rightarrow \mathbb{R}$ be a function such that the set $$\{x \in \mathbb{R}: a \leq f(x) \leq b\}, $$
+is measurable for any $a<b.$ Prove that $f$ is measurable.
+
+\emph{Solution:} Consider the collection $\{[a-1/n,b+n]\}_{n \in \mathbb{N}}.$ Thus union of this collection is $(a,\infty).$ Let $C_n:= f^{-1}([a-1/n,b+n]).$
+See that $C_n$ is measurable for all $n.$ Since measurable sets are closed under countable union, we have $\cup_{n=1}^{\infty}C_n=f^{-1}([a-1/n,b+n])=f^{-1}((a,\infty))$ is 
+also measurable. Our choice of $a$ was arbitrary, which implies that $f$ is a measurable function. 
+\section{} %Problem 3
+Suppose that $f:[a,b]\rightarrow \mathbb{R}$ is a function such that 
+$$\{x \in [a,b]: f(x)=c \}, $$ is measurable for each $c \in \mathbb{R}.$ Is $f$ necessarily measurable?
+
+\emph{Solution:} We know that $f^{-1}(\{c\})$ is measurable for all $c \in \mathbb{R}.$ See that the function $f:[0,1]\rightarrow \mathbb{R}$
+where $f(x)=x$ if $x \in V,$ where $V$ is the Vitali set, and $x+1$ otherwise. See that this function is actually one-one, so the pre-image has only one point, which is measurable.
+However, $f^{-1}([0,1]\cap f([0,1]))$ is $V,$ a non-measurable set. Thus $f$ needn't be measurable as a function even though the fibre of each point is measurable as a set.
+\section{} %Problem 4
+\section{} %Problem 5
+\section{} %Problem 6
+Prove that an increasing function $f: [a,b] \rightarrow \mathbb{R}$ is measurable.
+
+\emph{Solution:} We know from the previous homework that monotone functions are measurable, since we can explicitly find $f^{-1}((a,\infty)),$ where $f$ is 
+a monotone function. Since $f:[a,b] \rightarrow \mathbb{R}$ in this case is given to be increasing, it is also monotone. Therefore it must also be measurable.
+
+$e^{i \pi}$
+\section{} %Problem 7
+\section{} %Problem 8
+If $f: \mathbb{R} \rightarrow \mathbb{R}$ is continuous and $g: \mathbb{R} \rightarrow \mathbb{R}$ is Lebesgue measurable,
+then $g \circ f$ is Lebesgue measurable. True or false?
+
+\emph{Solution:} Let $f: [0,2] \rightarrow [0,1]$ be the inverse of the function $K: [0,1]\rightarrow [0,2],$ which is given by $K(x)=\Lambda(x)+x,$ where $\Lambda$ is the Cantor function.
+It is strictly increasing, hence one-one. It is also surjective onto $[0,2]$ as it takes every value in that range due to the continuity of $\Lambda$ and $x.$ Thus $K$ is biijective, and the function 
+$f;=K^{-1}$ is also bijective and continuous, thus a measurable function.
+\section{} %Problem 9
+ 
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+
+\end{document}

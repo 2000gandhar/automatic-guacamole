@@ -1,0 +1,70 @@
+\documentclass[]{article}
+\usepackage{amssymb, amsmath}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{geometry}
+\geometry{margin=0.75in}
+%opening
+\title{Measure Theory Homework 5}
+\author{Gandhar Kulkarni (mmat2304)}
+
+\begin{document}
+	
+	\maketitle
+	
+	
+	\section{} %Problem 1 done
+	We have a sequence of non-negative measurable functions $\{f_n\}$ such that $0 \leq f_1 \leq \dots f,$ where $f$ is a non-negative measurable function that is defined as $\lim_{n\to \infty}f_n.$ Then we know that $f_n \leq f \implies \int_{X}f_n \leq \int_{X}f$ for all $n \in \mathbb{N}.$ This means that $\lim_{n \to \infty}\int_{X}f_n \leq \int_{X}f.$ Note that from Fatou's lemma we can say that $$\int_{X}\liminf_{n \to \infty}f_n \leq \liminf_{n \to \infty} \int_{X}f_n.$$ Since $\{f_n\}$ is increasing, we can say that $\liminf_{n \to \infty} f_n=f.$ Therefore we have $$ \int_{X}\liminf_{n \to \infty}f_n = \int_{X}f \leq \liminf_{n \to \infty} \int_{X}f_n.$$ We know that integration preserves order; that is, $f_{n} \leq f_{n+1} \implies \int_{X}f_n \leq \int_{X}f_{n+1}$ for all $n$. This means that $\liminf_{n \to \infty} \int_{X}f_n=\lim_{n\to \infty} \int_{X} f_n.$ Therefore we have $ \int_{X}f \leq \lim_{n \to \infty}\int_{X}f_n,$ which implies that $\lim_{n \to \infty}f_n = \int_{X}f.$ 
+	\section{} %Problem 2
+	Let $X_n=\{x \in X: f(x)\geq n\}.$ Then $$\int_{X_n}f=\nu_{f}(X_n),$$ where $\nu_f$ is the measure function determined by $f.$ Note that $ X_1 \supseteq X_2 \supseteq \dots.$ This means that $\nu_f(X_1) \geq \nu_{f}(X_2) \geq \dots .$ This is clearly a decreasing sequence. Since $f \in L^1(\mu),$ $\nu_f(X_1) < \infty,$ $\nu_f(X_n)<\infty$ for all $n.$ Moreover, $A_{\infty}\{x \in X: f(x)=\infty\},$ and $\mu(A_{\infty})=0.$ Thus $\nu_f(A_{\infty})=0.$ We can use continuity from above to see that $\nu_f(\cap_{n=1}^{\infty}X_n)=\lim_{n \to \infty} \nu_f(X_n)=\nu_{f}(A_{\infty})=0.$ This gives us our result. 
+	\section{} %Problem 3 done
+	Since $f_n \to f,$ and $ f_n \geq f_{n+1} \geq f,$ we have $\int f_n \geq \int f.$ Also note that $\int f_1 < \infty$ means that $\int f_n < \infty$ and $\int f < \infty.$ Thus $\left\{ \int f_n\right\} $ is a bounded monotone sequence, hence it must be convergent. Since $\int f_n \geq \int f,$ we have $\lim_{n \to \infty} \int f_n \geq \int f.$ To get the second inequality, see that by Fatou's lemma, $\int \liminf_{n \to \infty} f_n \leq \liminf_{n \to \infty} \int f_n.$ Since $\{f_n\}$ is convergent, $\liminf_{n \to \infty} f_n=\lim_{n \to \infty} f_n=f.$ Since $\left\{\int f_n\right\}$ is convergent, we have $\liminf_{n \to \infty} \int f_n=\lim_{n \to \infty} \int f_n.$ Putting this together, we have $ \int f \leq \lim_{n \to \infty} \int f_n.$ This gives us our result, that is $\lim_{n \to \infty} f_n=\int f.$
+	\section{} %Problem 4
+	Let $\varepsilon>0.$ Choose a measurable partition $A_1,\dots, A_m$ of $X$ where $$\int_{X}f < \varepsilon + \mathcal{L}(f,P). $$ 
+	Denote by $E$ the union of those $A_j$'s such that $\inf_{A_j}g>0.$ Then we have $\mu(E)<\infty$ as otherwise we could have $\mathcal{L}(f,P)=\infty,$ contradicting that $\int_{X}f<\infty.$ Now see that $$\int_{X\backslash E}f = \int_{X}f - \int_{X}\chi_{E}f< (\varepsilon +\mathcal{L}(f,P)) - \mathcal{L}(\chi_{E}f,P)<\varepsilon,$$ which gives us the desired result. 
+	\section{} %Problem 5 done
+	Let $f \in L^+$.  We know that a sequence of simple functions $\{f_n\}$ (that are bounded) that approximate $f.$ Moreover, $|f_n|\leq |f_{n+1}|\leq |f|.$ Simple functions are measurable, and we have $f_n \rightarrow f.$ Note that we can have $f_n \in L^+,$ without loss of generality as we can replace the function $f_n$ with $|f_n|$. Using the monotone convergence theorem we can say that $ \lim_{n \to \infty} \int f_n =\int f.$
+	\section{} %Problem 6 done
+	Define $f: \mathbb{R} \rightarrow \mathbb{R},$ where $$f(x)= \begin{cases}		
+	\frac{1}{x} \hspace{0.5 in} x<0\\
+	\frac{1}{1+x^2} \hspace{0.3 in} x \geq 0.
+	\end{cases} $$
+
+This function is measurable, as $f^{-1}(a,\infty)$ is $ \left[0,\sqrt{\frac{1}{a}-1}\right)$ for $ 0 \leq a < 1,$ $ \phi$ for $ a>1,$ $[0,\infty)$ for $a=0,$ and $\left( -\infty,\frac{1}{a} \right) \cup [0,\infty)$ for $ a <0.$ These are all measurable, however, see that $f^+ = f|_{x \geq 0}$ is integrable, while $f^-=-f|_{x <0}$ is not integrable as the integral does not exist. To show this, see that the sequence of simple functions $\{\varphi_n\},$ where $\varphi_n(x)= \frac{1}{i}$ for $x \in [i,i+1), i \leq n, $ and $0$ for $x >n.$ $\int_{-\infty}^0 \varphi_n= 1+\frac{1}{2}+\dots+\frac{1}{n}.$ See that $\varphi_n \leq f^-,$ which means that the integral for $f^-$ cannot exist.   
+	\section{} %Problem 7 done
+	Since $f_n=(n+1)x^n,$ we see that $\int_{0}^{1}f_n=[x^{n+1}]_{x=0}^{x=1}=1, $ we have $\liminf_{n \to \infty} \int_{0}^{1}f_n=1.$ To find $\liminf_{n \to \infty} f_n(x),$ see that for $0 < x <1,$ 
+	$f_n(x)=(n+1)x^n$ will go to zero as $n \to \infty.$ For $x=0,$ $\liminf_{n \to \infty}f_n(0)=0.$ For $x=1,$ $\liminf_{n \to \infty}f_n(1)=n+1 \to \infty.$ Then we have $\liminf_{n \to \infty} f_n(x)$ is zero for all $x \in [0,1]$ except $x=1,$ where it is $+\infty.$
+This is zero almost everywhere, hence $\int_{0}^{1}\liminf_{n \to \infty}f_n=0.$ Thus in this case $\int_{0}^{1}\liminf_{n \to \infty}f_n \lneq \liminf_{n \to \infty} \int_{0}^{1}f_n;$ that is, Fatou's lemma applies strictly.
+	\section{} %Problem 8 done
+	Define $\{f_n\}$ as a sequence of simple (hence integrable) functions on $\mathbb{R},$ and $f(x)$ is $\frac{1}{x}$ for $x>0$ and $0$ otherwise. 
+	We define $f_n(x)$ as 
+	\begin{align*}
+		f_n(x)&= \frac{2^n}{i}, \hspace{0.1 in} x \in \left[ \frac{i-1 }{2^n}, \frac{i }{2^n} \right), 0 \leq i \leq n2^n \\
+		&= 0 \text{ otherwise.} 
+	\end{align*} 
+See that $$\int_{\mathbb{R}}f_n=\int_{0}^{\infty}f_n= \sum_{i=0}^{n2^n}\frac{2^n}{i}\cdot \frac{1}{2^n} < \infty.$$
+Also note that $f_n \leq f_{n+1} \leq f,$ and see that this sequence converges pointwise to $f.$ However, see that $f$ is not integrable, which means that there could be a sequence of integral functions that converges pointwise to a limit but that limit need not be integrable.
+	\section{} %Problem 9 done
+	We will fix $x \in [0,1]$ and observe its behaviour as $n$ varies. For $x \in \left[0,\frac{1}{3}\right]$ we have $f_n(x)= 0,1,0,1, \dots$ for $n \geq 1.$ For $x \in \left[ \frac{1}{3},1 \right],$ $f_n(x)=1,0,1,0,\dots.$ 
+	Thus $\liminf_{n \to \infty}f_n(x)=0,$ while $ \limsup_{n \to \infty} f_n(x)=1.$ See that $\int_{0}^{1}f_{2n}=\frac{1}{3},$ while $\int_{0}^{1}f_{2n+1}=\frac{2}{3}.$ Then $\int_{0}^{1}f_{n} \in \left\{ \frac{1}{3}, \frac{2}{3}\right\}.$ We can then infer that $\limsup_{n \to \infty}\int_{0}^{1}f_{n} =\frac{2}{3},$ and   $\limsup_{n \to \infty}\int_{0}^{1}f_{n} =\frac{1}{3}.$ Putting all of this together gives us our required result. 
+	\section{} %Problem 10 done
+	Let $X_{\alpha}:=\{x \in X: f(x) \geq \alpha\}.$ Then define the function $g(x)=\alpha \cdot \chi_{X_{\alpha}}.$ Note that $f(x) \geq g(x)$ for all $x \in X,$ and $f \in L^+,$ hence $$\int_{X}f\geq \int_{X}g= \int_{X_n}\alpha + \int_{X \backslash X_n}0=\alpha \cdot \mu(X_{\alpha}),$$ which is the desired inequality.
+	\section{} %Problem 11 done
+	Let $A_n:=\{x \in X: f(x) \in [n,n+1)\}$, for $n \geq 1$. See that $X_n=\sqcup_{i=n}^{\infty}A_i,$ for $n \geq 1.$ Define $A_0=\{x \in X: f(x)=0\},$ and $A_{\infty}=\{x \in X: f(x)=\infty\}.$ Since $f \in L^1(\mu),$ we must have $\mu(A_{\infty})=0,$ as otherwise the integral would not be finite. Thus see that 
+	\begin{align*}
+		\int_{X}f&=\int_{A_0}0 + \int_{A_{\infty}}\infty + \sum_{i=1}^{\infty}\int_{A_i}f\\ 
+		&\geq 0+0+ \sum_{i=1}^{\infty}i \cdot \mu(A_i)= (\mu(A_1) + \mu(A_2) +\dots)+ (\mu(A_2)+\mu(A_3)+\dots)+ \dots\\
+		&=\sum_{n=1}^{\infty}\mu(X_n) < \infty. 
+	\end{align*}
+ Thus $f \in L^1(\mu) \implies \sum_{n=1}^{\infty}\mu(X_n)<\infty.$ 
+ To see the converse, we will first show that $\mu(A_{\infty})=0.$ Since $\sum_{n=1}^{\infty}\mu(X_n) < \infty,$ we must have $\mu(X_n) \to 0$ and $n \to \infty.$ 
+ Then we have $ \mu(\cap_{n=1}^{\infty}X_n)=\lim_{n \to \infty} \mu(X_n)=\mu(A_{\infty})=0.$ Then see that for $K \in \mathbb{N},$ $4\int_{A_0}0+\int_{A_{\infty}}\infty+ \sum_{i=1}^{K}\int_{A_i}f \leq 0+0+ \sum_{i=1}^{K}(i+1)\mu(A_{i+1})\leq \sum_{i=1}^{\infty}(i+1)\mu(A_{i+1}) \leq \sum_{i=1}^{\infty}\mu(X_i)+ \mu(X_1) < \infty.$ Since the left hand side holds for all $K \in \mathbb{N},$ we see that $\int_{X}f < \infty,$ which means that $f \in L^1(\mu).$
+	\section{} %Problem 12 done
+	We know that $\{f_n\} \subseteq L^+$, and that $f_n \leq f.$ From monotonicity of integral, we have that $\int f_n \leq \int f,$ which means that $\lim_{n \to \infty} \int f_n \leq \int f.$ Now see that since $f_n \to f,$ $\liminf_{n \to \infty} f_n= \lim_{n \to \infty} f_n=f.$ We also know that since $\{f_n\}$ is convergent, $\left\{\int f_n\right\}$ is also convergent. Therefore by Fatou's lemma see that $\int \liminf_{n \to \infty} f_n \leq \liminf_{n \to \infty} \int f_n$. Thus we have $\int f \leq \lim_{n \to \infty} \int f_n.$ This is the inequality in the other direction, which implies that $\lim_{n \to \infty} \int f_n = \int f. $
+	
+\end{document}
+
+
+
+
+
+

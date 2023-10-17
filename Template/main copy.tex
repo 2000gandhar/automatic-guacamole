@@ -1,0 +1,171 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lachaise Assignment
+% LaTeX Template
+% Version 1.0 (26/6/2018)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Marion Lachaise & François Févotte
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Algebra 1 Homework 3} % Title of the assignment
+
+\author{Gandhar Kulkarni (mmat2304)} % Author name and email address
+
+\date{} % University, school and/or department name(s) and a date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{} %Problem 1 
+Let $\mathbb{F}_3=\{0,1,-1\}$ denote the field of $3$ elements.
+\begin{enumerate}
+	\item Verify that there are exactly $3$ monic irreducible polynomials of degree $2$ in $\mathbb{F}_3[x].$
+	\item Verify that the three polynomials can be obtained from each other via translations $x \mapsto x+a.$
+\end{enumerate}
+\emph{Solution:} 
+\begin{enumerate}
+	\item If we had to list all nine monic quadratic polynomials of degree 2, $x^2,x^2+1,x^2-1,x_2+x,x^2+x+1,x^2+x-1,x^2-x,x^2-x+1,x^2-x-1,$
+	we can eliminate $x^2,x^2+x,x^2-x$ as they are not irreducible. Also see that $x^2-1,x^2+x+1,x^2-x+1$ are not 
+	irreducible as they are $(x-1)(x+1), (x-1)^2,$ and $(x+1)^2$  respectively. Thus, $x^2+1,x^2+x-1,$ and $x^2-x-1$
+	are the three irreducible monic polynomials.
+
+	\item We can see that $ (x-1)^2+1=x^2+x-1,$ and $(x+1)^2+1=x^2-x-1,$ which are both translates of $x^2+1.$
+\end{enumerate}
+
+\section{} %Problem 2
+\begin{enumerate}
+	\item Prove: In $\mathbb{Z}[\sqrt{-5}], (1+\sqrt{-5},3)$ is a maximal ideal.
+	\item Prove that $\frac{\mathbb{Z}[i]}{(1+3i)}\cong \mathbb{Z}/10\mathbb{Z}.$
+\end{enumerate}
+
+\emph{Solution:} \begin{enumerate}
+	\item See that $\mathbb{Z}[\sqrt{-5}]=\mathbb{Z}[x]/(x^2+5).$ Then we can see that \begin{align*}
+		\frac{\mathbb{Z}[\sqrt{-5}]}{(1+\sqrt{-5},3)} &= \frac{\frac{\mathbb{Z}[x]}{(x^2+5)}}{(1+\sqrt{-5},3)}.\\
+	\end{align*}
+	We can send the ideal $(x^2+5)$ below provided we find an ideal in $\mathbb{Z}[x]$ corresponding to $(1+\sqrt{-5}).$ We can see that $x^2+x+6$ does the trick.
+
+	Then we have 
+
+	\begin{align*}
+		\frac{\mathbb{Z}[\sqrt{-5}]}{(1+\sqrt{-5},3)} &= \frac{\mathbb{Z}[x]}{(x^2+5,x+1,3)}\\
+		&= \frac{\mathbb{Z}}{(6,3)}= \frac{\mathbb{Z}}{(3)}=\mathbb{Z}_3.
+	\end{align*}
+	Clearly $\mathbb{Z}_3$ is a field. Thus $(1+\sqrt{-5},3)$ is a maximal ideal.
+	\item See that $1+3i=1+i \cdot 2+i,$ so $(1+3i)=(1+i)\cdot(1+2i).$ The ideals $(1+i)$ and $(2+i)$ are coprime, as $2+i + -1 \cdot 1+i=1,$ where $2+i \in (2+i), 1+i \in (1+i).$
+	By Chinese Remainder Theorem, we have $\frac{\mathbb{Z}[i]}{(1+3i)}\cong \frac{\mathbb{Z}[i]}{(1+i)}\times \frac{\mathbb{Z}[i]}{(2+i)}.$ Now we can see that 
+	$\frac{\mathbb{Z}[i]}{(1+i)} \cong \frac{\mathbb{Z}[x]}{(1+x,x^2+1)}\cong \frac{\mathbb{Z}}{(2)}\cong \mathbb{Z}_2$, and $\frac{\mathbb{Z}[i]}{(2+i)} \cong \frac{\mathbb{Z}[x]}{(2+x,x^2+1)}\cong \frac{\mathbb{Z}}{(5)}\cong \mathbb{Z}_5$.
+	Since $\mathbb{Z}_2 \times \mathbb{Z}_5 \cong \mathbb{Z}_{10}$ are isomorphic, we are done. (The isomorphism from $\mathbb{Z}_{10}$ can be explicitly seen by sending $m \mapsto (m \mod 2,m \mod 5).$ This map is clearly surjective. To see that the kernel is trivial, see that there is no number in $\mathbb{Z}_{10}$ other than $0$ that is $0$ modulo $2$ and $5.$ )
+\end{enumerate}
+\section{} %Problem 3
+Let $I \subseteq R$ be an ideal and $\mathfrak{p} \subseteq R$ a prime ideal.
+\begin{enumerate}
+	\item Prove that $I^k \subseteq \mathfrak{p}$ for some $k \implies I \subseteq \mathfrak{p}.$
+	\item Prove that for any ideals $I,J \subseteq R$ and integers $k,l >0,$ $$ \sqrt{I}+\sqrt{J}=R \iff I+J=R \iff I^k+J^l=R.$$
+\end{enumerate}
+
+\emph{Solution:} \begin{enumerate}
+	\item We will assume that $I \nsubseteq \mathfrak{p}.$ Then assume that $I^k \subseteq \mathfrak{p}$ for some $k \in \mathbb{N}.$ Let $k$ be the smallest number 
+	such that this holds. See that prime ideals have the property that $IJ \subseteq \mathfrak{p} \implies I \subseteq \mathfrak{p}$ or $J \subseteq \mathfrak{p}.$
+	We can prove the contrapositive. See that for $i \in I, j \in J$ such that $i \notin \mathfrak{p}, j \notin \mathfrak{p},$ we must have $i\cdot j \notin \mathfrak{p},$
+	from the definition of a prime ideal. Thus see that finite sums of such $i,j$ also cannot lie in $\mathfrak{p}.$ Since our choice of $i,j$ were arbitrary, 
+	we can conclude that $IJ \nsubseteq \mathfrak{p}. $ Thus we must have $IJ \subseteq \mathfrak{p} \implies I \subseteq \mathfrak{p} $ or $J \subseteq \mathfrak{p}.$
+	
+	Now that we now this, see that we fixed $k$ as the smallest number such that $I^k \subseteq \mathfrak{p}.$ Since $\mathfrak{p}$ is prime, we must have 
+	$I \subseteq \mathfrak{p}$ or $I^{k-1} \subseteq \mathfrak{p}.$ Since the first one is not true by assumption, we must have $I^{k-1} \subseteq \mathfrak{p}.$ However,
+	this contradicts the minimality of the choice of $k,$ which means that this is not possible. Thus we have $I^k \subseteq \mathfrak{p} \implies I \subseteq \mathfrak{p}.$
+
+	\item See that $I^k \subseteq I \subseteq \sqrt{I}, $ and $J^l \subseteq J \subseteq \sqrt{J},$ from the properties of ideals, If $I^k+J^l=R,$ then 
+	there exists $i \in I^k, j \in J^l$ such that $ i+j=1.$ Then see that $ i \in I, i \in sqrt{I},$ and $j \in J, j \in \sqrt{J},$ which means that we also have 
+	$I+J=R,$ and $\sqrt{I}+\sqrt{J}=R.$ Thus $ I^k+J^l=R \implies I+J=R \implies \sqrt{I}+\sqrt{J}=R.$ 
+
+	If $\sqrt{I}+\sqrt{J}=R,$ then there exists $r_i \in \sqrt{i}, R_J \in \sqrt{J}$ and $n_i,n_j >0$ such that $r_i+r_j=1,$ and $r_i^{n_i} \in I$ and $r_j^{n_j}\in J.$
+	Assuming this, fix a $k,l \geq 1.$ Now choose a $n \in \mathbb{N}$ large enough (at least $n_ik+n_jl$). Now see that $(r_i+r_j)^{n}=1^n=1.$
+	Expanding the term on the left, we have 
+	\begin{align*}
+		(r_i+r_j)^{n} &= \sum_{m=0}^n \binom{n}{m} r_i^{n-m}r_j^m\\ 
+		&= \binom{n}{0}r_i^n+\binom{n}{1}r_i^{n-1}r_j + \dots + \binom{n}{n_jl}r_i^{n-n_jl}r_j^{n_jl} + \\
+		&\binom{n}{n_jl+1}r_i^{n-n_jl-1}r_j^{n_jl+1}+\dots+\binom{n}{n}r_j^n\\
+		&= \left(\binom{n}{0}r_i^{n-n_ik}+\binom{n}{1}r_i^{n-n_ik-1}r_j + \dots + \binom{n}{n_jl}r_i^{n-n_jl-n_ik}r_j^{n_jl} \right)r_i^{n_ik}+ \\
+		&\left(\binom{n}{n_jl+1}r_i^{n-n_jl-1}r_j^{1}+\dots+\binom{n}{n}r_j{n-n_jl}\right)r_j^{n_jl}\\
+		&= c_1r_i^{n_ik}+c_2r_j^{n_jl},
+	\end{align*}
+	where $c_1,c_2 \in R.$ See that $r_i^{n_i} \in I,$ which means that $ r_i^{n_ik} \in I^k.$ Similarly, $r_j^{n_jl} \in J^l.$ As $I^k, J^l$ are ideals,
+	we have $ c_1r_i^{n_ik} \in I^k,$ and  $c_2r_j^{n_jl} \in J^l.$ Therefore we have two elements in $I^k$ and $J^l$ such that their sum is $1,$ that is 
+	 $c_1r_i^{n_ik}+c_2r_j^{n_jl}=1.$ Thus $\sqrt{I}+\sqrt{J}=R \implies I^k+J^l=R.$ Thus any one statement implies all the other statements. 
+\end{enumerate}
+\section{} %Problem 4
+
+\section{} %Problem 5
+Let $F$ be a field. Let $R=F[[x]].$(We denote the fraction field $Q(R)$ by $F((x))$.)
+\begin{enumerate}
+	\item Prove that every ideal in $R$ is of the form $x^kR$ for some $k.$
+	\item Prove that $R[[\frac{1}{x}]]=Q(R).$
+\end{enumerate} 
+\emph{Solution:} \begin{enumerate}
+	\item See that for $k\geq 0,$ $x^kR$ is an ideal. We want to show that all ideals look like this. Let $I$ be an ideal in $R.$ Let $k_0$ denote the lowest power of $x$ in a power series such 
+	that the coefficient for $x^{k_0}$ is non-zero. Then find the power series in $I$ that has the smallest such $k_0.$ This is guaranteed to exist due to the 
+	well ordering principle. We claim that this element generates $I.$ For an ideal $I,$ let $f_0(x)$ denote the corresponding power series. 
+
+	First, we shall mention that if we have a power series $f(x)=a_0+a_1x+\dots \in F[[x]],$ then it is a unit iff $a_0\neq 0.$ We examine the 
+	power series $f_0(x)$ corresponding to an ideal. Let $k_0$ be the smallest power of $x$ with a non-zero coefficient. If it is $0,$ then $f_0(x)$ is 
+	a unit, which means that this ideal must generate $R.$ For $k_0>0,$ see that we can write $f_0(x)=x^{k_0}(a_{k_0}+a_{k_0+1}x+\dots).$ The power series in 
+	the brackets $a_{k_0},$ which means that $(a_{k_0}+a_{k_0+1}x+\dots)$ is a unit. Then it is enough to check that $x^{k_0}$ is the generator for $I.$ This means that 
+	any element in $R$ is associate to $x^{k_0},$ where $k_0$ is as defined above. Then we only need to check that $I$ is an ideal for powers of $x.$ Given an 
+	$x^k,$ we can obviously generate any higher power of $x,$ say $x^n$ by multiplying $x^{n-k}.$ However, no power of $x$ lower than $k$ can be generated, since 
+	powers of $x$ are not units since their constant term is $0.$ Thus any ideal $I$ can be described as $(x^{k_0}).$
+
+	\item Note that $R[\frac{1}{x}]$ denotes the smallest ring that contains $R$ and $\frac{1}{x}$. It is interesting to see that in $R,$ the reason why 
+	some elements fail to be units is due to their constant term being zero. However, it is also important to see that all elements of $R$ are associate to
+	either $1$ or some power of $x.$ The ring $R\left[\frac{1}{x}\right]$ has $\frac{1}{x}$ as a term, hence in this ring $x$ is actually a unit. Therefore $x^n$ is also 
+	a unit for all $n\geq 1.$ Thus it can be seen that all non-zero elements are units, which means that $R[\frac{1}{x}]$ is a field that contains $R.$ The smallest field 
+	that contains $R$ is $Q(R),$ which implies that $Q(R) \subseteq R\left[\frac{1}{x}\right].$ %Now we take an arbitrary element in $R[\frac{1}{x}],$ $f_0(x)+f_1(x)x^{-1}+\dots+f_n(x)x^{-n}.$
+	%By making the denominators common, we have $ \frac{f_0(x)x^n+\dots+f_n(x)}{x^n}=g(x)x^{-n}.$
+	%Rewrite $g(x)$ as $x^{k_0}(a_{k_0}+a_{k_0+1}z+\dots),$ where $k_0$ is as given above. Then $(a_{k_0}+a_{k_0+1}z+\dots)$ is a unit,
+	%and we can rewrite $\frac{f(x)}{g(x)}$ as $(f(x)\cdot (a_{k_0}+a_{k_0+1}x+\dots)^{-1})\cdot \frac{1}{x^{k_0}},$ which is an element of $R[\frac{1}{x}].$
+	That being said, $R\left[ \frac{1}{x}\right]$ is also the smallest ring containing $R$ and $\frac{1}{x},$ while $Q(R)$ is a field containing $R$ and $\frac{1}{x}.$
+	Thus we must have $Q(R) \supseteq R\left[ \frac{1}{x} \right],$ which establishes the equality.   
+ 	
+	
+\end{enumerate}
+\section{} %Problem 6
+
+\section{} %Problem 7
+Let $R$ be an integral domain. Let $a \in R\backslash \{0\}.$
+Prove that $$ R\left[\frac{1}{a}\right]\equiv \frac{R[x]}{(ax-1)},$$ where $R[\frac{1}{a}]$ is being viewed as a subring of $Q(R).$
+
+\emph{Solution:} Define the map $\phi: R[x] \twoheadrightarrow R\left[ \frac{1}{a}\right]$ that sends $f(x) \mapsto f\left(\frac{1}{a}\right).$
+Then we see that this map is $R-$linear surjective ring map. We want to examine its kernel. See that $(ax-1) \in \ker \phi.$ This can be checked by 
+evaluating the polynomial at $x=\frac{1}{a}.$ This means that $(ax-1) \subseteq \ker \phi.$ Now let $f(x)\in \ker \phi.$ See that we can use the division
+algorithm on this ring derived from the ring $Q[x],$ where $Q$ is the field of fractions of $R.$ Now see that we have $f(x)=q(x)(ax-1)+r(x),$ 
+where $\deg r(x)<1.$ Thus it must be constant. Evaluating the expression, we get $0=r\left(\frac{1}{a}\right).$ Therefore $f(x) \in (ax-1),$ which implies that 
+$(ax-1) \subseteq \ker \phi,$ proving the result.   
+
+
+\end{document}
