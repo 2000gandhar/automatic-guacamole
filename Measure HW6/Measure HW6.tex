@@ -1,52 +1,56 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Lachaise Assignment
-% LaTeX Template
-% Version 1.0 (26/6/2018)
-%
-% This template originates from:
-% http://www.LaTeXTemplates.com
-%
-% Authors:
-% Marion Lachaise & François Févotte
-% Vel (vel@LaTeXTemplates.com)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
 \documentclass{article}
 
 \input{structure.tex} % Include the file specifying the document structure and custom commands
-
-%----------------------------------------------------------------------------------------
-%	ASSIGNMENT INFORMATION
-%----------------------------------------------------------------------------------------
-
 \title{Measure Theory HW6} % Title of the assignment
 
 \author{Gandhar Kulkarni (mmat2304)} % Author name and email address
 
 \date{} % University, school and/or department name(s) and a date
 
-%----------------------------------------------------------------------------------------
-
 \begin{document}
 
 \maketitle % Print the title
 
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
-
 \section{} %Problem 1 
+We wish to show that $h \in L^1(\mu \times \nu).$ See that since $f \in L^1(\mu)$ and $g \in L^1(\nu).$ Then see that $|h(x,y)|=|f(x)|\cdot |g(y)|.$ Since these measure space are $\sigma-$finite and the functions $|f|$ and $|g|$ are positive measurable, we can apply the Fubini- Tolleni theorem. Integrating over $X \times Y,$ we get 
+\begin{align*}
+\int_{X \times Y} |h(x,y)| d(\mu \times \nu) &= \int_{X \times Y}|f(x)|\cdot |g(y)| d(\mu \times \nu)\\
+&= \int_Y \left( \int_X |h^{y}(x)| d\mu(x) \right) d\nu(y)= \int_Y |g(y)| \cdot \left( \int_X |f(x)| d\mu(x) \right) d\nu(y)\\
+&= \int_Y |g(y)| d\nu(y) \cdot \left( \int_X |f(x)| d\mu(x) \right) < \infty.
+\end{align*}
 
-\section{} %Problem 2
+Thus $h \in L^1(\mu \times \nu).$ To calculate the integral, see that 
+\begin{align*}
+	\int_{X \times Y} h(x,y) d(\mu \times \nu) &= \int_{X \times Y}f(x)\cdot g(y) d(\mu \times \nu)\\
+	&= \int_Y \left( \int_X h^{y}(x) d\mu(x) \right) d\nu(y)= \int_Y g(y) \cdot \left( \int_X f(x) d\mu(x) \right) d\nu(y)\\
+	&= \int_Y g(y) d\nu(y) \cdot \left( \int_X f(x) d\mu(x) \right),
+\end{align*}
+which is the desired result.
 
+
+\section{} %Problem 2 
+The Fubini-Tolleni theorem requires the two spaces $X$ and $Y$ to both be $\sigma-$finite with respect to both $\mu$ and $\nu$ respectively. In this case see that the counting measure over $\mathbb{N}$ is indeed $\sigma-$finite, as $\mathbb{N}=\cup_{n=1}^{\infty} \{n\},$ where $\mu(\{n\})=1 < \infty.$ Thus for $X=Y=\mathbb{N},$ and $\Sigma_1=\Sigma_2=P(\mathbb{N}),$ and $\mu=\nu =m,$ where $m(A)$ denotes the cardinality of the set $A$ if it is finite and $+\infty$ otherwise. Note that $\Sigma_1 \otimes \Sigma_2= P(\mathbb{N}^2),$ since $\Sigma_1 \otimes \Sigma_2 \subseteq P(\mathbb{N}^2),$ and for any $ A \times B \in P(\mathbb{N}^2),$ we have $A \times B= \cup_{x\times y \in A \times B} \{x\} \times \{y\} \in \Sigma_1 \otimes \Sigma_2,$ which gives us the other inequality. 
+
+We wish to see what sorts of functions over $\mathbb{N}$ are measurable. All functions are clearly $\Sigma_1 \otimes \Sigma_2$ measurable, as the entire power set constitutes the $\sigma-$algebra. See that functions can be indexed by two natural numbers, hence they can be described as $a_{m,n}$ Note that $(a_{m_0})_{n}=a_{m_0,n}$ fixes the first variable at some $m_0 \in \mathbb{N},$ and $a^{n_0}_m=a_{m,n_0}$ fixes the second variable at some $n_0 \in \mathbb{N}.$  
+We also need to understand what integration looks like. Integration in this case is just summation, as we can see that integrating over a point gives us the value of the function at that point. Thus $\int_{\mathbb{N}}\{a_n\} dm(n)=\sum_{n=1}^{\infty}a_n $ and $ \int_{\mathbb{N}^2}\{a_{m,n}\} dm(m,n)=\sum_{(m,n) \in \mathbb{N}^2} a_{m,n}.$
+We take a positive measurable function $\{a_{m,n}\},$ and the Fubini-Tolleni theorem tells us that 
+\begin{enumerate}
+	\item $$m \mapsto \sum_{n=1}^{\infty} (a_m)_{n} $$ is $P(\mathbb{N})$ is measurable, 
+	
+	and $$n \mapsto \sum_{m=1}^{\infty}a^{n}_m $$ is $P(\mathbb{N})$ is measurable;
+	\item $$\sum_{(m,n) \in \mathbb{N}^2}a_{m,n}dm(m,n) = \sum_{n=1}^{\infty} \left( \sum_{m=1}^{\infty}a^{n}_m \right)= \sum_{m=1}^{\infty} \left( \sum_{n=1}^{\infty}(a_m)_{n} \right).$$
+\end{enumerate}
+
+The above statement means in the case of $\mathbb{N}^2$ is that we can switch the limits of double summations without issue. 
+
+Fubini's theorem can also be stated since our product measure consists of two $\sigma-$finite measures. We need to consider functions $\{a_{m,n}\} \in L^1(m^2),$ where we have $\sum_{(m,n) \in \mathbb{N}^2} |a_{m,n}|< \infty.$ Then Fubini's theorem says that: 
+\begin{enumerate}
+	\item $(a_m)_n \in L^1(m),$ $m-$almost everywhere, and $a^m_n \in L^1(m),$ $m-$almost everywhere.
+	\item $$m \mapsto \sum_{n=1}^{\infty} (a_m)_{n}$$ and $$ n \mapsto \sum_{m=1}^{\infty}a^{n}_m$$ are $L^1(m)$.  
+\end{enumerate}
+In the case of the counting measure it means that if the double summation is absolutely convergent, then so are the summations of all sections.
+
+ 
 \section{} %Problem 3 
 We need to find a function $g(x)$ that dominates $f_n=f(nx)$ for all $n \in \mathbb{N}.$ Then see that $$\mid \frac{\sin(n^2x^2)}{nx}\mid \leq \frac{1}{nx} \leq \frac{1}{x}.$$ Also see that $\frac{cnx}{1+nx}\leq c.$ See that this holds for all $x \in [0,\infty)$
 
@@ -55,11 +59,22 @@ We need to find a function $g(x)$ that dominates $f_n=f(nx)$ for all $n \in \mat
 \section{} %Problem 5 
 
 \section{} %Problem 6 
+\begin{enumerate}
+	\item We know that $\mu(E)=0.$ Also $f= (\Re (f)^+ - \Re (f)^-)+i(\Im (f)^+ - \Im (f)^-),$ which are all positive measurable functions. Then $\nu(E)=\int_E \Re (f)^+ d\mu \leq +\infty \cdot \mu(E) \leq 0.$ Since measure cannot be negative, we have $\nu(E)=0.$ Use this same strategy for the other three functions $\Re (f)^-,\Im (f)^+,$ and $ \Im (f)^-.$
+	\item Let $\{E_n\}_{n \in \mathbb{N}}$ be a countable disjoint collection of measurable subsets. Then define $g$ as $g= \sum_{n=1}^{\infty}f\chi_{E_n}.$ Then $f-g$ is zero on $\coprod_{n=1}^{\infty} E_n.$ Then we must have  
+	\begin{align*}
+		\int_{\coprod_{n=1}^{\infty}E_n}(f-g) d\mu&=0 \implies \\ \nu(\coprod_{n=1}^{\infty}E_n) =\int_{\coprod_{n=1}^{\infty}E_n}f d\mu &= \int_{\coprod_{n=1}^{\infty}E_n} \sum_{n=1}^{\infty} f\chi_{E_n}\\
+		&=\sum_{n=1}^{\infty} \int_{\coprod_{n=1}^{\infty}E_n} f\chi_{E_n}=\sum_{n=1}^{\infty} \int_{E_n}f d\mu\\
+		&= \sum_{n=1}^{\infty} \nu(E_n),
+	\end{align*} which means that $\nu(\coprod_{n=1}^{\infty}E_n)=\int_{\coprod_{n=1}^{\infty}E_n}f d\mu.$
+\end{enumerate}
 
 \section{} %Problem 7 
+From the solution of problem $1,$ the answer to the problem follows directly.
 
 \section{} %Problem 8 
-
+Note that $|f(m,n)|=1$ for $m=n$ and $m=n+1.$ Then $$\int_{\mathbb{N}^2} |f(m,n)| dm(m,n)= \sum_{m=1}^{\infty} \sum_{n=1}^{\infty} |f(m,n)| = \sum_{p=1} |f(p,p)| + \sum_{q=1}^{\infty}|f(q+1,q)|=\infty.$$
+Now we fix each variable and successively integrate. $\sum_{m=1}^{\infty} f(m,n_0)= f(n_0,n_0)+f(n_0+1,n_0)=1+ (-1)=0.$ Thus $\sum_{n=1}^{\infty}0=0.$ If we fix $m,$ and $m>1,$ then we have $\sum_{n=1}^{\infty} f(m,n)= f(m,m)+f(m,m-1)=1+(-1)=0.$ If $m=1,$ there is no $n$ such that $ m=n+1,$ so $\sum_{n=1}f(1,n)=f(1,1)=1.$ Thus $ \sum_{m=1}^{\infty} \sum_{n=1}^{\infty} f(m,n) = 1 \neq \sum_{n=1}^{\infty} \sum_{m=1}^{\infty} f(m,n) = 0.$
 \section{} %Problem 9 
 
 \section{} %Problem 10 
