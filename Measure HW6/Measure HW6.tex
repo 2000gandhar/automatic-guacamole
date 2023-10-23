@@ -58,7 +58,7 @@ We need to find a function $g(x)$ that dominates $f_n=f(nx)$ for all $n \in \mat
 
 \section{} %Problem 5 
 
-\section{} %Problem 6 
+\section{} \label{Prob6} %Problem 6 
 \begin{enumerate}
 	\item We know that $\mu(E)=0.$ Also $f= (\Re (f)^+ - \Re (f)^-)+i(\Im (f)^+ - \Im (f)^-),$ which are all positive measurable functions. Then $\nu(E)=\int_E \Re (f)^+ d\mu \leq +\infty \cdot \mu(E) \leq 0.$ Since measure cannot be negative, we have $\nu(E)=0.$ Use this same strategy for the other three functions $\Re (f)^-,\Im (f)^+,$ and $ \Im (f)^-.$
 	\item Let $\{E_n\}_{n \in \mathbb{N}}$ be a countable disjoint collection of measurable subsets. Then define $g$ as $g= \sum_{n=1}^{\infty}f\chi_{E_n}.$ Then $f-g$ is zero on $\coprod_{n=1}^{\infty} E_n.$ Then we must have  
@@ -67,6 +67,7 @@ We need to find a function $g(x)$ that dominates $f_n=f(nx)$ for all $n \in \mat
 		&=\sum_{n=1}^{\infty} \int_{\coprod_{n=1}^{\infty}E_n} f\chi_{E_n}=\sum_{n=1}^{\infty} \int_{E_n}f d\mu\\
 		&= \sum_{n=1}^{\infty} \nu(E_n),
 	\end{align*} which means that $\nu(\coprod_{n=1}^{\infty}E_n)=\int_{\coprod_{n=1}^{\infty}E_n}f d\mu.$
+	\item Let $\varepsilon>0.$ We wish to find a $\delta >0$ such that $\mu(E)<\delta \implies |\nu(E)|<\varepsilon.$ 
 \end{enumerate}
 
 \section{} %Problem 7 
@@ -78,7 +79,9 @@ Now we fix each variable and successively integrate. $\sum_{m=1}^{\infty} f(m,n_
 \section{} %Problem 9 
 
 \section{} %Problem 10 
+Since $f(x)\cdot g(x)=0,$ we cannot have $f(x)$ and $g(x)$ nonzero for the same value of $x$ almost everywhere. We divide our domain $X$ into four disjoint parts $X=X_1 \sqcup X_2 \sqcup X_3 \sqcup X_4,$ where $X_1$ is the set of all $x \in X$ where $f$ is nonzero but $g$ is zero; $X_2$ is the set of all $x \in X$ such that $g$ is nonzero but $f$ is zero; $X_3$ is the set of all $x \in X$ such that $f$ and $g$ are both zero, and $X_4$ is the set of all $x \in X$ such that both $f$ and $g$ are nonzero. We know that $\mu'(X_4)=0.$ Let $A= (X_1 \sqcup X_3 \sqcup X_4)$ and $B=X_2.$ Clearly the two are disjoint and their union is $X,$ by construction. We argue that this should show that $\mu' \perp \nu.$ We try to evaluate $\mu'(E_B),$ for $E_B$ a measurable subset in $B.$ See that $$ \mu'(E_B)=\mu'(E_B|\cap (X_1 \sqcup X_2 \sqcup X_3 \sqcup X_4))=\int_{X_1 \cap E_B}f d\mu + \int_{X_2 \cap E_B}f d\mu +\int_{X_3 \cap E_B}f d\mu +\int_{X_4 \cap E_B}f d\mu.$$ We know that $E_B \cap X_1=E_B \cap X_3=E_B \cap X_4=\phi.$ Thus we have $\mu'(E_B)= \int_{E_B \cap X_2}f d\mu.$ However, we know that $f$ is zero on $X_2,$ hence $\mu'(E_B)=0.$ 
 
+Similarly, see that $\nu(E_A)$ should also be zero for $E_A$ a measurable set on $A$. So see that$$\nu(E_A)=\nu(E_A|\cap(X_1 \sqcup X_2 \sqcup X_3 \sqcup X_4))=\int_{X_1 \cap E_A}g d\mu + \int_{X_2 \cap E_A}g d\mu +\int_{X_3 \cap E_A}g d\mu +\int_{X_4 \cap E_A}g d\mu.$$ We have $E_A \cap X_2=\phi,$ and we have that $g$ is zero on $X_1$ and $X_3.$ Thus $\int_{E_A \cap X_1}g d\mu=\int_{E_A \cap X_3}g d\mu=0.$ Note that on $X_4$ the function may be non-zero, but $X_4 \cap E$ is a null set as it is a subset of $X_4,$ a $\mu-$null set. Thus $\int_{E_A \cap X_4}g d\mu =0.$ (This exact question has been solved in \ref{Prob6}). Thus we have $\nu(E_A)=0.$ Therefore $\mu' \perp \nu.$ 
 \section{} %Problem 11
 
 
