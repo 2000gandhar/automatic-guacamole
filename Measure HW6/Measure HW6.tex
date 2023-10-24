@@ -28,7 +28,7 @@ Thus $h \in L^1(\mu \times \nu).$ To calculate the integral, see that
 which is the desired result.
 
 
-\section{} %Problem 2 
+\section{} \label{Prob2} %Problem 2 
 The Fubini-Tolleni theorem requires the two spaces $X$ and $Y$ to both be $\sigma-$finite with respect to both $\mu$ and $\nu$ respectively. In this case see that the counting measure over $\mathbb{N}$ is indeed $\sigma-$finite, as $\mathbb{N}=\cup_{n=1}^{\infty} \{n\},$ where $\mu(\{n\})=1 < \infty.$ Thus for $X=Y=\mathbb{N},$ and $\Sigma_1=\Sigma_2=P(\mathbb{N}),$ and $\mu=\nu =m,$ where $m(A)$ denotes the cardinality of the set $A$ if it is finite and $+\infty$ otherwise. Note that $\Sigma_1 \otimes \Sigma_2= P(\mathbb{N}^2),$ since $\Sigma_1 \otimes \Sigma_2 \subseteq P(\mathbb{N}^2),$ and for any $ A \times B \in P(\mathbb{N}^2),$ we have $A \times B= \cup_{x\times y \in A \times B} \{x\} \times \{y\} \in \Sigma_1 \otimes \Sigma_2,$ which gives us the other inequality. 
 
 We wish to see what sorts of functions over $\mathbb{N}$ are measurable. All functions are clearly $\Sigma_1 \otimes \Sigma_2$ measurable, as the entire power set constitutes the $\sigma-$algebra. See that functions can be indexed by two natural numbers, hence they can be described as $a_{m,n}$ Note that $(a_{m_0})_{n}=a_{m_0,n}$ fixes the first variable at some $m_0 \in \mathbb{N},$ and $a^{n_0}_m=a_{m,n_0}$ fixes the second variable at some $n_0 \in \mathbb{N}.$  
@@ -52,12 +52,16 @@ In the case of the counting measure it means that if the double summation is abs
 
  
 \section{} %Problem 3 
-We need to find a function $g(x)$ that dominates $f_n=f(nx)$ for all $n \in \mathbb{N}.$ Then see that $$\mid \frac{\sin(n^2x^2)}{nx}\mid \leq \frac{1}{nx} \leq \frac{1}{x}.$$ Also see that $\frac{cnx}{1+nx}\leq c.$ See that this holds for all $x \in [0,\infty)$
+We need to find a function $g(x)$ that dominates $f_n=f(nx)$ for all $n \in \mathbb{N}.$ Then see that for $x \in \left[0,\frac{1}{n}\right)$ we have $nx <1,$ which means that $\frac{\sin(n^2x^2)}{nx}< \frac{n^2x^2}{nx} <nx <1.$ For $x \in \left[\frac{1}{n}, \infty \right)$ see that $\frac{\sin(n^2x^2)}{nx} \leq \frac{1}{nx} \leq 1.$   Also see that $\frac{cnx}{1+nx}\leq c.$ Thus we using DCT we can see that for $a \leq 1$ we have $f_n < 1 + c ,$ and for $a > 1$ we have 
+$f_n < 1+c$ either way. Thus we can say that $\lim_{n \to \infty} \int_{0}^{a}f_n = \int_{0}^{a}\lim_{n \to \infty}f_n=\int_{0}^{a} 0+c=ac.$ 
 
 \section{} %Problem 4 
+To find the value of $\int_{0}^{1} (\int_{0}^{1}\chi_D d\mu)d\nu,$ see that we need to fix the second coordinate. Thus for a fixed $y \in [0,1]$ we have $\int_{0}^{1}\chi_D(x,y)d\mu(x)=0,$ as this function is zero almost everywhere with respect to the Lebesgue measure. Thus we have $\int_{0}^{1}0 d\nu(y)=0.$ Thus we have $\int_{0}^{1} (\int_{0}^{1}\chi_D d\mu)d\nu=0.$
+To find the value of $\int_{0}^{1} (\int_{0}^{1}\chi_D d\nu)d\mu,$ see that we need to fix the first coordinate. Thus for a fixed $x \in [0,1]$ we have $\int_{0}^{1}\chi_D(x,y)d\nu(y)=0,$ as this function is $1$ at $y=x,$ on a set of cardinality $1$. Thus we have $\int_{0}^{1}1 d\mu(x)=1.$ Thus we have $\int_{0}^{1} (\int_{0}^{1}\chi_D d\nu)d\mu=1.$ 
 
+To find the double integral, we want to find the measure of $D$ with respect to the product measure $\mu \times \nu.$ Using the definition of the product measure, we know that $(\mu \times \nu)(D)=\inf \{ \sum_{i=1}^{\infty}(\mu \times \nu)(B_i): D \subseteq \cup_{i=1}^{\infty}B_i\}.$ Note that for a box $B_i= L_i \times H_i$ we have $(\mu \times \nu)(B_i)=\mu(L_i)\nu(H_i).$ Note that $(H_i)$ has to necessarily have non-zero $\mu(H_i)$ for some $i,$ since if for all $i \in \mathbb{N}$ $H_i$ had zero measure, it would only cover at most countable many points of $[0,1]$ which clearly cannot cover the entire space. Thus for some $i$ $\mu(H_i)>0,$ which then means that $\nu(H_i)=\infty.$ For this same $i,$ $\mu(L_i)>0,$ thus we have $(\mu \times \nu)(B_i)=\infty.$ Thus for an arbitrary covering we have $\sum_{i=1}^{\infty}(\mu \times \nu)(B_i) \geq (\mu \times \nu)(D).$ But since the term on the left is always infinite, we have $\int_{X \times Y}\chi_D d(\mu \times \nu)=\infty.$   
 \section{} %Problem 5 
-
+We pick $X=\{1,2,3\},$ and $\mathcal{C}=\{\phi, \{1\},\{2\},\{3\},X\}.$ This is a monotone class, as it can be checked. However, $\{1\}\cup \{2\}=\{1,2\} \nsubseteq \mathcal{C},$ which means that $\mathcal{C}$ is a monotone class but not a $\sigma-$algebra.
 \section{} \label{Prob6} %Problem 6 
 \begin{enumerate}
 	\item We know that $\mu(E)=0.$ Also $f= (\Re (f)^+ - \Re (f)^-)+i(\Im (f)^+ - \Im (f)^-),$ which are all positive measurable functions. Then $\nu(E)=\int_E \Re (f)^+ d\mu \leq +\infty \cdot \mu(E) \leq 0.$ Since measure cannot be negative, we have $\nu(E)=0.$ Use this same strategy for the other three functions $\Re (f)^-,\Im (f)^+,$ and $ \Im (f)^-.$
@@ -67,22 +71,43 @@ We need to find a function $g(x)$ that dominates $f_n=f(nx)$ for all $n \in \mat
 		&=\sum_{n=1}^{\infty} \int_{\coprod_{n=1}^{\infty}E_n} f\chi_{E_n}=\sum_{n=1}^{\infty} \int_{E_n}f d\mu\\
 		&= \sum_{n=1}^{\infty} \nu(E_n),
 	\end{align*} which means that $\nu(\coprod_{n=1}^{\infty}E_n)=\int_{\coprod_{n=1}^{\infty}E_n}f d\mu.$
-	\item Let $\varepsilon>0.$ We wish to find a $\delta >0$ such that $\mu(E)<\delta \implies |\nu(E)|<\varepsilon.$ 
+	\item Let $\varepsilon>0.$ We wish to find a $\delta >0$ such that $\mu(E)<\delta \implies |\nu(E)|<\varepsilon.$ See that $\nu(E)=\int_E (\Re (f)^+ - \Re (f)^-)+i(\Im (f)^+ - \Im (f)^-) d\mu= (I_1-I_2)+i(I_3-I_4),$ where $I_1=\int_{E}\Re(f)^+d\mu , I_2=\int_{E}\Re(f)^-d\mu , I_3=\int_{E}\Im(f)^+d\mu ,I_4=\int_{E}\Im(f)^-d\mu.$ Then see that $|\mu(E)|= \sqrt{(I_1-I_2)^2 + (I_3-I_4)^2}\leq \sqrt{I_1^2+I_2^2+I_3^2+I_4^2}.$ Take $\Re(f)^+$ integrated on $X$. Since $f$ is integrable, $I_1 < \infty.$ Then we find a simple measurable function $h$ such that $0 \leq h \leq \Re(f)^+$ $\int_X \Re f^+ d\mu - \int_E h d\mu < \varepsilon/4.$ Let $H$ be the maximum of $h(x)$ on $X.$ Choose $\delta_1 > 0$ such that $H\delta < \varepsilon/4.$ Now see that for $\mu(E)<\delta,$ 
+	
+	$$\int_E \Re(f)^+ d\mu = \int_E (\Re(f)^+-h) d\mu + \int_E h d\mu \leq \varepsilon/4+\varepsilon/4 < \varepsilon/2.$$
+	Thus $I_1< \varepsilon/2.$ We can do the same to get $I_2,I_3, I_4$ in the same fashion. In all cases we have a value of $\delta_i,$ $i=1,2,3,4.$ We pick $\delta= \min\{\delta_i\},$ then we are done as $|\nu(E)|\leq \sqrt{I_1^2+I_2^2+I_3^2+I_4^2} < \varepsilon.$  
 \end{enumerate}
 
 \section{} %Problem 7 
-From the solution of problem $1,$ the answer to the problem follows directly.
+Using the same product measure as the one in \ref{Prob2}, we take a positive measurable function $\{a_{m,n}\},$ and the Fubini-Tolleni theorem tells us that 
+\begin{enumerate}
+	\item $$m \mapsto \sum_{n=1}^{\infty} (a_m)_{n} $$ is $P(\mathbb{N})$ is measurable, 
+	
+	and $$n \mapsto \sum_{m=1}^{\infty}a^{n}_m $$ is $P(\mathbb{N})$ is measurable;
+	\item $$\sum_{(m,n) \in \mathbb{N}^2}a_{m,n}dm(m,n) = \sum_{n=1}^{\infty} \left( \sum_{m=1}^{\infty}a^{n}_m \right)= \sum_{m=1}^{\infty} \left( \sum_{n=1}^{\infty}(a_m)_{n} \right).$$
+\end{enumerate}
+
+Therefore we get $\sum_{m=1}^{\infty} \sum_{n=1}^{\infty} a_{mn}= \sum_{n=1}^{\infty} \sum_{m=1}^{\infty} a_{mn}.$
 
 \section{} %Problem 8 
 Note that $|f(m,n)|=1$ for $m=n$ and $m=n+1.$ Then $$\int_{\mathbb{N}^2} |f(m,n)| dm(m,n)= \sum_{m=1}^{\infty} \sum_{n=1}^{\infty} |f(m,n)| = \sum_{p=1} |f(p,p)| + \sum_{q=1}^{\infty}|f(q+1,q)|=\infty.$$
 Now we fix each variable and successively integrate. $\sum_{m=1}^{\infty} f(m,n_0)= f(n_0,n_0)+f(n_0+1,n_0)=1+ (-1)=0.$ Thus $\sum_{n=1}^{\infty}0=0.$ If we fix $m,$ and $m>1,$ then we have $\sum_{n=1}^{\infty} f(m,n)= f(m,m)+f(m,m-1)=1+(-1)=0.$ If $m=1,$ there is no $n$ such that $ m=n+1,$ so $\sum_{n=1}f(1,n)=f(1,1)=1.$ Thus $ \sum_{m=1}^{\infty} \sum_{n=1}^{\infty} f(m,n) = 1 \neq \sum_{n=1}^{\infty} \sum_{m=1}^{\infty} f(m,n) = 0.$
 \section{} %Problem 9 
-
+\begin{enumerate}
+	\item We have an increasing sequence of subsets $\{E_n\}.$ We wish to show that continuity from below above to signed measures as well. By the Jordan decomposition theorem, we have $\nu=\nu^+-\nu^-,$ where $\nu^+$ and $\nu^-$ are two positive measures, $\nu^+ \perp \nu^-$.  Note that $\nu^+$ lives on $P,$ $\nu^-$ lives on $N,$ where $P \cup N=X,$ $P,N \in \mathcal{A},$ and $P \cap N= \phi.$ 
+	
+	We can see that $E_n= P_n \sqcup N_n,$ where $P_n :=(E_n \cap P)$ and  $N_n:=(E_n \cap N).$ Thus we have $ E= \cup_{n=1}^{\infty} E_n= (\cup_{n=1}^{\infty} P_n) \cup (\cup_{n=1}^{\infty}N_n).$ Note that $$\nu(E)= \nu^+((\cup_{n=1}^{\infty} P_n) \cup (\cup_{n=1}^{\infty}N_n) - \nu^-((\cup_{n=1}^{\infty} P_n) \cup (\cup_{n=1}^{\infty}N_n)=\nu^+(\cup_{n=1}^{\infty} P_n) - \nu^-(\cup_{n=1}^{\infty}N_n).$$ We will set $P_0=\cup_{n=1}^{\infty}P_n$ and $N_0=\cup_{n=1}^{\infty}N_n.$ We will rewrite $P_0$ and $N_0$ as a disjoint union $\bigsqcup_{n=1}^{\infty} P_n'$ and $\bigsqcup_{n=1}^{\infty} Q_n'$ where $P_1'=P_1, Q_1'=Q_1$ and $P_n'=P_n \backslash (\cup_{i=1}^{n-1}P_i)$ and $Q_n'=Q_n \backslash (\cup_{i=1}^{n-1}Q_i).$  We denote by $P_n''=\cup_{i=1}^{n}P_n'$ and $Q_n''=\cup_{i=1}^{n}Q_n'.$ Then using continuity from below we have $\nu^+(\cup_{n=1}^{\infty}P_n'')=\lim_{n \to \infty} \nu^+(P_n'')= \nu^+(P_0)$ and similarly $\nu^-(\cup_{n=1}^{\infty}Q_n'')=\nu^-(N_0).$ Thus we have $\nu(E)= \nu^+(P_0)-\nu^-(N_0)= \lim_{n \to \infty} \nu(E_n).$
+	\item We know that $\nu(E_1)$ is finite. Thus we must have both $\nu^+$ and $\nu^-$ are finite, as at most one of the two positive measures constituting the signed measure can be infinite. Thus we define $P_n''$ and $Q_n''$ in the same way as in the previous question, except that this sequence is decreasing. Using continuity from above for positive measures gives us the desired result.  
+\end{enumerate}
 \section{} %Problem 10 
 Since $f(x)\cdot g(x)=0,$ we cannot have $f(x)$ and $g(x)$ nonzero for the same value of $x$ almost everywhere. We divide our domain $X$ into four disjoint parts $X=X_1 \sqcup X_2 \sqcup X_3 \sqcup X_4,$ where $X_1$ is the set of all $x \in X$ where $f$ is nonzero but $g$ is zero; $X_2$ is the set of all $x \in X$ such that $g$ is nonzero but $f$ is zero; $X_3$ is the set of all $x \in X$ such that $f$ and $g$ are both zero, and $X_4$ is the set of all $x \in X$ such that both $f$ and $g$ are nonzero. We know that $\mu'(X_4)=0.$ Let $A= (X_1 \sqcup X_3 \sqcup X_4)$ and $B=X_2.$ Clearly the two are disjoint and their union is $X,$ by construction. We argue that this should show that $\mu' \perp \nu.$ We try to evaluate $\mu'(E_B),$ for $E_B$ a measurable subset in $B.$ See that $$ \mu'(E_B)=\mu'(E_B|\cap (X_1 \sqcup X_2 \sqcup X_3 \sqcup X_4))=\int_{X_1 \cap E_B}f d\mu + \int_{X_2 \cap E_B}f d\mu +\int_{X_3 \cap E_B}f d\mu +\int_{X_4 \cap E_B}f d\mu.$$ We know that $E_B \cap X_1=E_B \cap X_3=E_B \cap X_4=\phi.$ Thus we have $\mu'(E_B)= \int_{E_B \cap X_2}f d\mu.$ However, we know that $f$ is zero on $X_2,$ hence $\mu'(E_B)=0.$ 
 
 Similarly, see that $\nu(E_A)$ should also be zero for $E_A$ a measurable set on $A$. So see that$$\nu(E_A)=\nu(E_A|\cap(X_1 \sqcup X_2 \sqcup X_3 \sqcup X_4))=\int_{X_1 \cap E_A}g d\mu + \int_{X_2 \cap E_A}g d\mu +\int_{X_3 \cap E_A}g d\mu +\int_{X_4 \cap E_A}g d\mu.$$ We have $E_A \cap X_2=\phi,$ and we have that $g$ is zero on $X_1$ and $X_3.$ Thus $\int_{E_A \cap X_1}g d\mu=\int_{E_A \cap X_3}g d\mu=0.$ Note that on $X_4$ the function may be non-zero, but $X_4 \cap E$ is a null set as it is a subset of $X_4,$ a $\mu-$null set. Thus $\int_{E_A \cap X_4}g d\mu =0.$ (This exact question has been solved in \ref{Prob6}). Thus we have $\nu(E_A)=0.$ Therefore $\mu' \perp \nu.$ 
 \section{} %Problem 11
-
+\begin{enumerate}
+	\item Since $A$ is a positive set, we have $\nu(E)\geq 0$ $ \forall E \subset A.$ We fix $B \subseteq A \in \mathcal{A}.$ We know that $\nu(B)=0.$ Also note that for any set $C \in \mathcal{A}$ where $C \subseteq B \subseteq A,$ we can infer that $ C \subseteq A \implies \nu(C) \geq 0$ from the positivity of $A.$ Since our choice of subset $C$ was arbitrary, we must have that $B$ is a positive set. Hence every subset of a positive set is also a positive set.
+	
+	\item Let $P:= \cup_{n=1}^{\infty}P_n.$ Let $E \subset P.$ We can rewrite $P$ as a disjoint union $\bigsqcup_{n=1}^{\infty}Q_n,$ where $Q_1=P_1,$ and $Q_n=P_n\backslash (\cup_{i=1}^{n-1}P_i).$ Note that $Q_n \subset P_n,$ hence from the previous section we can see that $Q_n$ is also a positive set for all $n.$ We now consider $E \cap Q_n,$ which is clearly a subset of $Q_n,$ hence $ \nu(E \cap Q_n) \geq 0.$ We now have $$\nu(E \cap P)= \nu \left(E \cap \bigsqcup_{n=1}^{\infty} Q_n \right)= \sum_{n=1}^{\infty} \nu \left(E \cap Q_n \right) \geq 0,$$ which means that for any measurable subset $E$ of $P$ we have positive measure. 
+	
+\end{enumerate}
 
 \end{document}

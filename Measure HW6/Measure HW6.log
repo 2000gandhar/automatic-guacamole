@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.9.28)  23 OCT 2023 21:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.9.28)  24 OCT 2023 21:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -721,37 +721,46 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] (./Measure HW6
-.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Overfull \hbox (14.91106pt too wide) in paragraph at lines 74--75
+[][] \OMS/cmsy/m/n/10 =\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 )[]\O
+ML/cmm/m/it/10 d^^V; I[] \OT1/cmr/m/n/10 = [][] \OMS/cmsy/m/n/10 =\OT1/cmr/m/n/
+10 (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 d^^V:$ \T1/cmr/m/n/10
+ Then see that $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^V\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 E\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/
+n/10 ^^T []\OML/cmm/m/it/10 :$
+ []
+
+[3] [4] [5] (./Measure HW6.aux) ) 
 Here is how much of TeX's memory you used:
- 17070 strings out of 480247
- 331221 string characters out of 5896151
- 617875 words of memory out of 5000000
- 34692 multiletter control sequences out of 15000+600000
+ 17071 strings out of 480247
+ 331228 string characters out of 5896151
+ 621883 words of memory out of 5000000
+ 34693 multiletter control sequences out of 15000+600000
  479441 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  125i,9n,129p,1182b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1
-000.600pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
-bx1440.600pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecrm1200.600pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen
-/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra
-/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/symbols/msbm7.pfb>
-Output written on "Measure HW6.pdf" (4 pages, 158379 bytes).
+ </home/gandhar/.texlive2021/texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecrm1000.600pk> </home/gandhar/.texlive2021/texmf-var/font
+s/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/gandhar/.texlive2021/texmf-var/f
+onts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/gandhar/.texlive2021/texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on "Measure HW6.pdf" (5 pages, 175132 bytes).
 PDF statistics:
- 194 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 201 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
