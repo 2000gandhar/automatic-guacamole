@@ -44,10 +44,71 @@
 %----------------------------------------------------------------------------------------
 
 \section{} %Problem 1 
+\begin{enumerate}
+	\item See that $bx-a \in \ker \pi,$ since $b \cdot \left( \frac{a}{b} \right)-a=0.$ Therefore $(bx-a) \subseteq \ker \pi.$ Now consider $f(x) \in R[x]$ where $f(x) \in \ker \pi.$ We consider the polynomials $f(x)$ and $x-\frac{a}{b}$ as elements of $Q[x]$ the ring of polynomials with coefficients from the fraction field of $R.$ Then this is a PID, which is why we can apply the division algorithm to see that $f(x)=q(x)\left(x-\frac{a}{b}\right)+c,$ where $c \in Q, q(x) \in Q[x].$ Setting $x=\frac{a}{b}$ we get $c=0.$ Thus we have $f(x)=q(x)\left(x-\frac{a}{b}\right).$ We rewrite all polynomials are primitive polynomials in $R[x];$ thus we have $f(x)=a_1 \cdot f_0(x),$ $q(x)=a_2 \cdot q_0(x),$ and $x-\frac{a}{b}=b^{-1} \cdot (bx-a).$ Then we have $ a_1 \cdot f_0(x)= (a_2b^{-1}) q_0(x) (bx-a).$ We multiply on both sides by some $k \in R$ such that $ka_1b \in R $ and $ ka_2 \in R$ and the two are coprime. The constant cannot divide the polynomials as they are all primitive, hence we must have $ka_1b  |  ka_2,$ and by Gauss' lemma we can say that $f_0(x) | q_0(x)(bx-a),$ that is, $f \in (bx-a).$ Thus we have $\ker f=(bx-a).$
+	
+	\item Note that $(1+\sqrt{-3})\cdot (1-\sqrt{-3})=2 \cdot 2 = 4,$ which means that $R$ is not a UFD. Therefore the above result needn't apply. 
+\end{enumerate}
 \section{} %Problem 2
 \section{} %Problem 3 
-\section{} %Problem 4 
-\section{} %Problem 5 
-\section{} %Problem 6 
+Let $R=\frac{F[x,y]}{xy},$ and $I=(\bar{x},\bar{y}).$ Then $$\frac{R}{I} \equiv \frac{\frac{F[x,y]}{(xy)}}{(\bar{x},\bar{y})} \equiv \frac{F[x,y]}{(xy,x,y)} \equiv \frac{F[x]}{0 \cdot x,x} \equiv F,$$ which is a domain. Thus $I$ is prime. TO see that it is not principal, we assume for the sake of contradiction that $I=(f_0),$ where $f_0 \in F[x,y].$ Note that once seen modulo $(xy),$ we have $\bar{f_0}=f_1(x)+f_2(y),$ where $f_1 \in F[x], f_2 \in F[y].$ If we say that $(f_0)=(\bar{x},\bar{y}),$ then we have $f_0 | x$ and $f_0 | y.$ $f_0(x,y)=f_1(x)+f_2(y)$ must have degree less than  or equal to $1,$ with no term of $y,$ hence $f_2(y)=c_2$ and $f_1(x)=c_1+dx.$ Set $c=c_1+c_2,$ then see that we must have $x=t(c+dx)$ for some $t \in F[x,y].$ Comparing degrees, we must have $t \in F \backslash \{0\}.$ Comparing the two sides, see that $c=0, d=1/t$ which is the only possibility. However, $x \nmid y,$ so such a $f_0$ cannot exist. Thus $I$ is not principal.
 
+ 
+\section{} %Problem 4 
+Let $$A=\begin{pmatrix}
+	1 & 2 & 2 &3 \\
+	5 & 5 & 4 & 4\\
+	6 & 7 & 7 & 8\\
+	10 & 10 & 9 & 9
+\end{pmatrix}.$$ Through a myriad set of row and column operations shall we reduce our matrix $A$ to form that will generate an alike cokernel. We shall use $R_1,R_2,$ and $R_3$ to denote the rows, while $C_1,C_2,$ and $C_3$ shall denote the columns of $A.$ First we execute $C_2 \mapsto C_2-C_1, C_4 \mapsto C_4 - C_3.$ Then we execute $C_4 \mapsto C_4 - C_2$ to get $$A'=\begin{pmatrix}
+1 & 1 & 2 & 0\\
+5 & 0 & 4 & 0\\
+6 & 1 & 7 & 0\\
+10 & 0 & 9 & 0
+\end{pmatrix}.$$
+Execute $C_2 \mapsto C_2 - C_1, C_3 \mapsto C_3- 2 C_1$ to get $$A''=\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	5 & -5 & -6 & 0\\
+	6 & -5 & -5 & 0\\
+	10 & -10 & -11 &0
+\end{pmatrix}. $$
+Execute $R_2 \mapsto R_2 -R_1, R_3 \mapsto R_3- 6R_1,$ and $R_4 \mapsto R_4 - 10R_1.$ After this, execute $R_3 \mapsto R_3-R_2$ and $R_4 \mapsto R_4 - 2R_2$ to get $$A'''=\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+	0 & -5 & -6 & 0\\
+	0 & 0 & 1 & 0\\
+	0 & 0 & 1 & 0
+\end{pmatrix}.$$ Execute $R_2 \mapsto -R_2,$ and $R_4 \mapsto R_4 - R_3.$ After this execute $R_2 \mapsto R_2 - 6R_3$ to get $$A''''=\begin{pmatrix}
+	1 & 0 & 0 & 0\\
+0 & 5 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0
+\end{pmatrix}.$$
+
+We are well aware that the cokernel is left unchanged due to our row and column operations. Thus it can be seen that the image of this matrix is $A''''(x_1 x_2 x_3 x_4)^T=(x_1 5x_2 x_3 0).$ Therefore the image is $\mathbb{Z} \oplus 5\mathbb{Z} \oplus \mathbb{Z} \oplus 0.$ Then $\text{coker} A=\frac{Z^4}{\mathbb{Z} \oplus 5\mathbb{Z} \oplus \mathbb{Z} \oplus 0}= \frac{\mathbb{Z}}{5\mathbb{Z}}.$
+
+\section{} %Problem 5 
+\begin{enumerate}
+	\item Since $f \circ g=0,$ we have $f(g(p))=0 \forall p \in P.$ Then we have $g(p) \in \ker f \forall p \in P \implies g(P) \subseteq \ker f.$ Thus we can define $h: P \rightarrow \ker f$ as $h(p)=g(p).$ If another $h': P \rightarrow \ker f$ exists such that $g=i \circ h',$ then we have $g=i \circ h= i \circ h'.$ Since $i$ is injective, for all $p \in P$ we have $i(h(p))=i(h'(p)) \implies h(p)=h'(p),$ thus we have $h=h',$ proving the uniqueness of $h.$
+	
+	\item Let $h(\bar{n})=g\circ \pi^{-1}(\bar{n}),$ for $\bar{n} \in \text{coker} f.$ We propose that this is the desired map. We need to see that this map is well defined. $\pi^{-1}(\bar{n})= n + f(M),$ for some $n \in N.$ We need to see that the choice of representative does not matter. We can see that since $g$ is $R-$linear we have $g(n + f(M))= g(n) + g \circ f(M)=g(n) \in P.$ Thus this map is well defined. To see that this map is unique, for another such map $h': \text{coker} f \rightarrow P$ such that $ g=h \circ \pi,$ we have $g=h \circ \pi= h' \circ \pi,$ which implies that $h=h'$ is surjective, where right cancellation is possible. Thus this map is unique. 
+\end{enumerate}
+\section{} %Problem 6 
+We can see that $(0) \subseteq \ker f \subseteq \ker f^2 \subseteq \dots$ which is an ascending chain of submodules of $M.$ This clearly must stabilise as the Noetherian condition is equivalent to the ascending chain condition. That is, for some $n \in \mathbb{N}$ we have $\ker f^n=\ker f^{n+1}=\ker f^{n+2}=\dots.$ Now see that for some $m \in \ker f$ we have $f(m)=0.$ Since $f$ is surjective, we can find a $m' \in M$ such that $f(m')=m.$ Repeating this process, see that there must exist some $m_n \in M$ such that $f^n(m_n)=m.$ Applying $f$ on both sides, we have $f^{n+1}(m_n)=f(m)=0.$ Thus $m_n \in \ker f^{n+1}=\ker f^n,$ we must have $f^n(m_n)=m=0.$ Thus $m$ must necessarily be zero, meaning that a surjective endomorphism on a Noetherian module must necessarily be injective, and thus an isomorphism. 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
