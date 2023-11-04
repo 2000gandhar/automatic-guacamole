@@ -104,10 +104,10 @@ thus $\mathbb{N}=\sum_{n=1}^{\infty}\{n\},$ where $\nu(\{n\})<\infty.$ Thus defi
 have $\nu(E)=\int_E f d\mu=\sum_{n \in E}f(n),$ is the required function. Thus $f=\frac{d\nu}{d\mu}.$
 \section{} %Problem 9 
 If we assume that $\frac{d\mu}{d\lambda}\cdot \frac{d\nu}{d\lambda}=0$ $\lambda$ almost everywhere, we know from the previous assignment that $\mu(E)$ and 
-$\nu(E)$ are mutually singular. To see the converse, let us assume that $\mu \perp \nu.$ For sake of contradiction, let there be a subset $K \subseteq X$ 
-where $\lambda(K)>0$ and $\frac{d\mu}{d\lambda}\cdot \frac{d\nu}{d\lambda} \neq 0.$ Since $\mu \perp \nu,$ we have $X = A \sqcup B,$
-where $\mu(E)=\lambda(E \cap A),$ and $\nu(E)=\lambda(E \cap B).$ We can split $X$ as $(K\cap A)\sqcup (K^c \cap A) \sqcup (K \cap B) \sqcup (K^c \cap B).$ 
-Then for $E \subseteq A,$   
+$\nu(E)$ are mutually singular. To see the converse, let us assume that $\mu \perp \nu.$ Then we have $X=A \sqcup B$, where $\mu$ lives on $A$ while $\nu$ 
+lives on $B.$ Then let $f:= \frac{d\mu}{d\lambda},$ and $g:=\frac{d\nu}{d\lambda}.$ See that $$\int_{E}fg d\lambda=\int_{(E\cap A)}fg d\lambda + 
+\int_{(E\cap B)} fg d\lambda.$$ We know that $ \int_{(E\cap A)}fg d\lambda=\int_{(E\cap A)}f d\nu,$ and $ \int_{(E\cap B)}fg d\lambda=\int_{(E\cap B)}g 
+d\mu.$ As $E \cap A$ is a $ \nu-$null set and $E \cap B$ is a $\mu-$null set, we have  $\int_{E}fg d\lambda=0 \implies fg=0$  $\lambda-$almost everywhere.
 \section{} %Problem 10 
 $\nu=\nu^+-\nu^-$ is a signed measure, where we have $x=P \sqcup N,$ that is, $\nu^+(E)=\nu(E \cap P),$ and $\nu^-(E)=\nu(E \cap N).$
 Taking $|\nu|=\nu^+ +\nu^-,$ see that $ \nu^+ << |\nu|$ and $\nu^- << |\nu|,$ and thus there must exist $\frac{d\nu^+}{d|\nu|}$ and 
@@ -125,6 +125,13 @@ See that \begin{align*}
 \end{align*}
 as desired. 
 \section{} %Problem 12
+We know that the counting measure $\mu$ only has one $\nu-$null set, that is $\phi.$ Let us say that $\mu << \nu.$ Then for $\nu(E)=0$ for some measurable 
+$E \in \mathcal{A},$ we have $\mu(E)=0.$ To take the contrapositive, we see that if $\mu(E)\neq 0,$ then $\nu(E) \neq 0.$ Since we know that $\mu$ has no 
+non-empty null sets, non $\mu-$null sets and non-empty subsets are synonymous. Thus, if $E \neq \phi,$ $\nu(E) \neq 0.$
+
+For the Dirac measure at $x_0 \in X,$ we know that $\delta_{x_0} << \nu$ means that $\nu(E)=0$ for some $E \in \mathcal{A}$ implies that 
+$\delta_{x_0}(E)=0.$ The Dirac measure is zero if the measurable subset $E$ does not have $x_0.$ Thus we can take the contrapositive of the absolute 
+continuity to say that if $x_0 \in E,$ then we must necessarily have $\nu(E)\neq 0.$ 
 \end{document}
 
 
