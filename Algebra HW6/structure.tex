@@ -19,11 +19,10 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\usepackage{amsmath,amsfonts,stmaryrd,amssymb} % Math packages
+\usepackage{amsmath,amsfonts,amssymb} % Math packages
 
 \usepackage{enumerate} % Custom item numbers for enumerations
 
-\usepackage[ruled]{algorithm2e} % Algorithms
 
 \usepackage[framemethod=tikz]{mdframed} % Allows defining custom boxed/framed environments
 
@@ -57,7 +56,6 @@
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
-\usepackage{XCharter} % Use the XCharter fonts
 
 %----------------------------------------------------------------------------------------
 %	COMMAND LINE ENVIRONMENT
@@ -65,12 +63,12 @@
 
 % Usage:
 % \begin{commandline}
-%	\begin{verbatim}
-%		$ ls
-%		
-%		Applications	Desktop	...
-%	\end{verbatim}
-% \end{commandline}
+	%	\begin{verbatim}
+		%		$ ls
+		%		
+		%		Applications	Desktop	...
+		%	\end{verbatim}
+	% \end{commandline}
 
 \mdfdefinestyle{commandline}{
 	leftmargin=10pt,
@@ -90,7 +88,7 @@
 \newenvironment{commandline}{
 	\medskip
 	\begin{mdframed}[style=commandline]
-}{
+	}{
 	\end{mdframed}
 	\medskip
 }
@@ -101,8 +99,8 @@
 
 % Usage:
 % \begin{file}[optional filename, defaults to "File"]
-%	File contents, for example, with a listings environment
-% \end{file}
+	%	File contents, for example, with a listings environment
+	% \end{file}
 
 \mdfdefinestyle{file}{
 	innertopmargin=1.6\baselineskip,
@@ -128,7 +126,7 @@
 	\medskip
 	\newcommand{\mdfilename}{#1}
 	\begin{mdframed}[style=file]
-}{
+	}{
 	\end{mdframed}
 	\medskip
 }
@@ -139,8 +137,8 @@
 
 % Usage:
 % \begin{question}[optional title]
-%	Question contents
-% \end{question}
+	%	Question contents
+	% \end{question}
 
 \mdfdefinestyle{question}{
 	innertopmargin=1.2\baselineskip,
@@ -149,7 +147,7 @@
 	nobreak,
 	singleextra={%
 		\draw(P-|O)node[xshift=1em,anchor=west,fill=white,draw,rounded corners=5pt]{%
-		Question \theQuestion\questionTitle};
+			Question \theQuestion\questionTitle};
 	},
 }
 
@@ -161,7 +159,7 @@
 	\stepcounter{Question}
 	\newcommand{\questionTitle}{~#1}
 	\begin{mdframed}[style=question]
-}{
+	}{
 	\end{mdframed}
 	\medskip
 }
@@ -172,8 +170,8 @@
 
 % Usage:
 % \begin{warn}[optional title, defaults to "Warning:"]
-%	Contents
-% \end{warn}
+	%	Contents
+	% \end{warn}
 
 \mdfdefinestyle{warning}{
 	topline=false, bottomline=false,
@@ -193,7 +191,7 @@
 	\medskip
 	\begin{mdframed}[style=warning]
 		\noindent{\textbf{#1}}
-}{
+	}{
 	\end{mdframed}
 }
 
@@ -203,8 +201,8 @@
 
 % Usage:
 % \begin{info}[optional title, defaults to "Info:"]
-% 	contents
-% 	\end{info}
+	% 	contents
+	% 	\end{info}
 
 \mdfdefinestyle{info}{%
 	topline=false, bottomline=false,
@@ -222,6 +220,6 @@
 	\medskip
 	\begin{mdframed}[style=info]
 		\noindent{\textbf{#1}}
-}{
+	}{
 	\end{mdframed}
 }
