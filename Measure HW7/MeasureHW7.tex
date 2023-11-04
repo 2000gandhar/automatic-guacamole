@@ -53,6 +53,11 @@ measurable subset $E$ in $B.$ For a general measurable set $E,$ we have $E=(E \c
 that $\nu(E \cap B)=0$ also. Thus $\nu(E)=\nu(E \cap A)+\nu(E \cap B)=0$ for all measurable $E \subset X.$
 \section{} %Problem 2
 \section{} %Problem 3 
+We can check that $m << m$ trivially, as $m(E)=0 \implies m(E)=0.$ We can split $\mathbb{R}$ into two disjoint subsets, that is, $\mathbb{R}= \{0\} \sqcup 
+((\infty,0)\cup (0,\infty)).$ We denote the two sets as $A$ and $B.$ Then observe that $\delta_0(E)= \delta_0(E \cap A),$ that is, the Dirac measure at $0$ 
+only cares if it intersects $\{0\},$ and nothing else. Also, we have $m(E)=m(E \cap B),$ as $A$ is a $m-$null set, hence $m(E)=m(E\cap A \sqcup E \cap 
+B)=m(E \cap A)+ m(E \cap B)=m(E \cap B),$ seeing as $E \cap A$ is also a $m-$null set. Thus we have $m \perp \delta_0.$ Thus $\nu=m+\delta_0$ is already in 
+the Lebesgue decomposition. 
 \section{} %Problem 4 
 \begin{itemize}
 	\item We find the positive and negative parts of $f.$ Note that the roots of this polynomial are $3+2\sqrt{2}$ and 
@@ -82,15 +87,43 @@ $\nu(E)=\sum_{n=1}^{N}c_n \mu(E \cap E_n)=0.$ Thus $\nu << \mu.$ See that the fu
 Radon-Nikodym derivative. $$\int_{E} f d\mu= \int_{E}\sum_{n=1}^{N}c_n \chi_{E_n} d\mu= \sum_{n=1}^{N}c_n \int_{X}\chi_{E} \chi_{E_n} d\mu= 
 \sum_{n=1}^{N}c_n \int_{X}\chi_{E \cap E_n} d\mu=\sum_{n=1}^{N}c_n \mu(E \cap E_n),$$ which is the desired result. Thus $\frac{d\nu}{d\mu}=f.$
 \section{} %Problem 6 
+\begin{enumerate}
+	\item Since $\nu << \mu,$ there exists $f \in L^1(\mu)$ such that $\nu(E)=\int_E f d\mu.$ We know that $f>0 \mu-$almost everywhere, then assume that 
+	$\nu(E)=0.$ Thus $\int_{E}f d\mu=0.$ Assume that $\mu(E)>0.$ Then $f$ is greater than zero on all of $E,$ thus $\int_E f d\mu > 0.$ However, since 
+	$\nu(E)=0$ this forces $\mu(E)$ to be $0.$ Thus $\mu << \nu.$
+	
+	\item 
+\end{enumerate}
 \section{} %Problem 7 
+Let $\theta:= \mu + \nu.$ Then $f=\frac{d\nu}{d\theta}.$ See that since $\theta(E)=\int_{E}1 d\theta= \mu(E)+ \int_{E} f d\theta.$ Therefore we have 
+$\mu(E)=\int_{E}(1-f)d\theta.$ Thus we have $\frac{d\mu}{d\theta}=1-f.$  
 \section{} %Problem 8 
 In $(\mathbb{N},\mathbb{P(N)}),$ $\mu$ is the counting measure. Note that the empty set is the only $\mu-$null set, since every non-empty set has 
 cardinality more than zero. Then somewhat trivially we have $\mu(E)=0 \implies E=\phi \implies \nu(E)=0.$ So $\nu << \mu.$ We have $\nu$ is $\sigma-$finite, 
 thus $\mathbb{N}=\sum_{n=1}^{\infty}\{n\},$ where $\nu(\{n\})<\infty.$ Thus define $f: \mathbb{N} \rightarrow \mathbb{R},$ where $f(n)=\nu(\{n\}).$ Then we 
 have $\nu(E)=\int_E f d\mu=\sum_{n \in E}f(n),$ is the required function. Thus $f=\frac{d\nu}{d\mu}.$
 \section{} %Problem 9 
+If we assume that $\frac{d\mu}{d\lambda}\cdot \frac{d\nu}{d\lambda}=0$ $\lambda$ almost everywhere, we know from the previous assignment that $\mu(E)$ and 
+$\nu(E)$ are mutually singular. To see the converse, let us assume that $\mu \perp \nu.$ For sake of contradiction, let there be a subset $K \subseteq X$ 
+where $\lambda(K)>0$ and $\frac{d\mu}{d\lambda}\cdot \frac{d\nu}{d\lambda} \neq 0.$ Since $\mu \perp \nu,$ we have $X = A \sqcup B,$
+where $\mu(E)=\lambda(E \cap A),$ and $\nu(E)=\lambda(E \cap B).$ We can split $X$ as $(K\cap A)\sqcup (K^c \cap A) \sqcup (K \cap B) \sqcup (K^c \cap B).$ 
+Then for $E \subseteq A,$   
 \section{} %Problem 10 
+$\nu=\nu^+-\nu^-$ is a signed measure, where we have $x=P \sqcup N,$ that is, $\nu^+(E)=\nu(E \cap P),$ and $\nu^-(E)=\nu(E \cap N).$
+Taking $|\nu|=\nu^+ +\nu^-,$ see that $ \nu^+ << |\nu|$ and $\nu^- << |\nu|,$ and thus there must exist $\frac{d\nu^+}{d|\nu|}$ and 
+$$\frac{d\nu^-}{d|\nu|},$$ the Radon-Nikodym derivatives. Then see that $\frac{d\nu^+}{d|\nu|}=\chi_P.$ To see this, see that for $E$ measurable in $P,$
+\begin{align*}
+	\int_E \chi_{P}d|\nu| &= \int_E \chi_P d\nu^+ + \int_E \chi_P d\nu^-\\
+	&= \nu^+(E\cap P)  + 0 = \nu^+(E),
+\end{align*}
+and similarly for $\nu^-,$ $\frac{d\nu^-}{d|\nu|}=\chi_N.$ 
 \section{} %Problem 11
+See that \begin{align*}
+	\left| \int_X f d\nu \right| &\leq \left|\int_{X}f d\nu^+ - \int_{X}f d\nu^-  \right|\\
+	&= \left|\int_{X}f d\nu^+\right| + \left|\int_{X}f d\nu^-\right| \leq \int_{X}|f| d\nu^+ + \int_{X}|f| d\nu^-\\
+	&= \int_{X}|f| d|\nu|,
+\end{align*}
+as desired. 
 \section{} %Problem 12
 \end{document}
 
