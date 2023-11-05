@@ -48,14 +48,30 @@
 	\item Since $R$ is a PID, we know that $(a,b)=(d),$ for some $d,a,b \in R.$ Then we have $d=am+bn,$ for some $m,n \in R.$ Now we have a vector 
 	$v=[a,b]^T \in R^2 \backslash \{0\}.$ Then we show that there exists a $2x2$ matrix that does what we want by constructing one. Let the desired matrix 
 	by be given by $X= \begin{pmatrix}
-	x_{11}&x_{21}\\
-	x_{12}&x_{22} 	
+		x_{11}&x_{21}\\
+		x_{12}&x_{22} 	
 	\end{pmatrix}.$ Now we have $Xv= [x_{11}a + x_{21}b, x_{12}a+x_{22}b]^T=[d,0]^T.$ Comparing terms, we have $x_{12}a+x_{22}b=0.$ Then we have 
-	$x_{12}a=-x_{22}b,$ which implies that $ x_{12}| -b,$ and $x_{22}|a.$ It is easy to see that $x_{12}=-a$ and $x_{22}=b$ does the trick. For $x_{11}a + 
-	x_{21}b=d,$ see that $x_{11}=m$ and $x_{21}=n$ are good choices, since their linear combination produces $d.$ Thus see that $$X=\begin{pmatrix}
-	m&n\\
-	-b&a
-\end{pmatrix} $$ is a matrix that achieves the intended result.
+	$x_{12}a=-x_{22}b,$ which implies that $ x_{12}| -b,$ and $x_{22}|a.$ It is easy to see that $x_{12}=-a/d$ and $x_{22}=b/d$ does the trick. For $x_{11}a 
+	+ 
+	x_{21}b=d,$ see that $x_{11}=m$ and $x_{21}=n$ are good choices, since their linear combination produces $d.$ Thus see that 
+		$$X=\begin{pmatrix}
+			m&n\\
+			-b/d&a/d
+		\end{pmatrix} $$ is a matrix that achieves the intended result.
+	
+	\item The above result shall be of much use to us. We see that we want to send $a_{11}$ to $d,$ that is the gcd of $a_{11}$ and $a_{i1},$ and $a_{i1}$ 
+	to $0.$ Let $m,n \in R$ such that $d=a_{11}m+a_{i1}n.$ Define the matrix $\tilde{X}=(x_{kl})$ thus--- $x_{11}=m, x_{1i}=n, x_{i1}=-a_{i1}/d, 
+	x_{ii}=a_{11}/d.$ Also we have $x_{kk}=1$ if $k \neq 1,i.$ All other elements are $0.$ Then we have $A'=\tilde{X}A=(a'_{kl}),$ where 
+	$a'_{11}=a_{11}m+a_{i1}n,$ $a'_{i1}=(-a_{i1})a_{11}+(a_{11})a_{i1}=0,$ and $a'_{kl}=a_{kl}$ for $k \neq 1,i.$   
+	We need to see that this here matrix is invertible. For $\tilde{X}$ a $m \times m$ matrix, we want $\det \tilde{X}.$ We expand the determinant along the 
+	first row. Then we have $\det \tilde{X}= m \det \tilde{X}[1|1]+ (-1)^{i+1}((-1)^{i+1}\det \tilde{X}[1|i]).$ $\tilde{X}[1|1]$ is a diagonal matrix with 
+	$a_{11}$ on the $a_{ii}$th entry, and $1$ otherwise on the diagonal. Thus $\det \tilde{X}[1|1]=a_{11}.$ $\tilde{X}[1|i])$ is a matrix with $x_{i1}$ at 
+	the $(i-1,1)$th entry, with every element below and above it zero. We take the determinant along this column, we have $(-1)^{i-1+1}x_{i1}\cdot \det 
+	I_{m-2}=(-1)^{i}x_{i1}.$ Thus see that $\det \tilde{X}=ma_{11}+(-1)^{2i+1}(-a_{i1})=1,$ means that $\tilde{X}$ is invertible. 
+	
+	\item The above result and the result above that shall be of much use to us. If $A=0,$ then there is nothing to do. We then have $A\neq 0.$ Without loss 
+	of generality, we take $a_{11}\neq 0.$ This is because we can shift the row with a non-zero element to the top, then send the column with that element 
+	to the first column. Now using the above result, there is a $\tilde{X}_1$ such that $a_{21}=0.$ The value of $a_{11}$
 \end{enumerate}
  
 \section{} %Problem 2
