@@ -128,7 +128,16 @@ See that \begin{align*}
 	&= \left|\int_{X}f d\nu^+\right| + \left|\int_{X}f d\nu^-\right| \leq \int_{X}|f| d\nu^+ + \int_{X}|f| d\nu^-\\
 	&= \int_{X}|f| d|\nu|,
 \end{align*}
-as desired. 
+as desired.
+Now see that $f \leq 1$ implies that $f\chi_E \leq \chi_E,$ which means that integrating over $X$ we have $\int_{X}f\chi_E d\nu \leq \int_{X}\chi_E d\nu.$ 
+Then this gives us $$\mid \int_{X}f\chi_E d\nu \mid=\mid \int_{E}d d\nu \mid \leq \int_X |f\chi_E| d|\nu|\leq \int_{X} \chi_E d|\nu|=|\nu|(E).$$ Therefore 
+we have $ |\nu|(E) \geq \mid \int_{E}f d\nu \mid,$ for all $f$ such that $f\leq 1.$ Then we must have $|\nu|(E) \geq \sup \left\{\mid \int_{E}f d\nu \mid: f 
+\leq 1\right\}.$ Now let $f=\chi_{E \cap A}-\chi_{E \cap B},$ where $X=A \sqcup B,$ as per the Jordan decomposition. Then we have $$\int_{E}f d\nu=\int_{E}f 
+d\nu^+-\int_{E}f d\nu^-= \int_{E}\chi_{E \cap A} d\nu^+ - \int_{E}\chi_{E \cap B} d\nu^+ + \int_{E}\chi_{E \cap A} d\nu^- + \int_{E}\chi_{E \cap B} 
+d\nu^-=\nu^+(E \cap A) - \nu^+(E \cap B)- \nu^-(E\cap A)+ \nu^-(E \cap B).$$ Note that $\nu^+(E \cap B)=\nu^-(E\cap A)=0.$ Thus we have $\int_{E}f d\nu= 
+\nu^+(E \cap A)+ \nu^-(E \cap B)=\nu^+(E)+\nu^-(E)=|\nu|(E).$ This means that the right hand side actually attains its supremum within the set of all 
+integrable functions where $f \leq 1.$ Thus we have $|\nu|(E) \leq \sup \left\{\mid \int_{E}f d\nu \mid: f \leq 1\right\}.$ This gives us the desired 
+equality.
 \section{} %Problem 12
 We know that the counting measure $\mu$ only has one $\nu-$null set, that is $\phi.$ Let us say that $\mu << \nu.$ Then for $\nu(E)=0$ for some measurable 
 $E \in \mathcal{A},$ we have $\mu(E)=0.$ To take the contrapositive, we see that if $\mu(E)\neq 0,$ then $\nu(E) \neq 0.$ Since we know that $\mu$ has no 

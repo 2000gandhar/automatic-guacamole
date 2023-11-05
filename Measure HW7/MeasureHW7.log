@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.9.28)  5 NOV 2023 21:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.9.28)  5 NOV 2023 22:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -722,8 +722,23 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./MeasureHW7.aux)
- ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Overfull \hbox (141.64226pt too wide) detected at line 137
+[][] \OML/cmm/m/it/10 fd^^W \OT1/cmr/m/n/10 = [][] \OML/cmm/m/it/10 fd^^W[] \OM
+S/cmsy/m/n/10 ^^@ [][] \OML/cmm/m/it/10 fd^^W[] \OT1/cmr/m/n/10 = [][] \OML/cmm
+/m/it/10 ^^_[]d^^W[] \OMS/cmsy/m/n/10 ^^@ [][] \OML/cmm/m/it/10 ^^_[]d^^W[] \OT
+1/cmr/m/n/10 + [][] \OML/cmm/m/it/10 ^^_[]d^^W[] \OT1/cmr/m/n/10 + [][] \OML/cm
+m/m/it/10 ^^_[]d^^W[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ^^W[]\OT1/cmr/m/n/10 (
+\OML/cmm/m/it/10 E \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 A\OT1/cmr/m/n/10 ) \OMS/
+cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^W[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 E \OMS/
+cmsy/m/n/10 \ \OML/cmm/m/it/10 B\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm
+/m/it/10 ^^W[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 E \OMS/cmsy/m/n/10 \ \OML/cmm/m
+/it/10 A\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 ^^W[]\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 E \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 B\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :
+
+ []
+
+[3] (./MeasureHW7.aux) ) 
 Here is how much of TeX's memory you used:
  17075 strings out of 480247
  331247 string characters out of 5896151
@@ -732,23 +747,23 @@ Here is how much of TeX's memory you used:
  481310 words of font info for 62 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  125i,9n,129p,547b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.6
-00pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm100
-0.600pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
-1440.600pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-crm1200.600pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb>
-Output written on MeasureHW7.pdf (3 pages, 141729 bytes).
+ </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/
+jknappen/ec/tcrm1000.600pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecrm1000.600pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecbx1440.600pk> </home/gandhar/.texlive2021/texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecrm1200.600pk> </home/gandhar/.texlive2021/texmf-var/font
+s/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on MeasureHW7.pdf (3 pages, 144176 bytes).
 PDF statistics:
  178 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream
