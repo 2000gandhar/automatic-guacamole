@@ -27,7 +27,7 @@
 %	ASSIGNMENT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{Algebra HW5} % Title of the assignment
+\title{Measure Theory HW7} % Title of the assignment
 
 \author{Gandhar Kulkarni (mmat2304)} % Author name and email address
 
@@ -45,7 +45,7 @@
 
 \section{} %Problem 1 
 If we have $\nu=0,$ then see that $\nu(E)=\int_{E}0 d\mu,$ thus $\mu(E)=0 \implies \nu(E)=0$ trivially, so $\nu << \mu.$ Also see that $\nu \perp \mu$, as 
-$X= X \sqcup \phi,$ and see that $\mu(E)=\mu(E \cap X),$ while $\nu(E)=\nu(E \int \phi).$ 
+$X= X \sqcup \phi,$ and see that $\mu(E)=\mu(E \cap X),$ while $\nu(E)=\nu(E \cap \phi).$ 
 
 Now let us assume that $\nu << \mu$ and $\nu \perp \mu.$ Then we have $X=A \sqcup B,$ where $\mu(E)=\mu(E \cap A),$ while $\nu(E)=\nu(E \int B).$ Let us 
 pick a measurable set $E \subseteq B.$ Then we have $\mu(E)=\mu(E \cap B)=\mu(\phi)=0.$ Since $\nu << \mu,$ we have $\nu(E)=0.$ Thus $\nu$ is zero on every 
@@ -56,7 +56,28 @@ If $\nu \perp \mu,$ then there exists we have $X=A \sqcup B,$ where $\mu(B)=0$ a
 \mathbb{N}.$ Then see that $\mu(E_n), \nu(X\backslash A)=0,$ as required.
 
 Conversely, we assume that $\{E_n\}$ is a sequence of measurable subsets such that $\mu(E_n)\to \infty$ and $\nu(X \backslash E_n) \to \infty$ as $n \to 
-\infty.$ 
+\infty.$ We will use a fun result from real analysis--- for any real sequence $\{x_n\}$ such that $x_n \rightarrow 0$ as $n \to \infty,$ we can find a 
+subsequence $\{x_{n_i}\}$ such that $\sum_{i=1}^{\infty}x_{n_i}< \varepsilon.$ The proof for this is constructive. Choose $\varepsilon>0,$ then find a 
+$x_{n_1} \leq \frac{\varepsilon}{2}.$ Then choose $x_{n_2} 
+\leq \frac{\varepsilon}{2^2}.$ In this fashion, we can always find a $x_{n_k} \leq \frac{\varepsilon}{2^{k+1}}.$ See that the sum of this sequence is less 
+than $\varepsilon$. Using this, we find a subsequence of $\{E_n\}$ such that $\sum_{i=1}^{\infty} \nu(X\backslash E_{n_i})<\varepsilon.$ This is always 
+true, so without loss 
+of generality we assume that the sequence itself is such that it respects this additional condition. Let $A= \liminf_{n \to \infty} E_k= 
+\cup_{n=1}^{\infty}\cap_{k=n}^{\infty}E_k.$ Now see that 
+\begin{align*}
+	\mu(A) &= \mu\left(\cup_{n=1}^{\infty}\cap_{k=n}^{\infty}E_k\right)\\
+	&\leq \sum_{n=1}^{\infty} \mu \left(\cap_{k=n}^{\infty}E_k\right).
+\end{align*} 
+See that for a fixed $n,$ let $F_m=\cap_{k=n}^m E_k,$ so we have $F_{m+1} \subseteq F_m$ thus $\lim_{m \to \infty} 
+\mu(F_m)=\mu\left(\cap_{m=n}^{\infty}F_m\right)=\mu\left(\cap_{k=n}^{\infty}E_k \right).$ However, we have $F_m \subseteq E_m \implies \mu(F_m) \leq 
+\mu(E_m) \implies \lim_{m \to \infty} \mu(F_m) \leq \lim_{m \to \infty} \mu(E_m) \implies \lim_{m \to \infty} \mu(F_m)=0,$ as $\lim_{m \to \infty} 
+\mu(E_m)=0.$ Then we have $$\sum_{n=1}^{\infty} \mu \left(\cap_{k=n}^{\infty}E_k\right)= \sum_{n=1}^{\infty}0=0.$$
+
+Now consider $B=X\backslash A= \cap_{n=1}\left(\cup_{k=n}^{\infty}D_k\right),$ where $D_k=X \backslash E_k.$ Now \begin{align*}
+	\nu(B)&= \nu\left(\cap_{n=1}\left(\cup_{k=n}^{\infty}D_k\right)\right)\\
+	 &\leq \nu \left(\cup_{k=n}^{\infty}D_k\right) \leq \sum_{k=n}^{\infty} \nu(D_k)<\varepsilon,
+\end{align*}  
+which means that $\nu(B)=0.$ This means that $\mu \perp \nu.$
 \section{} %Problem 3 
 We can check that $m << m$ trivially, as $m(E)=0 \implies m(E)=0.$ We can split $\mathbb{R}$ into two disjoint subsets, that is, $\mathbb{R}= \{0\} \sqcup 
 ((\infty,0)\cup (0,\infty)).$ We denote the two sets as $A$ and $B.$ Then observe that $\delta_0(E)= \delta_0(E \cap A),$ that is, the Dirac measure at $0$ 
@@ -97,11 +118,19 @@ Radon-Nikodym derivative. $$\int_{E} f d\mu= \int_{E}\sum_{n=1}^{N}c_n \chi_{E_n
 	$\nu(E)=0.$ Thus $\int_{E}f d\mu=0.$ Assume that $\mu(E)>0.$ Then $f$ is greater than zero on all of $E,$ thus $\int_E f d\mu > 0.$ However, since 
 	$\nu(E)=0$ this forces $\mu(E)$ to be $0.$ Thus $\mu << \nu.$
 	
-	\item 
+	\item For some $g=\chi_E,$ we have $\int_X g d\mu= \int_X \chi_E \left(\frac{d\nu}{d\mu}\right) d\mu$ holds. This means that this statement holds for 
+	simple functions. From here, we can extend this result to measurable functions as they are the limits of simple functions. This can then be further 
+	extended to all $L^1(\nu)$ functions. The exact result holds when we integrate $L^1(\mu)$ functions over $\mu.$ Now see that 
+	$$\int_{E}d\nu=\nu(E)=\int_{E}\frac{d\nu}{d\mu} d\mu=\int_{E} \frac{d\nu}{d\mu}\cdot \frac{d\mu}{d\mu}d\nu.$$ Comparing the integrand functions, we have 
+	the desired result. Since we know that $\frac{d\nu}{d\mu}>0,$ the reciprocal is always defined.  
 \end{enumerate}
 \section{} %Problem 7 
-Let $\theta:= \mu + \nu.$ Then $f=\frac{d\nu}{d\theta}.$ See that since $\theta(E)=\int_{E}1 d\theta= \mu(E)+ \int_{E} f d\theta.$ Therefore we have 
-$\mu(E)=\int_{E}(1-f)d\theta.$ Thus we have $\frac{d\mu}{d\theta}=1-f.$  
+Let $\lambda:= \mu + \nu.$ Then $f=\frac{d\nu}{d\lambda}.$ See that since $\lambda(E)=\int_{E}1 d\lambda= \mu(E)+ \int_{E} f d\lambda.$ Therefore we have 
+$\mu(E)=\int_{E}(1-f)d\lambda.$ Thus we have $\frac{d\mu}{d\lambda}=1-f.$ Note that from the previous result, we have $\int_{E}g d\nu= \int_{E}g \cdot 
+\frac{d\nu}{d\mu} d\mu.$ This works even if we replace $\nu$ by $\mu$  and $\mu$ by $\lambda.$ Then putting all of this together we have $$\nu(E)=\int_{E} 
+\frac{d\nu}{d\mu} d\mu= \int_{E}\frac{d\nu}{d\mu}\cdot \frac{d\mu}{d\lambda} d\lambda.$$ Comparing the two integrands gives us 
+$\frac{d\nu}{d\lambda}=\frac{d\nu}{d\mu}\frac{d\mu}{d\lambda}.$ Putting it all together, we get $f=\frac{d\nu}{d\mu}(1-f),$ which gives us the desired 
+result.
 \section{} %Problem 8 
 In $(\mathbb{N},\mathbb{P(N)}),$ $\mu$ is the counting measure. Note that the empty set is the only $\mu-$null set, since every non-empty set has 
 cardinality more than zero. Then somewhat trivially we have $\mu(E)=0 \implies E=\phi \implies \nu(E)=0.$ So $\nu << \mu.$ We have $\nu$ is $\sigma-$finite, 
@@ -116,7 +145,7 @@ d\mu.$ As $E \cap A$ is a $ \nu-$null set and $E \cap B$ is a $\mu-$null set, we
 \section{} %Problem 10 
 $\nu=\nu^+-\nu^-$ is a signed measure, where we have $x=P \sqcup N,$ that is, $\nu^+(E)=\nu(E \cap P),$ and $\nu^-(E)=\nu(E \cap N).$
 Taking $|\nu|=\nu^+ +\nu^-,$ see that $ \nu^+ << |\nu|$ and $\nu^- << |\nu|,$ and thus there must exist $\frac{d\nu^+}{d|\nu|}$ and 
-$$\frac{d\nu^-}{d|\nu|},$$ the Radon-Nikodym derivatives. Then see that $\frac{d\nu^+}{d|\nu|}=\chi_P.$ To see this, see that for $E$ measurable in $P,$
+$\frac{d\nu^-}{d|\nu|},$ the Radon-Nikodym derivatives. Then see that $\frac{d\nu^+}{d|\nu|}=\chi_P.$ To see this, see that for $E$ measurable in $P,$
 \begin{align*}
 	\int_E \chi_{P}d|\nu| &= \int_E \chi_P d\nu^+ + \int_E \chi_P d\nu^-\\
 	&= \nu^+(E\cap P)  + 0 = \nu^+(E),
@@ -130,11 +159,17 @@ See that \begin{align*}
 \end{align*}
 as desired.
 Now see that $f \leq 1$ implies that $f\chi_E \leq \chi_E,$ which means that integrating over $X$ we have $\int_{X}f\chi_E d\nu \leq \int_{X}\chi_E d\nu.$ 
-Then this gives us $$\mid \int_{X}f\chi_E d\nu \mid=\mid \int_{E}d d\nu \mid \leq \int_X |f\chi_E| d|\nu|\leq \int_{X} \chi_E d|\nu|=|\nu|(E).$$ Therefore 
+Then this gives us $$\left| \int_{X}f\chi_E d\nu \right|=\left| \int_{E} d\nu \right| \leq \int_X |f\chi_E| d|\nu|\leq \int_{X} \chi_E d|\nu|=|\nu|(E).$$ 
+Therefore 
 we have $ |\nu|(E) \geq \mid \int_{E}f d\nu \mid,$ for all $f$ such that $f\leq 1.$ Then we must have $|\nu|(E) \geq \sup \left\{\mid \int_{E}f d\nu \mid: f 
-\leq 1\right\}.$ Now let $f=\chi_{E \cap A}-\chi_{E \cap B},$ where $X=A \sqcup B,$ as per the Jordan decomposition. Then we have $$\int_{E}f d\nu=\int_{E}f 
-d\nu^+-\int_{E}f d\nu^-= \int_{E}\chi_{E \cap A} d\nu^+ - \int_{E}\chi_{E \cap B} d\nu^+ + \int_{E}\chi_{E \cap A} d\nu^- + \int_{E}\chi_{E \cap B} 
-d\nu^-=\nu^+(E \cap A) - \nu^+(E \cap B)- \nu^-(E\cap A)+ \nu^-(E \cap B).$$ Note that $\nu^+(E \cap B)=\nu^-(E\cap A)=0.$ Thus we have $\int_{E}f d\nu= 
+\leq 1\right\}.$ Now let $f=\chi_{E \cap A}-\chi_{E \cap B},$ where $X=A \sqcup B,$ as per the Jordan decomposition. Then we have 
+\begin{align*}
+	\int_{E}f d\nu&=\int_{E}f 
+	d\nu^+-\int_{E}f d\nu^-\\
+	&= \int_{E}\chi_{E \cap A} d\nu^+ - \int_{E}\chi_{E \cap B} d\nu^+ + \int_{E}\chi_{E \cap A} d\nu^- + \int_{E}\chi_{E \cap B} 
+	d\nu^-\\
+	&=\nu^+(E \cap A) - \nu^+(E \cap B)- \nu^-(E\cap A)+ \nu^-(E \cap B).
+\end{align*} Note that $\nu^+(E \cap B)=\nu^-(E\cap A)=0.$ Thus we have $\int_{E}f d\nu= 
 \nu^+(E \cap A)+ \nu^-(E \cap B)=\nu^+(E)+\nu^-(E)=|\nu|(E).$ This means that the right hand side actually attains its supremum within the set of all 
 integrable functions where $f \leq 1.$ Thus we have $|\nu|(E) \leq \sup \left\{\mid \int_{E}f d\nu \mid: f \leq 1\right\}.$ This gives us the desired 
 equality.
