@@ -27,7 +27,7 @@
 %	ASSIGNMENT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{Algebra HW5} % Title of the assignment
+\title{Measure Theory HW8} % Title of the assignment
 
 \author{Gandhar Kulkarni (mmat2304)} % Author name and email address
 
@@ -44,54 +44,19 @@
 %----------------------------------------------------------------------------------------
 
 \section{} %Problem 1 
-If we have $\nu=0,$ then see that $\nu(E)=\int_{E}0 d\mu,$ thus $\mu(E)=0 \implies \nu(E)=0$ trivially, so $\nu << \mu.$ Also see that $\nu \perp \mu$, as 
-$X= X \sqcup \phi,$ and see that $\mu(E)=\mu(E \cap X),$ while $\nu(E)=\nu(E \int \phi).$ 
-
-Now let us assume that $\nu << \mu$ and $\nu \perp \mu.$ Then we have $X=A \sqcup B,$ where $\mu(E)=\mu(E \cap A),$ while $\nu(E)=\nu(E \int B).$ Let us 
-pick a measurable set $E \subseteq B.$ Then we have $\mu(E)=\mu(E \cap B)=\mu(\phi)=0.$ Since $\nu << \mu,$ we have $\nu(E)=0.$ Thus $\nu$ is zero on every 
-measurable subset $E$ in $B.$ For a general measurable set $E,$ we have $E=(E \cap A) \sqcup (E \cap B).$ We already know that $\nu(E\cap A)=0,$ now we see 
-that $\nu(E \cap B)=0$ also. Thus $\nu(E)=\nu(E \cap A)+\nu(E \cap B)=0$ for all measurable $E \subset X.$
 \section{} %Problem 2
 \section{} %Problem 3 
 \section{} %Problem 4 
-\begin{itemize}
-	\item We find the positive and negative parts of $f.$ Note that the roots of this polynomial are $3+2\sqrt{2}$ and 
-	$3-\sqrt{2}.$ Let us call them $\alpha_1$ and $\alpha_2$ for sake of convenience. Then $$p^+=\begin{cases}
-		x^2-6x+1 & x \in (-\infty,\alpha_2] \cup [\alpha_1, \infty)\\
-		0 & \text{ else},
-	\end{cases}$$ 
-	and $$p^-= \begin{cases} 
-		-(x^2-6x+1) & x \in (\alpha_2,\alpha_1)\\
-		0 & \text{ else}.
-	\end{cases}$$
-	Then $\nu(E)=\int_{E}p^+d\mu - \int_{E}p^-d\mu=\nu^+-\nu^-,$ where $\nu^+:=\int_{E}p^+d\mu$ and $\nu^-:=\int_{E}p^-d\mu$ are two positive measures. Note 
-	that it is not possible for both of them to attain $\infty$ together, since $\nu^-$ is a finite measure. Thus it is trivial to see that $\nu$ must be a 
-	signed measure.
-	\item Let $\mathbb{R}= A \sqcup B,$ where $A= (-\infty,\alpha_2] \cup [\alpha_1, \infty)$ and $B=(\alpha_2,\alpha_1).$ See that since both the positive 
-	measures have their usual properties, we have that for $E \subseteq A$ measurable, we have $\nu(E)=\nu^+(E)-\nu^-(E)=\nu^+(E)-0 \geq 0,$ and likewise 
-	for $E \subseteq B$ measurable, we have $\nu(E)=\nu^+(E)-\nu^-(E)=0-\nu^-(E) \leq 0.$ Thus the above construction is a Hahn decomposition.
-	\item See that $\nu^+$ lives on $A,$ while $\nu^-$ lives on $B.$ That is, $\nu^+(E)=\nu(E \cap A),$ and $\nu^-(E)=-\nu(E \cap B).$ This is easy to see, 
-	as $E= (E \cap A) \sqcup (C \cap B).$ Then $\nu(E)= \int_{(E\cap A) \sqcup (E \cap B)}p^+d\mu - \int_{(E\cap A) \sqcup (E \cap B)}p^-d\mu= \int_{(E\cap 
-	A)}p^+ d\mu + \int_{(E\cap B)}p^+ d\mu - \int_{(E\cap A)}p^- d\mu - \int_{(E\cap B)}p^- d\mu.$ Since $p^+$ is $0$ on $B,$ and $p^-$  is $0$ on $A,$ we 
-	have that $\nu^+ \perp \nu^-.$ Thus we have the Jordan decomposition.  
-\end{itemize}
-
 \section{} %Problem 5 
-Let us assume that $\mu(E)=0.$ As $E$ is $\mu-$null, then $\mu(E\cap E_n)=0$ for all $n,$ by monotonicity of the measure. Then we have 
-$\nu(E)=\sum_{n=1}^{N}c_n \mu(E \cap E_n)=0.$ Thus $\nu << \mu.$ See that the function $f:= \sum_{n=1}^{N}c_n \chi_{E_n}$ is a good candidate for the 
-Radon-Nikodym derivative. $$\int_{E} f d\mu= \int_{E}\sum_{n=1}^{N}c_n \chi_{E_n} d\mu= \sum_{n=1}^{N}c_n \int_{X}\chi_{E} \chi_{E_n} d\mu= 
-\sum_{n=1}^{N}c_n \int_{X}\chi_{E \cap E_n} d\mu=\sum_{n=1}^{N}c_n \mu(E \cap E_n),$$ which is the desired result. Thus $\frac{d\nu}{d\mu}=f.$
 \section{} %Problem 6 
 \section{} %Problem 7 
 \section{} %Problem 8 
-In $(\mathbb{N},\mathbb{P(N)}),$ $\mu$ is the counting measure. Note that the empty set is the only $\mu-$null set, since every non-empty set has 
-cardinality more than zero. Then somewhat trivially we have $\mu(E)=0 \implies E=\phi \implies \nu(E)=0.$ So $\nu << \mu.$ We have $\nu$ is $\sigma-$finite, 
-thus $\mathbb{N}=\sum_{n=1}^{\infty}\{n\},$ where $\nu(\{n\})<\infty.$ Thus define $f: \mathbb{N} \rightarrow \mathbb{R},$ where $f(n)=\nu(\{n\}).$ Then we 
-have $\nu(E)=\int_E f d\mu=\sum_{n \in E}f(n),$ is the required function. Thus $f=\frac{d\nu}{d\mu}.$
 \section{} %Problem 9 
 \section{} %Problem 10 
 \section{} %Problem 11
 \section{} %Problem 12
+\section{} %Problem 13
+
 \end{document}
 
 

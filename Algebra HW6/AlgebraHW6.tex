@@ -97,18 +97,28 @@
 We have $M$ a $R-$module which has itself as a generating set. Then $\pi: R^{\oplus M}\twoheadrightarrow M$ is the surjective map sending $e_m$ to $m.$ We 
 see that $\pi(e_{rm}-re_m)=\pi(e_{rm})-r\pi(e_m)=rm-rm=0.$ Also, $\pi(e_{m_1+m_2}-e_{m_1}-e_{m_2})=\pi(e_{m_1+m_2})-\pi(e_{m_1})-\pi(e_{m_2})= 
 (m_1+m_2)-m_1-m_2=0.$ Therefore we have $ e_{rm}-re_m \in \ker \pi, $ and $e_{m_1+m_2}-e_{m_1}-e_{m_2} \in \ker \pi.$ Thus we have 
-$$(e_{rm}-re_m,e_{m_1+m_2}-e_{m_1}-e_{m_2}) \subseteq \ker \pi.$$ Let us have $\sum_{m \in M}r_m e_m \in R^{\oplus M}.$ Note that there are only finitely 
-many 
-terms in the summation. See that $$\pi(\sum_{m \in M}r_m e_m)=\sum_{m \in M}r_m \pi(e_m)= \sum_{m \in M}r_m m = \pi(\sum_{m \in M}e_{r_mm}).$$ This means 
-that 
-$\pi(\sum_{m \in M}r_m e_m - \sum_{m \in M}e_{r_mm})=0.$ This, in turn implies that $ \sum_{m \in M} r_me_m - e_{r_mm} \in \ker \pi.$ We also see that 
-$$\pi(\sum_{m \in M}r_m e_m)=\sum_{m \in M}r_m \pi(e_m)= \sum_{m \in M}r_m m = \pi(e_{\sum_{m \in M}r_mm}).$$ This means that $\sum_{m \in M}r_m 
-e_m-e_{\sum_{m \in M}r_mm} \in \ker \pi.$ Given an element in $R^{\oplus M},$ we can choose which summands to clump and which to leave unchanged. Either 
-ways, we see that we get a linear combination of $re_m-e_{rm}$ and $e_{m_1+m_2}-e_{m_1}-e_{m_2},$ which implies that $ \ker \pi \subseteq 
-(e_{rm}-re_m,e_{m_1+m_2}-e_{m_1}-e_{m_2}).$ This gives us the desired equality.
+$$(e_{rm}-re_m,e_{m_1+m_2}-e_{m_1}-e_{m_2}) \subseteq \ker \pi.$$ 
+
+To see the other inclusion, let there be some $re_m \in \ker \pi.$ Then we have $\pi(re_m)=rm=0.$ See that we can write $re_m$ as $$re_m=-( 
+(e_{rm}-re_m)+(e_{0+0}-e_0-e_0) ),$$ as $e_{rm}=e_0.$ Thus for any general element $\sum re_m \in \ker \phi ,$ we can write the term as a linear combination 
+of terms in $\left(e_{rm}-re_m, e_{m_1+m_2}-e_{m_1}-e_{m_2}\right).$ Thus $$(e_{rm}-re_m,e_{m_1+m_2}-e_{m_1}-e_{m_2})= \ker \pi, $$ as required. 
 \section{} %Problem 4 
 \begin{enumerate}
-	\item We take the module $\mathbb{Z}[q_1,q_2],$ where $q_1,q_2 \in \mathbb{Q}.$ 
+	\item By the structure theorem for finitely generated modules, we have $N \equiv \frac{\mathbb{Z}}{(a_1)}\oplus \dots \oplus 
+	\frac{\mathbb{Z}}{(a_k)}\oplus \mathbb{Z}^d$, where $a_1|a_2|\dots|a_k$ and $N$ is a finitely generated submodule in $\mathbb{Q}.$ Since no element in 
+	$\mathbb{Q}$ is a torsion element, we must have $T(N)=\{0\}.$ Thus $N \equiv \mathbb{Z}^d.$ Let $d >1,$ say $d=2.$ Then we have a map $f: \mathbb{Z}^2 
+	\rightarrow N$ from $\mathbb{Z}^2$ to $N,$ where $f(1,0)=\frac{p_1}{q_1}$ and $f(0,1)=\frac{p_2}{q_2},$ for some $\frac{p_1}{q_1},\frac{p_2}{q_2} \in 
+	\mathbb{Q}.$ Then we have $ f(q_1p_2,-q_2p_1)=0, $ which contradicts the linear independence of $\mathbb{Z}.$ Then $d=0,1,$ which means $N$ is either 
+	zero or a cyclic module.
+	
+	\item We have $N_1,N_2,$ two non-zero submodules of $\mathbb{Q}.$ We have $\frac{p_1}{q_2} \in N_1, \frac{p_2}{q_2} \in N_2.$ See that $ 
+	\frac{p_1}{q_1}(q_1p_2)=\frac{p_2}{q_2}(q_2p_1),$ thus $p_1p_2 \in N_1 \cap N_2.$ Thus for any non-zero submodule we can find a non-zero element they 
+	have in common. 
+	
+	\item Let $f: \mathbb{Q} \rightarrow M \equiv \bigoplus_{i=1}^k \frac{\mathbb{Z}}{(a_i)} \oplus \mathbb{Z}^d$ be a $\mathbb{Z}-$linear map. By the 
+	structure theorem, we can write $M$ as given. Then we have $f(1)=(m_1,\dots,m_k,n_1,\dots,n_d),$ where $m_1 \in \frac{\mathbb{Z}}{(a_1)}, \dots, m_k \in 
+	\frac{\mathbb{Z}}{(a_k)},$ and $n_1,\dots,n_d \in \mathbb{Z}^d.$ 
+	
 \end{enumerate}
 \section{} %Problem 5 
 $R^{\oplus X}$ is a free module, for some indexing set $X.$ $M$ is some submodule of $R^{\oplus X}.$ We find a subset $Y \subseteq X$ such that $M \cap 
