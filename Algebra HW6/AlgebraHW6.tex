@@ -100,13 +100,14 @@ see that $\pi(e_{rm}-re_m)=\pi(e_{rm})-r\pi(e_m)=rm-rm=0.$ Also, $\pi(e_{m_1+m_2
 $$(e_{rm}-re_m,e_{m_1+m_2}-e_{m_1}-e_{m_2}) \subseteq \ker \pi.$$ 
 
 To see the other inclusion, let there be some $re_m \in \ker \pi.$ Then we have $\pi(re_m)=rm=0.$ See that we can write $re_m$ as $$re_m=-( 
-(e_{rm}-re_m)+(e_{0+0}-e_0-e_0) ),$$ as $e_{rm}=e_0.$ Thus for any general element $\sum re_m \in \ker \phi ,$ we can write the term as a linear combination 
+(e_{rm}-re_m)+(e_{0+0}-e_0-e_0) ),$$ as $e_{rm}=e_0.$ Thus for any general element $\sum re_m \in \ker \varphi ,$ we can write the term as a linear 
+combination 
 of terms in $\left(e_{rm}-re_m, e_{m_1+m_2}-e_{m_1}-e_{m_2}\right).$ Thus $$(e_{rm}-re_m,e_{m_1+m_2}-e_{m_1}-e_{m_2})= \ker \pi, $$ as required. 
 \section{} %Problem 4 
 \begin{enumerate}
-	\item By the structure theorem for finitely generated modules, we have $N \equiv \frac{\mathbb{Z}}{(a_1)}\oplus \dots \oplus 
+	\item By the structure theorem for finitely generated modules, we have $N \cong \frac{\mathbb{Z}}{(a_1)}\oplus \dots \oplus 
 	\frac{\mathbb{Z}}{(a_k)}\oplus \mathbb{Z}^d$, where $a_1|a_2|\dots|a_k$ and $N$ is a finitely generated submodule in $\mathbb{Q}.$ Since no element in 
-	$\mathbb{Q}$ is a torsion element, we must have $T(N)=\{0\}.$ Thus $N \equiv \mathbb{Z}^d.$ Let $d >1,$ say $d=2.$ Then we have a map $f: \mathbb{Z}^2 
+	$\mathbb{Q}$ is a torsion element, we must have $T(N)=\{0\}.$ Thus $N \cong \mathbb{Z}^d.$ Let $d >1,$ say $d=2.$ Then we have a map $f: \mathbb{Z}^2 
 	\rightarrow N$ from $\mathbb{Z}^2$ to $N,$ where $f(1,0)=\frac{p_1}{q_1}$ and $f(0,1)=\frac{p_2}{q_2},$ for some $\frac{p_1}{q_1},\frac{p_2}{q_2} \in 
 	\mathbb{Q}.$ Then we have $ f(q_1p_2,-q_2p_1)=0, $ which contradicts the linear independence of $\mathbb{Z}.$ Then $d=0,1,$ which means $N$ is either 
 	zero or a cyclic module.
@@ -115,7 +116,7 @@ of terms in $\left(e_{rm}-re_m, e_{m_1+m_2}-e_{m_1}-e_{m_2}\right).$ Thus $$(e_{
 	\frac{p_1}{q_1}(q_1p_2)=\frac{p_2}{q_2}(q_2p_1),$ thus $p_1p_2 \in N_1 \cap N_2.$ Thus for any non-zero submodule we can find a non-zero element they 
 	have in common. 
 	
-	\item Let $f: \mathbb{Q} \rightarrow M \equiv \bigoplus_{i=1}^k \frac{\mathbb{Z}}{(a_i)} \oplus \mathbb{Z}^d$ be a $\mathbb{Z}-$linear map. By the 
+	\item Let $f: \mathbb{Q} \rightarrow M \cong \bigoplus_{i=1}^k \frac{\mathbb{Z}}{(a_i)} \oplus \mathbb{Z}^d$ be a $\mathbb{Z}-$linear map. By the 
 	structure theorem, we can write $M$ as given. Then we have $f(1)=(m_1,\dots,m_k,n_1,\dots,n_d),$ where $m_1 \in \frac{\mathbb{Z}}{(a_1)}, \dots, m_k \in 
 	\frac{\mathbb{Z}}{(a_k)},$ and $n_1,\dots,n_d \in \mathbb{Z}^d.$ 
 	
@@ -136,8 +137,91 @@ such submodules in $R^{\oplus X}.$
 	\text{Hom}_{\mathbb{Z}}\left(\frac{\mathbb{Z}}{(n)},\frac{\mathbb{Q}}{\mathbb{Z}}\right)$ is a $\mathbb{Z}-$module ($\mathbb{Z}-$modules and abelian 
 	groups are the same).  Elements in $\frac{\mathbb{Q}}{\mathbb{Z}}$ are precisely the elements of $\mathbb{Q} \cap [0,1).$ Then due to the 
 	$\mathbb{Z}-$linearity of $f,$ we only need to ask where $1$ is sent to. Let us say that $f(1)=\frac{p}{q}.$ We see that $n \cdot f(1)=f(n)=f(0)=0,$ 
-	thus $n \cdot \frac{p}{q}=0.$ This then means that $\frac{np}{q} \in \mathbb{Z} \implies n | q.$ Also see that $qf(1)=p \in \mathbb{Z}.$ Thus $f(q)=0,$ 
-	which means that $q \in \ker f.$  
+	thus $n \cdot \frac{p}{q}=0.$ This then means that $\frac{np}{q} \in \mathbb{Z} \implies q | n.$ This means that $f(1)=\frac{p}{n},$ for some $p<n,$ 
+	which means that we have $n$ choices at most. Now note that any map of the form $f_i:\frac{Z}{(n)}\rightarrow \frac{\mathbb{Q}}{\mathbb{Z}}$ where 
+	$f_i(k)=\frac{ik}{n},$ where $i=0,1,\dots,n-1$ is in $\text{Hom}_{\mathbb{Z}}\left(\frac{\mathbb{Z}}{(n)},\frac{\mathbb{Q}}{\mathbb{Z}}\right),$ which 
+	means that it must have at least $n$ elements. Since the only number that is at least $n$ but is at most $n$ is $n$, we are done.
+	
+	\item Since $M$ is a finite $\mathbb{Z}-$module, it is finitely generated, hence it must be of the form $\bigoplus_{i=1}^k \frac{\mathbb{Z}}{(a_i)} 
+	\oplus \mathbb{Z}^d,$ for some $d \geq 0.$ Note that since the module is finite, we must have $d=0.$ Then we have $M= \bigoplus_{i=1}^k 
+	\frac{\mathbb{Z}}{(a_i)},$ where $(a_1) \supseteq (a_2) \supseteq \dots \supseteq (a_k).$ Let us denote $M_i:= \frac{\mathbb{Z}}{(a_i)},$ so we have 
+	$M=\bigoplus_{i=1}^k M_i.$ See that $\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right)$ is a cyclic group of order $a_i$ as given in 
+	the previous result. Moreover, we know explicitly what those maps are. Also see that in 
+	$\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{R}}{\mathbb{Z}}\right),$ the map is determined solely by where $1$ is taken to. If it is taken to an 
+	irrational number, then this map cannot be a cyclic group, as it will not have a period. Therefore these maps must be rational, and hence we defer to 
+	the rational case to see that the module $\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{R}}{\mathbb{Z}}\right)$ must have the same maps as 
+	$\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right),$ giving us the isomorphism. 
+	
+	We will state a few facts that will make proving that $M \cong \text{Hom}_{\mathbb{Z}}\left(M,\frac{\mathbb{Q}}{\mathbb{Z}}\right)$ easier. Note that 
+	$\text{Hom}_{\mathbb{Z}}\left(M,\frac{\mathbb{Q}}{\mathbb{Z}}\right) \cong 
+	\bigoplus_{i=1}^{k}\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right),$ and that for modules $M_1,\dots,M_k$ and $N_1, \dots, N_k$ 
+	where $M_i \cong N_i$ for all $1 \leq i \leq k,$ we have $\oplus_{i=1}^{k}M_i \cong \oplus_{i=1}^k N_i.$ By the universal property of direct sums, we 
+	know that the composition of isomorphic maps shall also be an isomorphic map.
+	
+	We want to show that $ M_i \cong \text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right),$ the required result should follow directly. We 
+	know that $M_i=\{0,1,\dots,a_i-1\},$ and $\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right)=\{\varphi^i_0,\dots, 
+	\varphi^i_{a_i-1}\},$ where $\varphi^i_{m}(1)=\frac{m}{a_i}.$ Now define the map $\sigma: M_i \rightarrow 
+	\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right),$ where $\sigma(m_i)= \varphi^i_{m_i}.$ Our map is a $\mathbb{Z}-$module 
+	homomorphism. We define $\theta:\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right)  \rightarrow M_i,$ where 
+	$\theta(\varphi^i_{m_i})=m_i.$ Then see that $\sigma \circ \theta= \iota_{\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right) },$ and 
+	$\theta \circ \sigma = \iota_{M_i}.$ Thus we see that  $M_i \cong \text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right).$ 
+	
+	Since $\text{Hom}_{\mathbb{Z}}\left(M,\frac{\mathbb{Q}}{\mathbb{Z}}\right) \cong 
+	\bigoplus_{i=1}^{k}\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right),$ we have $$M \cong \bigoplus_{i=1}^k M_i \cong 
+	\bigoplus_{i=1}^{k}\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right) \cong 
+	\text{Hom}_{\mathbb{Z}}\left(M,\frac{\mathbb{Q}}{\mathbb{Z}}\right) ,$$ as required. 
+	
+	\item We have the map $\delta: M \rightarrow \text{Hom}_{R}\left(\text{Hom}_{R}\left(M, N\right),N \right)$ where $\delta(m)= (\varphi 
+	\mapsto \varphi(m)).$ Let us denote by $f_m \in \text{Hom}_{R}\left(\text{Hom}_{R}\left(M, N\right),N \right),$ where 
+	$f_m(\varphi)=\varphi(m).$ So $\delta(m)=f_m.$ We want to see if $\delta$ is a $R-$linear map. 
+	
+	We will check the behaviour of $\delta$ with respect to addition and scalar multiplication. We have $\delta(m+n)=f_{m+n},$ which means that 
+	$f_{m+n}(\varphi)=\varphi(m+n)=\varphi(m)+\varphi(n).$ We know that $f_m(\varphi)=\varphi(m)$ and $f_n(\varphi)=\varphi(n),$ so we have $f_{m+n}=f_m + 
+	f_n$.  Also we know that 
+	$\delta(m)=f_m$ and $\delta(n)=f_n,$ so putting all this together we have $\delta(m+n)=\delta(m)+\delta(n).$ For scalar multiples, see that 
+	$\delta(rm)=f_{rm},$ where $f_{rm}(\varphi)=\varphi(rm)=r\varphi(m).$ See that $f_m(\varphi)=\varphi(m),$ so $r\varphi(m)=rf_m.$ We know that 
+	$r\delta(m)=rf_m,$ which is 
+	the required result. Thus we have that $\delta$ is a $R-$linear map. 
+	
+	To see that $\delta$ commutes with finite direct sums, we note that since finite direct sums in the first slot and Hom commute, we can see that 
+	$$\text{Hom}_{R}\left(\text{Hom}_{R}\left(\oplus_{i=1}^k M_i, N\right),N \right) \cong \oplus_{i=1}^k 
+	\text{Hom}_{R}\left(\text{Hom}_{R}\left(M_i, N\right),N \right).$$ We specify an isomorphism between the two using the terminology 
+	defined earlier. For the ease of typing and the eyes of the reader, let $$H_1=\text{Hom}_{R}\left(\text{Hom}_{R}\left(\oplus_{i=1}^k 
+	M_i, N\right),N \right),$$ and $$H_2=\oplus_{i=1}^k \text{Hom}_{R}\left(\text{Hom}_{R}\left(M_i, N\right),N \right).$$ 
+	
+	We have $\delta_{\oplus_{i=1}^k M_i}: \oplus_{i=1}^k M_i \rightarrow H_1,$ where $\delta_{\oplus_{i=1}^k M_i}(m_1,\dots,m_k)=(\varphi \mapsto 
+	\phi(m_1,\dots,m_k))$. Denote the map on the right by $f_{m_1,\dots,m_k}.$ We have $\delta_{M_i} \rightarrow \text{Hom}_{R}\left(\text{Hom}_{R}\left(M, 
+	N\right),N \right),$ where $\delta_{M_i}(m_i)=(\varphi \mapsto \varphi(m_i)).$ We denote the map on the right by $f^i_{m_i}.$ We extend this map to 
+	$H_2,$ where $\delta|_{M_i}=\delta_{M_i}.$ Here, we abuse notation since more accurately $\delta_{M_i}$ acts on $M_k,$ while $\delta$ acts on 
+	$\oplus_{i=1}^k M_i.$ This product of maps is denoted by $\oplus_{i=1}^k\delta_{M_i}.$ 
+	
+	Now we wish to show that the given diagram in the problem commutes. Define $\psi_1:H_1\rightarrow H_2,$ and $\psi_2: H_2 \rightarrow H_1,$ two module 
+	maps. We know a map between the two exists such that their composition is the identity maps for $H_1$ and $H_2.$ Then we have $\psi_1 \circ 
+	\delta_{\oplus_{i=1}^k M_i}: \oplus_{i=1}^k M_i \rightarrow H_2,$ where $\psi_1 \circ \delta_{\oplus_{i=1}^k M_i}(m_1,\dots,m_k)= 
+	\psi_1(f_{(m_1,\dots,m_k)})= (f^1_{m_1},\dots,f^k_{m_k}).$ Similarly, we have the map $\psi_2 \circ \oplus_{i=1}^k \delta_{M_i}: \oplus_{i=1}^k M_i 
+	\rightarrow H_1$ where $\psi_2 \circ \oplus_{i=1}^k \delta_{M_i}(m_1,\dots,m_k)=\psi_2(f^1_{m_1},\dots,f^k_{m_k})=f_{(m_1,\dots,m_k)}.$ See that this 
+	diagram commutes, which is the desired result.
+	
+	\item We will use the previous two results liberally to get our result. We know $M \cong  
+	\text{Hom}_{\mathbb{Z}}\left(M,\frac{\mathbb{Q}}{\mathbb{Z}}\right),$ Thus 
+	$\text{Hom}_{\mathbb{Z}}\left(\text{Hom}_{\mathbb{Z}}\left(M,\frac{\mathbb{Q}}{\mathbb{Z}}\right),\frac{\mathbb{Q}}{\mathbb{Z}}\right) \cong 
+	\text{Hom}_{\mathbb{Z}}\left(M,\frac{\mathbb{Q}}{\mathbb{Z}}\right) \cong M.$ Now we need to check that $\delta_{\oplus_{i=1}^k M_i}$ is an isomorphism. 
+	Previously we established a correspondence between the elements of each $M_i$ with its Hom module, we extend it to all of $M.$ A general element of $M$ 
+	is $(m_1,\dots,m_k),$ and a general map from $M$ to $\frac{\mathbb{Q}}{\mathbb{Z}}$ is $(\phi^1_{m_1},\dots,\phi^k_{m_k}),$ where $\phi^i_{m_i}:M_i 
+	\rightarrow \frac{\mathbb{Q}}{\mathbb{Z}}$ is the map where $\phi^i_{m_i}(1)=\frac{m_i}{a_i}.$ 
+	
+	Now see that $\delta_{\oplus_{i=1}^k M_i}(m_1,\dots, m_k)=f_{m_1,\dots,m_k}.$ This map takes any map in 
+	$\text{Hom}_{\mathbb{Z}}\left(M,\frac{\mathbb{Q}}{\mathbb{Z}}\right)$ and sends it to that map evaluated at $(m_1,\dots,m_k).$ That is, 
+	$\delta_{\oplus_{i=1}^k M_i}(m_1,\dots,m_k)=(f_{m_1},\dots,f_{m_k}),$ which is the map where each component sends any map in 
+	$\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right) $ to that map evaluated at $m_i,$ for $i=1,\dots, k.$ We wish to have a map from 
+	$\text{Hom}_{\mathbb{Z}}\left(\text{Hom}_{\mathbb{Z}}\left(M,\frac{\mathbb{Q}}{\mathbb{Z}}\right),\frac{\mathbb{Q}}{\mathbb{Z}}\right)$ to $M,$ such 
+	that their composition is the identity map. Any element of $\text{Hom}_{\mathbb{Z}}\left(M_i,\frac{\mathbb{Q}}{\mathbb{Z}}\right)$ is of the form 
+	$\phi^i_{\ell},$ where $\ell= 0,1,\dots,a_i-1.$ As mentioned before, it can be mapped to $\ell \in M_i.$ Then we specify a map from $M_i$ to 
+	$\frac{\mathbb{Q}}{\mathbb{Z}},$ which sends $\ell$ to $\phi^i(\ell).$ Thus any element of 
+	$\text{Hom}_{\mathbb{Z}}\left(\text{Hom}_{\mathbb{Z}}\left(M,\frac{\mathbb{Q}}{\mathbb{Z}}\right),\frac{\mathbb{Q}}{\mathbb{Z}}\right)$ can be 
+	represented by $(\phi^1_{\ell_1},\dots,\phi^k_{\ell_k}).$ We naturally see that we can send this to $(\ell_1,\dots,\ell_k) \in M,$ which is the required 
+	inverse map.  
+	 
 \end{enumerate}
 \end{document}
 
