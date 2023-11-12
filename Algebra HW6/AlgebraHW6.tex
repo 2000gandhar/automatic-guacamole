@@ -92,7 +92,17 @@
 \end{enumerate}
  
 \section{} %Problem 2
-
+We are dealing with abelian groups, that is, we are dealing with $\mathbb{Z}-$modules. Applying the structure theorem on $G,$ we must have $$G\cong 
+\bigoplus_{i=1}^k \frac{\mathbb{Z}}{(a_i)} \oplus \mathbb{Z}^d.$$ Since $G$ is finite, we must have $d=0.$ By the Chinese remainder theorem, we can split 
+the module into a direct sum of modules of the form $\frac{\mathbb{Z}}{(p^r)},$ where $p$ is a prime and $r > 0.$ We want to show that if a prime appears, 
+it appears only once. Let us assume that there are two submodules of $G$ of the form $\frac{\mathbb{Z}}{(p^{r})}$ and $\frac{\mathbb{Z}}{(p^{s})}.$ Then 
+this means that we have more than $p$ number of elements of order $p$ in $G$ (This is because elements of both the submodules have an element of order $p.$ 
+They generate a cyclic subgroup all of which have order $p,$ but they have a trivial intersection). However, see that there are only at most  $p$ solutions 
+of $x^p-1$ in $F,$ which means that we have found more than $p$ roots to this equation in a finite subgroup! This is clearly a contradiction, which means 
+that each prime appears only once. Now note that since our module decomposition is such that $a_1|\dots|a_k,$ if any prime appears in the decomposition for 
+some $a_i$, it has to appear in the decomposition for every $a_j,$ for $i < j \leq k.$ This then means that no primes can appear until $a_k,$ since 
+otherwise they would appear more than once. Thus we have $a_1=a_2=\dots =a_{k-1}=1,$ which means that $G \cong \frac{\mathbb{Z}}{(a_k)},$ which is a cyclic 
+group. 
 \section{} %Problem 3
 We have $M$ a $R-$module which has itself as a generating set. Then $\pi: R^{\oplus M}\twoheadrightarrow M$ is the surjective map sending $e_m$ to $m.$ We 
 see that $\pi(e_{rm}-re_m)=\pi(e_{rm})-r\pi(e_m)=rm-rm=0.$ Also, $\pi(e_{m_1+m_2}-e_{m_1}-e_{m_2})=\pi(e_{m_1+m_2})-\pi(e_{m_1})-\pi(e_{m_2})= 
@@ -118,20 +128,67 @@ of terms in $\left(e_{rm}-re_m, e_{m_1+m_2}-e_{m_1}-e_{m_2}\right).$ Thus $$(e_{
 	
 	\item Let $f: \mathbb{Q} \rightarrow M \cong \bigoplus_{i=1}^k \frac{\mathbb{Z}}{(a_i)} \oplus \mathbb{Z}^d$ be a $\mathbb{Z}-$linear map. By the 
 	structure theorem, we can write $M$ as given. Then we have $f(1)=(m_1,\dots,m_k,n_1,\dots,n_d),$ where $m_1 \in \frac{\mathbb{Z}}{(a_1)}, \dots, m_k \in 
-	\frac{\mathbb{Z}}{(a_k)},$ and $n_1,\dots,n_d \in \mathbb{Z}^d.$ 
+	\frac{\mathbb{Z}}{(a_k)},$ and $n_1,\dots,n_d \in \mathbb{Z}^d.$ We dissect this function per component. Let us consider $g: \mathbb{Q} \rightarrow 
+	\mathbb{Z}.$ We can use the well ordered principle to see that there is some $r \in \mathbb{Q}$ such that $g(r)$ is the lowest positive integer. Let us 
+	assume that this function is not uniformly zero, then see that there is some rational number $r'$ such that $g(r')$ is not zero. It could be positive, 
+	in which case we know that $\mathbb{Z}^+ \cap g(\mathbb{Q})$ has a supremum; if it is negative, $g(-r')$ has to be positive. Thus we can pick the 
+	smallest positive number in the range of $g(\mathbb{Q}).$ We then see that $g\left(\frac{r}{2}\right)=m,$ so we have 
+	$g(r)=g\left(\frac{r}{2}\right)+g\left(\frac{r}{2}\right) \implies g(r)=2g\left(\frac{r}{2}\right) > g\left(\frac{r}{2}\right) > 0,$ which contradicts 
+	the minimality. Thus this map must be uniformly zero. Then we must have that $f:\mathbb{Q} \rightarrow \bigoplus_{i=1}^k \frac{\mathbb{Z}}{(a_i)}.$ Now 
+	we try to see that behaviour of $f_i: \mathbb{Q} \rightarrow \frac{\mathbb{Z}}{(a_i)},$ where $f_i=f|_{\frac{\mathbb{Z}}{(a_i)}}$. Let 
+	$f_i\left(\frac{1}{k}\right)=n,$ for some $k \in \frac{\mathbb{Z}}{(a_i)}\backslash \{0\}, n \in \frac{\mathbb{Z}}{(a_i)}.$ Then we have 
+	$f_i\left(\frac{a_i}{a_ik}\right)=n \implies a_if_i\left(\frac{1}{a_ik}\right)=n.$ However, the term on the left must be zero in 
+	$\frac{\mathbb{Z}}{(a_i)},$ which means that $ f_i\left(\frac{1}{a_ik}\right)=0.$ However, since our choice of $k$ was arbitrary, we must have $f_i=0$ 
+	uniformly. 
+		
+	Putting all of the above together, any map from $\mathbb{Q} \rightarrow M$ must be the zero map. 
 	
+	\item
+	 
+	\item Let us assume that it is possible to have two non-zero $\mathbb{Z}-$modules $M, N$ such that $M \oplus N =\mathbb{Q},$ then we must have $M \cap N 
+	=\phi.$ However, we showed earlier that any two non-zero submodules of $\mathbb{Q}$ must have non-empty intersection. Thus we cannot have $\mathbb{Q}$ 
+	splitting into such a direct sum.
+	
+	\item We want to show that any generating set can be reduced to fewer elements. We know that a finite number of elements clearly will not suffice, as 
+	$\mathbb{Q}$ is not cyclic. Then the generating set must necessarily be infinite. For sake of contradication, let $S$ be a minimal set that generates 
+	$\mathbb{Q}.$ Then take some $a \in S.$ Then we have $\frac{a}{2}=ak_0+\sum_{i=1}^{n}a_ik_i,$ where $k_i \in \mathbb{Z},$ $a_i \in S.$ Then 
+	$a=a(2k_0)+\sum_{i=1}^{n}a_i(2k_i),$ thus $$am=\sum_{i=1}^na_i(2k_i),$$ where $m \in \mathbb{Z}$ is non-zero, as $m=1-2k_0$. $\frac{a}{m}$ can also be 
+	written as a linear combination of elements in $S,$ so we have $a=a(mr_0)+\sum_{i=1}^{l}b_i(mr_i),$ thus we have $$a=\sum_{i=1}^{n}a_ir_0(2k_i)+ 
+	\sum_{i=1}^{l}b_i(mr_i),$$ which means that $a$ can be discarded safely since $a$ itself can be expressed as a combination of elements in 
+	$S\backslash\{a\}.$ This contradicts the minimality of $S,$ which is the required result.  
 \end{enumerate}
 \section{} %Problem 5 
 $R^{\oplus X}$ is a free module, for some indexing set $X.$ $M$ is some submodule of $R^{\oplus X}.$ We find a subset $Y \subseteq X$ such that $M \cap 
 R^{\oplus Y}$ is free and $B$ is a basis for this free module. Let $(B,Y)$ be such a pair with the given partial order. $\mathbb{T}$ is the poset of all 
 such submodules in $R^{\oplus X}.$
 \begin{enumerate}
-	\item $X$ is non-empty. Then we can pick a singleton subset $ \{x\} \subseteq X.$ $R^{\oplus Y}$ must be a finitely generated module (hence the free 
-	module generated by a singleton must be $R$), and hence so must $M \cap R,$ as this is merely an ideal in $R,$ which is an ideal generated by one 
-	element. Thus the ideal is isomorphic to $R$ as a module. Thus $R \cong Ra,$ where $(a)=I.$ Thus this is an element of $\mathbb{T},$ which means that 
-	$\mathbb{T},$ where this above example corresponds to the element $(R,\{1\}).$ 
+	\item $X$ is non-empty. Then we can have $M$ non-empty(if it is empty, there is nothing to prove). We take $M$ non-empty, so we can pick a finite subset 
+	of $M,$ elements $m_1,\dots,m_k.$ Then let $S=\{m_1,\dots,m_k\}.$ See that $R^{\oplus S}$ is a finitely generated module over a PID, and thus so must be 
+	$R^{\oplus S}\cap M,$ which is non-empty (since our chosen generators were taken from $M$). Then this is a submodule of $R^{\oplus S},$ which means it 
+	is also finitely generated. We can use the structure theorem to claim that $R^{\oplus S} \cap M \cong \oplus_{i=1}^l \frac{R}{(a_i)} \oplus R^d$. 
+	However, since $R^{\oplus X}$ and $R^{\oplus S}$ are torsion free, $M$ is also torsion free and thus so is $ R^{\oplus S} \cap M.$ Thus $$R^{\oplus S} 
+	\cap M \cong R^d,$$ for some $d \in \mathbb{N}.$ Thus we have $R^{\oplus S} \cap M$ free, with it having some basis. Therefore we have that $\mathbb{T}$ 
+	is non-empty. 
+	
+	\item We consider the chain $\{K_i\}$ where $K_i=(B_i,Y_i).$ Let $B_{\infty}=\cup_{i=1}^{\infty}B_i$ Then we propose that 
+	$Y_{\infty}=\cup_{i=1}^{\infty}Y_i$ is a basis for $R^{\oplus B_{\infty}}\cap M,$ which should make it a free module. Take any element $m \in R^{\oplus 
+	B_{\infty}}\cap M.$ Then it can be written as $m=\sum r_me_m,$ where $e_m$ is a basis element in some $B_i.$ Since this summation is finite, there is a 
+	maximum $i$ such that $B_i$ contains all the $e_m'$s. Then we know that $B_i \subseteq B_{\infty},$ which means that $B_{\infty}$ is a generating set 
+	for $ R^{\oplus B_{\infty}}\cap M.$  Now to check linear independence, see that as any element $m \in R^{\oplus B_{\infty}}\cap M$ has basis elements in 
+	one basis set $B_i$ as we previously saw, it inherits its linear independence from $B_i.$ Thus we have that $(B_{\infty},Y_{\infty})$ is a maximal 
+	element for the chain $\{K_i\}$. By Zorn's lemma, we have that $\mathbb{T}$ must have a maximal element.
+	
+	\item Let us assume that $(B,Y)$ is a maximal element of $\mathbb{T}.$ If we have that there is a $Y \subsetneq Y',$ where $Y' \backslash Y$ is finite, 
+	then we have that $i:M \cap R^{\oplus Y} \hookrightarrow M \cap R^{\oplus Y'}$ where the cokernel is a submodule of the cokernel of $i':R^{\oplus Y} 
+	\hookrightarrow R^{\oplus Y'}$ as the former map is the restriction map of the latter. Then the cokernel is a submodule of the cokernel of the latter 
+	map, which is $\frac{R^{\oplus Y'}}{R^{\oplus Y}},$ which makes the cokernel a free module as well by the structure theorem for finitely generated 
+	modules on a PID. See that $i$ splits $M \cap R^{\oplus Y'}$, as the surjective map $\pi: M \cap R^{\oplus Y'} \twoheadrightarrow \text{coker} i$ is 
+	such that $ \pi \circ i=1_{\text{coker} i},$ which means that $i$ splits. This means that we have $M \cap R^{\oplus Y'}$ is a free module, which 
+	contradicts the maximality of $(B,Y).$ Thus either $Y=X,$ or $Y\backslash X$ has infinitely many elements. If we assume the latter, then we have that 
+	any finite subset of $Y \backslash X$ can be included into $Y,$ thus we must have inductively that all of $X$ must be included in $Y,$ which completes 
+	the argument.
 \end{enumerate}
-\section{} %Problem 6 
+\section{} %Problem 6
 \begin{enumerate}
 	\item Let $f \in \text{Hom}_{\mathbb{Z}}\left(\frac{\mathbb{Z}}{(n)},\frac{\mathbb{Q}}{\mathbb{Z}}\right).$ Then we have an abelian group, as $ 
 	\text{Hom}_{\mathbb{Z}}\left(\frac{\mathbb{Z}}{(n)},\frac{\mathbb{Q}}{\mathbb{Z}}\right)$ is a $\mathbb{Z}-$module ($\mathbb{Z}-$modules and abelian 
