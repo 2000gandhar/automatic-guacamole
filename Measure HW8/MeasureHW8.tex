@@ -44,17 +44,82 @@
 %----------------------------------------------------------------------------------------
 
 \section{} %Problem 1 
+We will use $i=1,2$ to denote the measures. Let $E_{n,i}=\{x: \frac{d\nu_i}{d\mu_i}< -\frac{1}{n}\},$ and see that 
+$$\nu_i(E_{n,i})=\int_E d\nu_i= \int_{E_{n,i}}-\frac{1}{n}\int_{E_{n,i}}d\mu_i =- \frac{1}{n} \mu_i(E_{n,i}).$$ Since $\nu_i$ is a positive measure, 
+$\mu_i(E_{n,i})=0=\nu_i(E_{n,i})$ for all $n$.  We have $E= \cup_{n=1}^{\infty}E_{n,i},$ that is, $E=\{x: \frac{d\nu_i}{d\mu_i}<0\}.$ 
+By continuity from below, $\mu(E)=\lim_{n \to \infty}\mu(E_{n,i})=0.$ Then $\frac{d\nu_i}{d\mu_i}\geq 0$ almost everywhere. Then by Tonelli's theorem, 
+
+\begin{align*}
+	(\nu_1 \times \nu_2)(E)&= \int_{E} d(\nu_1 \times \nu_2)= \int \chi_E d(\nu_1 \times \nu_2)\\
+	&= \int \int \chi_E d\nu_1 d\nu_2 = \int \left( \int \chi_E \frac{d\nu_1}{d\mu_1} d\mu_1\right)\frac{d\nu_2}{d\mu_2} d\mu_2\\
+	&= \int \int \chi_E  \frac{d\nu_1}{d\mu_1} \frac{d\nu_2}{d\mu_2} d\mu_1 d\mu_2\\
+	&= \int_E \frac{d\nu_1}{d\mu_1} \frac{d\nu_2}{d\mu_2} d(\mu_1 \times \mu_2).
+\end{align*}
+This gives us the desired result. 
 \section{} %Problem 2
+$f \in BV$ means that $V^b_a(f)\leq M$ for some $M \in \mathbb{N}.$ Pick a partition $\mathcal{P}$ of $[a,b],$ then we have $\sum_{\mathcal{P}} 
+|f(x_{i+1})-f(x_i)| \geq \sum_{\mathcal{P}} ||(x_{i+1})| - |f(x_i)||.$ Thus we have $$V(|f|,\mathcal{P}) \leq V(f,\mathcal{P}).$$ Taking the limit over all 
+partitions, we have $V(|f|)\leq V(f) < \infty.$ 
 \section{} %Problem 3 
 \section{} %Problem 4 
+\begin{enumerate}
+	\item Since $V(x)$ is an increasing function, it is differentiable almost everywhere. Choose a partition $\mathcal{P}_1$ for $[a,x],$ and a partition 
+	$\mathcal{P}_2$ for $[a,x+h].$ Then we have a partition finer than both of them, say $\mathcal{P}.$ Then we can write $V(f, \mathcal{P})(a,x+h)= V(f, 
+	\mathcal{P})(a,x)+V(f, \mathcal{P})(x,x+h).$ Thus $V(f, \mathcal{P})(a,x+h)-V(f, \mathcal{P})(a,x)= V(f, \mathcal{P})(x,x+h).$ Then see that $$ 
+	\frac{V(f, \mathcal{P})(a,x+h)-V(f, \mathcal{P})(a,x)}{h} = \frac{V(f, \mathcal{P})(x,x+h)}{h}.$$ See that $$\frac{V(f, \mathcal{P})(x,x+h)}{h} \geq 
+	\frac{|\sum_{i=1}^{N}f(x_{i+1}-x_i)|}{h}= \frac{|f(x+h)-f(x)|}{h}.$$ Since the term on the right is dependent on $h,$ and not the partition, we let it 
+	go to zero, which gives us $|f'(x)|.$ The term on the left can be refined with respect to partitions, which gives us $\frac{V(x+h)-V(x)}{h}.$ Since the 
+	derivative of $V$ exists almost everywhere, we have the desired inequality.
+	
+	\item  From monotonicity of the integral, we have $\int_{a}^{b}|f'|\leq \int_{a}^b V' \leq V(b)-V(a)=V(b),$ as required. 
+	
+	\item If $f$ is AC, then we have $f(x)-f(a)=\int_{a}^x g, $ for some $L^1$ function $g.$ Then see that for some partition $\mathcal{P},$ we have 
+	$V(f,\mathcal{P})= \sum_{i=1}^n \left|\int_{x_i}^{x_{i+1}}g\right| \leq \int_{x_i}^{x_{i+1}}\left|g\right| = \int_{a}^b |g|.$
+	Thus taking the limit over all partitions, we have $V(b) \leq \int_{a}^{b}|f'|,$ which combined with the opposite inequality shown gives us the required 
+	result.
+	
+	For the converse, we assume $\int_{a}^{b}|f'| = V(b).$ The term on the right is also $\int_{a}^{b}V',$ so $V$ must be absolutely continuous as it is 
+	monotonous and of bounded variation. See that then $ \int_{a}^b V' - |f'| =0.$ Since we know $|f'| \leq V'$ almost everywhere, we must have $V'=|f'|$ 
+	almost everywhere. Choose a partition $\mathcal{P}$ such that $ \sum_{\mathcal{P}} |x_{i+1}-x_i|< \delta,$ we have $\sum_{\mathcal{P}} 
+	|V(x_{i+1})-V(x_i)|< \varepsilon,$ for some $\varepsilon >0$ from the absolute continuity of $V.$ Then at any subinterval of the partition $P_k$ we have 
+	$V(f,P_i) =|f(x_{i+1})-f(x_{i})| \leq V(x_{i+1})-V(x_i)= |V(x_{i+1})-V(x)|.$ Then summing over all subintervals we have our desired result. 
+\end{enumerate}
 \section{} %Problem 5 
+Define $h_n,h$ where $h_n=\sum_{i=1}^n |f_i|, h=\sum_{i=1}^{\infty} |f_i|.$ We have an increasing sequence of positive functions that converge to $h,$ so we 
+have by the monotone convergence theorem, $$\int h^p = \lim_{n \to \infty} \int h_n^p. $$ By Minkowski's inequality we have $$||h_n ||_p \leq \sum_{i=1}^n 
+|| g_n||_p \leq M,$$ where $M=\sum_{i=1}^{\infty} || g_n||_p.$ Then we have $h$ is $L^p$ and it is finite a.e. We also have that $\sum_{i=1}^n g_i$ is 
+convergent to some $f$ such that $|f| \leq h,$ so we have $$\left| f- \sum_{i=1}^n g_i \right|^p=\left(|f| + \sum_{i=1}^n |g_i|  \right) \leq (2h)^p,$$ so 
+by the dominated convergence theorem we have $\int (f- \sum_{i=1}^n g_i)^p \to \infty$ as $n \to \infty.$ Thus we have $\sum_{i=1}^{\infty} g_i$ converging 
+to $f$ in $L^p,$ as desired.   
 \section{} %Problem 6 
 \section{} %Problem 7 
+
 \section{} %Problem 8 
+
 \section{} %Problem 9 
 \section{} %Problem 10 
+\begin{enumerate}
+	\item Let us have $f \in L^{p_2}.$ Then let $r= \frac{p_2}{p_1}>1.$ We can see that the H\"{o}lder dual of $r$ is $r'=\frac{p_2}{p_2-p_1}.$ We apply 
+	H\"{o}lder's inequality on $|f|^{p_1}$ and $1,$ using $r$ and $r',$ we get 
+	\begin{align*}
+		\int |f|^{p_1} d\mu &\leq \left(\int |f^{p_1}|d\mu\right)^{\frac{1}{r}}\cdot \left(\int 1^{r'}d\mu\right)^{\frac{1}{r'}}\\
+		&=\mu(X)^{\frac{p_2-p_1}{p_2}}\left(\int |f|^{p_2}d\mu\right)^{\frac{p_1}{p_2}}.	
+	\end{align*} 
+		Now raising both sides to $\frac{1}{p_1},$ we have $$ \left(|f|^{p_1} d\mu\right)^{\frac{1}{p_1}} \leq \mu(X)^{\frac{p_2-p_1}{p_2}}\left(\int 
+		|f|^{p_2}d\mu\right)^{\frac{1}{p_2}}.$$ Since $\mu(X)<\infty,$ $f \in L^{p_1}.$
+		
+	\item Using the above inequality and putting $\mu(X)\leq 1$ gives us the required result. 
+	\item In the measure space $[1,\infty)$ we have $f(x)=\frac{1}{x},$ which is a $L^2$ function, as $\int_{1}^{\infty}\frac{1}{x^2} dx= 1,$ but 
+	$\int_{1}^{\infty}\frac{1}{x}dx = \infty,$ thus we have a $L^2$ function that is not $L^1.$  
+\end{enumerate}
 \section{} %Problem 11
+We integrate $e^{-px}$ as see when it has a finite value. See that $$\int_{0}^{\infty}e^{px}dx= \lim_{n \to \infty} \left[\frac{e^{-px}}{-p}\right]_0^n= 
+\lim_{n \to \infty} \frac{1-e^{np}}{p}=\frac{1}{p},$$ which implies that $e^{-x} \in L^p$ for $p \in [1,\infty].$
 \section{} %Problem 12
+We want to evaluate $\sum_{i=1}^{\infty}\frac{1}{(\sqrt{n}\log n)^p}.$ See that this is a decreasing sequence (let $a_n=\frac{1}{(\sqrt{n}\log n)^p}$). Then 
+$\sum a_n$ converges iff $\sum 2^na_{2^n}$ converges, by the Cauchy condensation test. 
+We can reduce this to $\sum 2^n \frac{1}{(\sqrt{2^n}\log (2^n))^p}= \sum 2^{k-\frac{kp}{2}} \frac{1}{(n^p (\log 2)^p}.$
+
 \section{} %Problem 13
 
 \end{document}
