@@ -49,9 +49,35 @@ must have $$\varphi(i^4)=\varphi(i)^4=1.$$ Thus we must have $\varphi(i)=\pm 1,$
 $\varphi$ is not one-one. If $\varphi(i)=-1,$ then $\varphi(i^2)=-1^2=1,$ which also means that $\varphi$ is not one-one. Thus no such isomorphism exists.
 
 \section{} %Problem 2
-
+\begin{enumerate}
+	\item To characterise a linear transformation, it is enough to understand its action on the basis elements, that is $(1,0)^T$ and $(0,1)^T.$ Looking at 
+	the point on the unit circle that has an angle $\theta$ to the x-axis, we can see that it has the coordinate $(\cos \theta, \sin \theta).$ Similarly, we 
+	want to see the coordinates of the point that has an angle of $\frac{\pi}{2}+ \theta$ to the x-axis. Its coordinates are $(-\sin \theta, \cos \theta).$ 
+	Putting it together, we get the required rotation matrix that describes the linear transformation.
+	\item To confirm that $\varphi:D_{2n} \rightarrow GL_2(\mathbb{R})$ is a homomorphism, we need to confirm that $\varphi(r)^n=\varphi(s)^2=I_{2},$ and 
+	that $\phi(r)\phi$
+\end{enumerate}
 \section{} %Problem 3
+$$D_{2n}= \left\{ r^is^j : 0 \leq i \leq n-1, 0 \leq j \leq 1, rs=sr^{n-1} \right\}.$$
+For any two elements $r^{i_1}s^{j_1}, r^{i_2}s^{j_2} \in D_{2n}.$ % we have $$r^{i_1}s^{j_1} \cdot r^{i_2}s^{j_2}=r^{n+i_1+ (-1)^{j_1}i_2} s^{j_1+j_2}.$$
+Let $r^{i_1}s^{j_1} \in Z(D_{2n})$ commute with $r^{i_2}s^{j_2} \in D_{2n}.$ Then $$r^{i_1}s^{j_1} \cdot r^{i_2}s^{j_2}= 
+r^{i_2}s^{j_2} \cdot r^{i_1}s^{j_1}.$$
+Working this out, we get $$r^{n+i_1+(-1)^{j_1}i_2} s^{j_1+j_2}=r^{n+i_2+(-1)^{j_2}i_1} s^{j_2+j_1}, $$ which implies that 
+\begin{enumerate}
+	\item If $n$ is odd, 
+\end{enumerate}
 \section{} %Problem 4
+Let $x \in G$ be such that $xZ(G)$ generates $G/Z(G).$ Thus any term in $G/Z(G)$ is of the form $x^aZ(G)$ for some $a \in \mathbb{Z}.$ Consider the 
+canonical quotient map $\pi: G \twoheadrightarrow G/Z(G)$ where $\pi(g)=gZ(G).$ Its kernel is $Z(G),$ so we have $G \cong Z(G) \times G/Z(G).$ Thus we can 
+write $g \in G$ as $(z,x^a),$ such that $g=x^az.$ Now take $g_1,g_2 \in G,$ and consider $g_1 \cdot g_2=x^{a_1}z_1 \cdot x^{a_2}z_2=g_2=x^{a_1} 
+x^{a_2}z_1z_2=g_2 \cdot g_1,$ as the order of multiplication of $z_1$ and $z_2$ can be switched as it is in the centre. Thus we have $G$ is abelian.  
 \section{} %Problem 5
+Let $n=|G|,$ $k=|[G:N]|.$ 
 \section{} %Problem 6
+$G=MN,$ where $M,N \trianglelefteq G.$ Define the map $f: G \rightarrow (G/M) \times (G/N),$ where $f(g)=(gM,gN).$ To see that this map is well-defined, see 
+that for $g=g'$ in $G$, we have $gM=g'M$ and $gN=g'N$ as the canonical projections from $G$ to $G/M$ and $G/N$ are well-defined. From these two maps it can 
+be seen that the map $f$ also respects the group operation, hence this is also a homomorphism. Note that for all $g \in G,$ $g=mn,$ for $m \in M, n \in N.$ 
+Then an arbitrary element of $(G/M) \times (G/N)$ is of the form $(nM,mN).$ Thus we can see that this corresponds to an element $mn \in G,$ which can cover 
+all of $G.$ Thus $f$ is surjective. To compute the kernel of $f,$ see that $gM=e_{G/M} \implies g \in M,$ and $gN=e_{G/N} \implies g \in N$. Thus $g \in M 
+\cap N,$ thus $\ker f=M \cap N.$ Using the first isomorphism theorem gives us our result. 
 \end{document}
