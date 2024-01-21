@@ -61,6 +61,15 @@ Take two elements $x,y \in X$ both non-zero, since if either were zero the inequ
 $\frac{x}{||x||}=\frac{y}{||y||}=1,$ thus we can use the convexity condition to see that $\frac{||x+y||}{||x||+||y||} \leq 1,$ which is the triangle 
 inequality.
 \section{} %Problem 3 
+\begin{enumerate}
+	\item Pick a $f \in C([a,b]).$ Then $|f|\leq M=\sup\{|f(x)|:x \in [a,b]\}.$ Now see that $$\int_a^b|f(t)|^pdt \leq (b-a)M^p \geq 0.$$ Thus $||f||_p \geq 
+	0.$
+	For $f=0,$ we have $M=0,$ so $\int_a^b|0|^pdt=0.$ If $\int_a^b|f(t)|^pdt =0,$ then see that $0 \leq (b-a)M^p \geq 0.$ Thus we must have $$(b-a)M^p=0 
+	\implies M=0 \implies f=0.$$ To see the next axiom, for $\alpha \in \mathbb{K},$ we have $\int_a^b|\alpha f(t)|^pdt =\int_a^b|\alpha|^p|f(t)|^pdt.$
+	Then $$||\alpha f||_p= \left(|\alpha|^p\int_a^b|f(t)|^pdt\right)^{\frac{1}{p}} =|\alpha| ||f||_p.$$
+	Now let $f,g \in C[a,b].$ 
+
+\end{enumerate}
 \section{} %Problem 4 
 \begin{enumerate}
 	\item $||f_1-F||_{\infty}$ is to be found, where $F$ is the subspace of constant functions. Unfolding the term, we get 
