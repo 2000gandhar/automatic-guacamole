@@ -1,0 +1,66 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lachaise Assignment
+% LaTeX Template
+% Version 1.0 (26/6/2018)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Marion Lachaise & François Févotte
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{} % Title of the assignment
+
+\author{Gandhar Kulkarni (mmat2304)} % Author name and email address
+
+\date{} % University, school and/or department name(s) and a date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{} %Problem 1 
+To prove the result, we will decompose an arbitrary permutation $\sigma \in S_n$ into transpositions. We will then show that each transposition can be 
+written as a product of transpositions of the form $(i i+1).$ We have $\sigma=\tau_1\dots\tau_r,$ where $\tau_i$ is some transposition of the form $(k_1 
+k+1+k_2)_i.$ Note that we can assume the first element of $\tau_i$ is strictly lesser than the second since if it weren't we could just invert the order 
+without any loss of generality. We state that $(k_1 k_1+k_2)$ can written as a product of finite transpositions of the form $(t t+1).$ See that $(k_1 
+k_1+k_2-1)=(k_1+k_2-1 k_1+k_2)(k_1 k_1+k_2)(k_1+k_2-1 k_1+k_2).$ Since we have $(k_1 k_1+k_2-1),$ we have lowered the second entry of the transposition by 
+one. In $k_2-1$ steps, we will get $(k_1 k_1+1)=(k_1+1 k_1+2)(k_1 k_1+2)(k_1+1 k_1+2),$ which means that we can stop. We have $\tau_i$ as a product of 
+$2(k_2-1)+1$ transpositions of the desired type. We can do this for all transpositions to get our result. Thus we can generate any permutation in $S_n$ by 
+exchanging adjacent elements. 
+The bubble sort algorithm works this way too, which accepts a permutation then returns the list of $n$ numbers. This is essentially the same problem.
+\section{} %Problem 2
+\section{} %Problem 3 
+\section{} %Problem 4 
+\section{} %Problem 5 
+\section{} %Problem 6 
+\section{} %Problem 7 
+\section{} %Problem 8 
+\section{} %Problem 9 
+\section{} %Problem 10 
+
+\end{document}

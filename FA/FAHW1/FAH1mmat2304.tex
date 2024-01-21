@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lachaise Assignment
+% LaTeX Template
+% Version 1.0 (26/6/2018)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Marion Lachaise & François Févotte
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{} % Title of the assignment
+
+\author{Gandhar Kulkarni (mmat2304)} % Author name and email address
+
+\date{} % University, school and/or department name(s) and a date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{} %Problem 1 
+\begin{enumerate}
+	\item
+	\item This statement is false. For sake of contradiction, let $(X,||\cdot||)$ be a normed linear space such that the induced metric is the discrete 
+	metric. Then for $x,y \in X, x \neq y$ we must have $||x-y|| =1.$ Note that $2x\neq 2y,$ so we must have $||2x-2y||=2||x-y||=2,$ but by the discrete 
+	metric the answer should still be $1!$ Thus there can be no such norm.
+\end{enumerate}
+\section{} %Problem 2 
+We wish to show that the function $||\cdot|| $ on $X$ satisfies the triangle inequality iff the closed unit ball is convex.
+Assume that the function $||\cdot||$ is indeed a norm. Then let $x,y \in D,$ the closed unit ball. Then $||x||,||y|| \leq 1.$ Now we have for $\alpha \in 
+[0,1]$ $z=\alpha x+(1-\alpha)y.$ See that $$||z|| =||\alpha x+(1-\alpha)y|| \leq \alpha ||x|| + (1-\alpha) ||y|| \leq \alpha \cdot 1 + (1-\alpha) \cdot 1 
+\leq 1,$$ thus we have $z \in D.$
+
+Take two elements $x,y \in X$ both non-zero, since if either were zero the inequality would be trivial. Then $$||x+y|| = (||x||+||y||)\cdot 
+\left|\left|\alpha \frac{x}{||x||}+ (1-\alpha)\frac{y}{||y||}\right|\right|,$$ where $\alpha=\frac{||x||}{||x||+||y||}.$ Note that 
+$\frac{x}{||x||}=\frac{y}{||y||}=1,$ thus we can use the convexity condition to see that $\frac{||x+y||}{||x||+||y||} \leq 1,$ which is the triangle 
+inequality.
+\section{} %Problem 3 
+\section{} %Problem 4 
+\begin{enumerate}
+	\item $||f_1-F||_{\infty}$ is to be found, where $F$ is the subspace of constant functions. Unfolding the term, we get 
+	$$||f_1-F||_{\infty}= \inf_{c \in \mathbb{R} }\{ \sup_{t \in [0,1]} |t-c|  \},$$ which for $c \in [-1,0] \cup [1,2] $ is $1,$ while in $(0,1)$ it 
+	decreases to $\frac{1}{2}$ then goes back up to $1.$ Thus, we must have $||f_1-F||_{\infty}=\frac{1}{2}.$
+	\item We want to now see the distance between $f_2=t^2$ and $G,$ the space of all polynomials with degree at most $1.$ Then for some polynomial $-ax-b 
+	\in G,$ we want to see $\sup_{t \in [0,1]}\{|t^2+ax+b|\}$ 
+\end{enumerate}
+\section{} %Problem 5 
+\section{} %Problem 6 
+Assume that $X$ is a Banach space. Let $(x_n)$ be an absolutely convergent sequence in $X,$ that is, $||x_n||\rightarrow \alpha,$ as $n \to \infty.$ Thus 
+for all $\varepsilon > 0,$ $\exists N \in \mathbb{N}$ such that for all $n \geq N,$ $$| ||x_n|| - \alpha| < \varepsilon.$$
+Now we have $ $
+\section{} %Problem 7 
+\section{} %Problem 8 
+\section{} %Problem 9 
+\section{} %Problem 10 
+\section{} %Problem 11
+\section{} %Problem 12 
+
+\end{document}
