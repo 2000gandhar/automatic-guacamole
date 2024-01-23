@@ -67,7 +67,17 @@ inequality.
 	For $f=0,$ we have $M=0,$ so $\int_a^b|0|^pdt=0.$ If $\int_a^b|f(t)|^pdt =0,$ then see that $0 \leq (b-a)M^p \geq 0.$ Thus we must have $$(b-a)M^p=0 
 	\implies M=0 \implies f=0.$$ To see the next axiom, for $\alpha \in \mathbb{K},$ we have $\int_a^b|\alpha f(t)|^pdt =\int_a^b|\alpha|^p|f(t)|^pdt.$
 	Then $$||\alpha f||_p= \left(|\alpha|^p\int_a^b|f(t)|^pdt\right)^{\frac{1}{p}} =|\alpha| ||f||_p.$$
-	Now let $f,g \in C[a,b].$ 
+	Now let $f,g \in C[a,b].$ Then we have to prove Minkowski's inequality to show the triangle inequality. 
+	\begin{align*}
+		||f+g||^p_p &= \int_{a}^b |f+g|^p dx\\
+		&= \int_{a}^b |f+g|\cdot|f+g|^{p-1} dx\\
+		&\leq \int_{a}^b |f||f+g|^{p-1} dx + \int_{a}^b |g||f+g|^{p-1} dx\\
+		&\leq \left(\int_{a}^b |f|^{p} dx+\int_{a}^b |g|^{p} dx\right)\left(\int_{a}^b |f+g|^{(p-1)\frac{p}{p-1}} dx \right)^{1-\frac{1}{p}} 
+		(\text{H\"{o}lder's inequality})\\
+		&= (||f||_p+||g||_p)\frac{||f+g||_p^p}{||f+g||_p},
+	\end{align*}
+	which yields the required result.
+	\item 
 
 \end{enumerate}
 \section{} %Problem 4 
@@ -79,14 +89,45 @@ inequality.
 	\in G,$ we want to see $\sup_{t \in [0,1]}\{|t^2+ax+b|\}$ 
 \end{enumerate}
 \section{} %Problem 5 
+Let $Y$ and $X/Y$ be Banach spaces. Then take $(x_n)$ to be a Cauchy sequence in $X.$ That is, for all $\varepsilon > 0$ there exists $N \in \mathbb{N}$ 
+such that for $m,n \geq N$ we have $$||x_m-x_n||< \varepsilon.$$
+By the canonical projection to $X/Y$ we can see that the sequence $(x_n+Y)$ is also Cauchy, since we have $$||x_m-x_n +Y|| \leq ||x_m-x_n+0|| < \varepsilon. 
+$$ Since $X/Y$ is Banach, we have $(x_n+Y) \to (x_0+Y).$ Now let $y_n:= $ 
+
+Let $X$ and $X/Y$ be Banach spaces. Then take $(y_n),$ a Cauchy sequence in $Y.$ Thus for all $\varepsilon > 0,$ there exists $N \in \mathbb{N}$ such that 
+for $m,n \geq N,$ we have $||y_m-y_n||< \varepsilon.$ As a Cauchy sequence in $X,$ this must converge to some element $y_0 \in X.$ We now need to show that 
+$y_0 \in Y.$ But since $Y$ is closed and $y_0$ is a limit point, we must have $y_0 \in Y.$
+
+Let $X$ and $Y$ be Banach spaces. 
 \section{} %Problem 6 
 Assume that $X$ is a Banach space. Let $(x_n)$ be an absolutely convergent sequence in $X,$ that is, $||x_n||\rightarrow \alpha,$ as $n \to \infty.$ Thus 
 for all $\varepsilon > 0,$ $\exists N \in \mathbb{N}$ such that for all $n \geq N,$ $$| ||x_n|| - \alpha| < \varepsilon.$$
 Now we have $ $
 \section{} %Problem 7 
+Let $\ell^p$ be the space of all $p-$power summable sequences. Then $||(x_n)||=(\sum_{i=1}^{\infty}|x_i|^p)^\frac{1}{p}.$ Now we want to show that the space 
+$K=\{(x_n) \in \ell^p: x_i=0 \forall i>n, n \in \mathbb{N}\}$ is dense in $\ell^p.$ Take any $(x_n)^{(0)}_{n \in \mathbb{N}} \in \ell^p.$ There is a 
+sequence of elements in $\ell^p$ $(x_n)^{(m)} \subseteq K$ such that $x_n^{(m)}=x_n$ if $n \leq m,$ and $0$ otherwise. See that 
+$||(x_n)^{(m)}-(x_n)^{(0)}||_p=\left(\sum_{i=m+1}^{\infty}|x_i|^p\right)^{\frac{1}{p}}.$ Since $||(x_n)^{(m)}||_p \to ||(x_n)^{(0)}||_p$ as $m \to \infty,$ 
+we must have for a choice of $\varepsilon >0$ there being $N \in \mathbb{N}$ such that for $m \geq N,$ $|||(x_n)^{(m)}||_p - ||(x_n)^{(0)}||_p|< 
+\varepsilon. $ Multiplying on both sides by $\frac{||(x_n)^{(m)}||^p_p - ||(x_n)^{(0)}||^p_p}{||(x_n)^{(m)}||_p - ||(x_n)^{(0)}||_p},$ and after a change in 
+the value of $\varepsilon,$ we get $$||(x_n)^{(m)}||^p_p - ||(x_n)^{(0)}||^p_p< \varepsilon.$$ Thus we have shown that $K$ is dense in $\ell^p.$ For a fixed 
+$m,$ and a fixed $n,$ look at $x_n^{(m)}.$ This is a real number or a complex number, which can be approximated by a sequence of rationals (or elements of 
+$\mathbb{Q}(i)$) such that $x_n^{(m)}$ is its limit. Now we have a sequence $(t_k),$ where $t_k \to x_n^{(m)}$ as $k \to \infty.$ 
+
+Now let us see that $K'=\{(x_n) \in K: x_n \in \mathbb{Q} \text{ or} \mathbb{Q}(i)\} \subset K$ is countable, and as we saw above must be dense in $\ell^p.$ 
+Thus it is separable.  
 \section{} %Problem 8 
 \section{} %Problem 9 
 \section{} %Problem 10 
+Let $P([0,1])$ be the space of all real polynomials defined on $[0,1]$ be a real vector space. Let the norm of a polynomial $f(x)=a_0+a_1x+\dots+a_nx^n \in 
+P([0,1])$ be given thus: $||f|| = |a_0|+|a_1|+\dots+|a_n|.$ Now see that the operator $I:P([0,1]) \rightarrow P([0,1])$ such that $x^t \mapsto 
+\frac{x^{t+1}}{t+1},$ we then see that $$||I|| = \sup_{0 \neq x \in P([0,1])} \frac{||If||}{||f||} = \frac{a_0x+\dots 
+\frac{a_n}{n+1}a_{n+1}}{a_0+\dots+a_nx^n }=\frac{|a_0|+\left|\frac{a_1}{2}\right|+\dots + \left|\frac{a_n}{n+1}\right|}{|a_0|+\dots+ |a_n|} \leq 1.$$ Also 
+see that this supremum is indeed attained since $I(a_0)=a_0x,$ and in this case $\frac{||I(a_0)||}{||a_0||}=1.$ Thus we have $||I|| =1.$ We wish to find the 
+inverse of this operator, see that the differential operator $D$ such that $x^t \mapsto tx^{t-1},$ is the required inverse. However, see that for 
+$f(x)=x^n,$ we have $Df=I^{-1}f=nx^{n-1}.$ Now we have $$||D|| = \sup_{0 \neq x \in P([0,1])} \frac{||Df||}{||f||} \geq 
+\frac{||Dx^n||}{||x^n||}=\frac{n}{1}.$$ Thus we have that our operator $D$ is unbounded, since for any chosen $N \in \mathbb{N}$ we can choose $x^{N+1},$ 
+such that $ \frac{||Dx^{N+1}||}{||x^{N+1}||}$ is larger. 
 \section{} %Problem 11
 \section{} %Problem 12 
 

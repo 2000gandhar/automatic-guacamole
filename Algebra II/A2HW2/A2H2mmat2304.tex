@@ -55,10 +55,39 @@ exchanging adjacent elements.
 The bubble sort algorithm works this way too, which accepts a permutation then returns the list of $n$ numbers. This is essentially the same problem.
 \section{} %Problem 2
 \section{} %Problem 3 
+\begin{enumerate}
+	\item For some $1 \leq i \leq n,$ $G)i=\{\sigma \in S_n: \sigma(i)=i\} \cong S_{n-1}.$ Consider $G_i$ acting on $\{1,2,\dots,i-1,i+1,\dots,n\}.$
+	If $n=2,$ this set will be a singleton, hence trivially transitive. For $n \geq 3,$ the set $\{1,2,\dots,n\}\backslash\{i\}$ has at least two elements. 
+	Then $k,\ell \in \{1,2,\dots,i-1,i+1,\dots,n\}$ such that they are distinct (If $k=\ell,$ then $i \in G_i$ works). See that $ (k \ell) \in G_i,$ as it 
+	does not affect $i.$ Then we have $(k \ell)k=\ell,$ which means that $G_i$ is transitive. 
+	\item For a doubly transitive action of $G$ on $X,$ see that if we choose a proper subset then since 
+\end{enumerate}
 \section{} %Problem 4 
+Let us denote all elements of $Q_8$ thus: $1,i,j,k,-1,-i,-j,-k$ are assigned the numbers from $1$ to $8.$ 
+Then see that left multiplication by $1$ is the identity permutation on $S_8.$ Left multiplication by $i$ is $(1 2 5 6)(3 4 7 8),$ by $j$ is $(1 3 5 7)(2 8 
+6 4),$ and by $k$ is $(1 4 5 8)(2 3 6 7).$ Their negatives also have a left regular representation. Now see that $i,j$ can generate $Q_8$ as a group, then 
+it must stand to reason that their corresponding left regular representations will behave in the same way! Thus, see that $G=\langle (1 2 5 6)(3 4 7 8), (1 
+3 5 7)(2 8 6 4) \rangle \cong Q_8.$
 \section{} %Problem 5 
+We know that $|[G:H]| = n.$ Consider the group action of left multiplication on left cosets of $H.$ This group action has a permutation 
+representation, let us denote that by $\pi_H.$ Take $K=\ker \pi_H,$ and $|[H:K]| =k.$ Then we have $|[G:K]|=|[G:H]||H:K|=nk.$ 
+Since $H$ has $n$ many cosets, we must have $\frac{G}{K}$ is isomorphic to some subgroup of $S_n.$ Clearly $K \leq H,$ and $K \trianglelefteq G,$ and since 
+$nk | n!,$ we have 
 \section{} %Problem 6 
+We shall prove a result that for $|G| =n$ and $p$ the smallest prime that divides $n,$ then a subgroup of order $p$ must be normal.
+Let some $H \leq G,$ with $|[G:H]|=p.$ Consider the group action of left multiplication on left cosets of $H.$ This group action has a permutation 
+representation, let us denote that by $\pi_H.$ Take $K=\ker \pi_H,$ and $|[H:K]| =k.$ 
+Then we have $|[G:K]|=|[G:H]||H:K|=pk.$ We know that H has $p$ many left cosets, hence $\frac{G}{K}$ is isomorphic to some subgroup of $S_p$ which is the 
+image of $G$ under $ \pi_H.$ Thus we must have $pk|p! \implies k|(p-1)!.$ But since $k$ can only have prime factors greater than or equal to $p$ and 
+$(p-1)!$ has no prime factors greater than $p,$ we must have $k=1.$ Thus $H=K \trianglelefteq G$ is normal.
+ 
+Let $p$ be the smallest prime dividing $n.$ We know that $p < n,$ since $n$ is composite. Then see that there must exist a subgroup of order $\frac{n}{p}$ 
+as given in the problem, hence this subgroup has index $\frac{n}{\frac{n}{p}}=p,$ hence this is a normal subgroup. Thus $G$ cannot be simple. 
 \section{} %Problem 7 
+We know that $|[G:Z(G)]| =n.$ We see that in the class equation we have 
+$$|G| =|Z(G)|+\sum_{x \notin Z(G)}|[G:C(x)]|.$$ 
+Dividing on both sides by $|Z(G)|$ we have $$n= 1+\sum_{x \notin Z(G)}\frac{n}{|C(x)|}.$$
+Thus $$\frac{1}{n}+\sum_{x \notin Z(G)}\frac{1}{|C(x)|}=1.$$  
 \section{} %Problem 8 
 \section{} %Problem 9 
 \section{} %Problem 10 
