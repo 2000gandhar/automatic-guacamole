@@ -100,9 +100,13 @@ $y_0 \in Y.$ But since $Y$ is closed and $y_0$ is a limit point, we must have $y
 
 Let $X$ and $Y$ be Banach spaces. 
 \section{} %Problem 6 
-Assume that $X$ is a Banach space. Let $(x_n)$ be an absolutely convergent sequence in $X,$ that is, $||x_n||\rightarrow \alpha,$ as $n \to \infty.$ Thus 
+Assume that $X$ is a Banach space. Let $(x_n)$ be an absolutely convergent series in $X,$ that is, $\sum_{i=1}^n||x_i||$ converges to $c \in \mathbb{R}$ as 
+$n \to \infty.$ Thus  
 for all $\varepsilon > 0,$ $\exists N \in \mathbb{N}$ such that for all $n \geq N,$ $$| ||x_n|| - \alpha| < \varepsilon.$$
 Now we have $ $
+
+For the converse, take a Cauchy sequence $(x_n).$ Pick $\varepsilon>0.$ Pick $N(n) \in \mathbb{N}$ such that for $m,n \geq N,$ we have $ ||x_{m}-x_n ||< 
+\frac{\varepsilon}{2^n}$ Now see that $\sum_{i=1}^n ||x_{i+1}-x_i||$ 
 \section{} %Problem 7 
 Let $\ell^p$ be the space of all $p-$power summable sequences. Then $||(x_n)||=(\sum_{i=1}^{\infty}|x_i|^p)^\frac{1}{p}.$ Now we want to show that the space 
 $K=\{(x_n) \in \ell^p: x_i=0 \forall i>n, n \in \mathbb{N}\}$ is dense in $\ell^p.$ Take any $(x_n)^{(0)}_{n \in \mathbb{N}} \in \ell^p.$ There is a 
@@ -116,8 +120,23 @@ $\mathbb{Q}(i)$) such that $x_n^{(m)}$ is its limit. Now we have a sequence $(t_
 
 Now let us see that $K'=\{(x_n) \in K: x_n \in \mathbb{Q} \text{ or} \mathbb{Q}(i)\} \subset K$ is countable, and as we saw above must be dense in $\ell^p.$ 
 Thus it is separable.  
-\section{} %Problem 8 
-\section{} %Problem 9 
+\section{} %Problem 8
+We first show that $\ell^{\infty}$ is not separable. Take the space $K$ of all sequences in $\ell^{\infty}$ such that their entries are either $0$ or $1.$ 
+Then for $x \neq y \in K,$ we have $||x_y||_{\infty} = 1,$ since at least one entry is different between the two. Then we have uncountably points. consider 
+a ball of radius $\frac{1}{2}$ centred at $x \in K,$ for all such points in $K.$ We know what uncountably many open sets, all of which are disjoint from 
+each other. Let $S$ be a possibly dense set. Then we have that each open ball contains at least one point of $S.$ This then means that there must be 
+uncountably many elements, so $\ell^{\infty}.$ 
+
+If there was a Schauder basis for $\ell^{\infty},$ then for all $x \in \ell^{\infty}$  we would have a sequence $(a_1,a_2,\dots)$ described using the basis. 
+We can approximate each term by a sequence of elements in $\mathbb{Q}$ or $\mathbb{Q}(i)$, which would then mean that we would have all the rational points 
+of $\ell^{\infty}$ as a dense subset, which contradicts the fact that the space is not separable. Thus there can be no Schauder basis. 
+\section{} %Problem 9
+We want to see if this function is continuous. Pick a $x_0 \in \mathbb{R}.$ Now for all $\varepsilon > 0$ have $f(z_0+h)-f(z_0)=f(h).$ 
+
+See that $f(2)=2f(1),$ $f(0)=2f(0) \implies f(0)=0,$  and that $f(0)=0=f(1)+f(-1) \implies f(-1)=-f(1).$ Thus $f(n)=nf(1)$ for all $n \in \mathbb{Z}.$ We 
+know that $f(1)=f\left(n \frac{1}{n}\right) \implies f\left(\frac{1}{n}\right)=\frac{1}{n}f(1).$ Thus we have $f(q)=qf(1)$ for all $q \in \mathbb{Q}.$ Since 
+any real number can be approximated by a sequence of rationals, we can easily see that for $q_n \to r$ and $n \to \infty,$ we have $f(q_n)=q_nf(1) \to 
+rf(1).$ Thus we can extend this to all real numbers. Now we have $|f(z_0+h)-f(z_0)|=|hf(1)| < \varepsilon,$ for a choice of $h= \frac{\varepsilon}{|f(1)|}.$
 \section{} %Problem 10 
 Let $P([0,1])$ be the space of all real polynomials defined on $[0,1]$ be a real vector space. Let the norm of a polynomial $f(x)=a_0+a_1x+\dots+a_nx^n \in 
 P([0,1])$ be given thus: $||f|| = |a_0|+|a_1|+\dots+|a_n|.$ Now see that the operator $I:P([0,1]) \rightarrow P([0,1])$ such that $x^t \mapsto 
@@ -129,6 +148,9 @@ $f(x)=x^n,$ we have $Df=I^{-1}f=nx^{n-1}.$ Now we have $$||D|| = \sup_{0 \neq x 
 \frac{||Dx^n||}{||x^n||}=\frac{n}{1}.$$ Thus we have that our operator $D$ is unbounded, since for any chosen $N \in \mathbb{N}$ we can choose $x^{N+1},$ 
 such that $ \frac{||Dx^{N+1}||}{||x^{N+1}||}$ is larger. 
 \section{} %Problem 11
+Since the linear functional $f:X \rightarrow \mathbb{R}$ is unbounded, we have a sequence $(x_n)$ such that $f(x_n) > n ||x_n||.$ We can say without loss of 
+generality, and by discarding non-zero elements, we have a sequence $(x_n)$ of norm $1.$ Pick $x \in X.$ Then see that the sequence 
+$z_n=x-\frac{f(x)}{f(x_n)}x_n,$ which is clearly in $K,$ the kernel of $f.$ Also it can be seen that as $n \to \infty,$ we have $||z_n|| \leq$
 \section{} %Problem 12 
 
 \end{document}

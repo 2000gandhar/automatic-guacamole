@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.9.28)  23 JAN 2024 22:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.9.28)  26 JAN 2024 13:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -719,34 +719,54 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Overfull \hbox (5.07082pt too wide) in paragraph at lines 64--67
+[]\T1/cmr/m/n/10 For the first case, we have $\OML/cmm/m/it/10 ^^M[]\OT1/cmr/m/
+n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 ^^M[]\OT1/cmr/m/n
+/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :$ \T1/cmr/m/n/10 Then
+ $\OMS/cmsy/m/n/10 j [][] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t
+\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 dt\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 = \OMS/c
+msy/m/n/10 j\OT1/cmr/m/n/10 (1 + \OML/cmm/m/it/10 i\OT1/cmr/m/n/10 ) [][] \OML
+/cmm/m/it/10 ^^M[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/
+m/it/10 dt\OMS/cmsy/m/n/10 j \OT1/cmr/m/n/10 = []\OMS/cmsy/m/n/10 j [][] \OML/c
+mm/m/it/10 ^^M[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cmm/m/
+it/10 dt\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 :$
+ []
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./CAH1mmat2304.aux) )
- 
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (13.88197pt too wide) in paragraph at lines 86--90
+\OML/cmm/m/it/10 t;$ \T1/cmr/m/n/10 in a clas-sic fash-ion of abuse of no-ta-ti
+on. These are the four curves: $[] \OML/cmm/m/it/10 ; [] ; [] ;$
+ []
+
+[2] [3] (./CAH1mmat2304.aux) ) 
 Here is how much of TeX's memory you used:
  17072 strings out of 480247
  331234 string characters out of 5896151
- 610847 words of memory out of 5000000
+ 620847 words of memory out of 5000000
  34692 multiletter control sequences out of 15000+600000
  480975 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  125i,11n,129p,549b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600
-pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.
-600pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm12
-00.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/symbols/msbm10.pfb>
-Output written on CAH1mmat2304.pdf (2 pages, 101090 bytes).
+ </home/gandhar/.texlive2021/texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecrm1000.600pk> </home/gandhar/.texlive2021/texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecbx1440.600pk> </home/gandhar/.texlive2021/texmf-var/font
+s/pk/ljfour/jknappen/ec/ecrm1200.600pk></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on CAH1mmat2304.pdf (3 pages, 125237 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 155 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
