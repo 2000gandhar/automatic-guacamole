@@ -55,67 +55,108 @@ Let us assume that there exists a holomorphic function on a domain $D$ such that
 Thus for $f=u+iv,$ we must have that $u=\frac{1}{2},$ a constant. Then $u_x=u_y=0,$ and by the Cauchy-Riemann equations, we have $v_y=u_x=0=u_y=-v_x.$ Thus 
 we have $v$ constant as well, which means that $f$ must be a constant.  
 \section{} %Problem 3 
+Note that $f(z)=\exp (-z^{-2}).$ We know that the exponential function is entire, so any value of $-z^{-2}$ is permissible. However, $-z^{-2}$ is analytic 
+on $\mathbb{C} \backslash \{0\}.$ Thus $f$ is analytic on $\mathbb{C}\backslash\{0\}.$ 
+
+Since the above holds, the Cauchy-Riemann equations are satisfied on this domain. Now see that 
+\begin{align*}
+	\lim_{h \to 0} \frac{f(h)-f(0)}{h} &= \lim_{h \to 0} \frac{\exp(-h^{-2})}{h}.
+\end{align*}
+For $h=h_1 \in \mathbb{R},$ we have $$\lim_{h \to 0} \frac{\exp(-h^{-2})}{h} \leq \frac{1}{h} \to 0. $$
+However, for $h=ih_2,$ we have $$\lim_{h \to 0} \frac{\exp(h^{-2})}{h},$$ which is unbounded as $h \to 0.$
+Thus no limit exists and $f$ is not differentiable at $0.$
 
 \section{} %Problem 4 
-Let us assume that the image of $f$ lies on a line passing through the origin. We have $f(t)=\gamma_1(t)+i\gamma_2(t),$ and $\exists \alpha \in \mathbb{R} 
-f([0,1])\subseteq ((x,\alpha x), x \in \mathbb{R})$ or $f([0,1]) \subseteq i\mathbb{R}.$ In the second case, we have $\gamma_1(t)=0.$ Then 
-$|\int_{0}^1f(t)dt| = |i\int_{0}^1\gamma_2(t)dt| = |\int_{0}^1\gamma_2(t)dt|.$ Also $\int_{0}^1 |f(t)|dt= \int_{0}^1 |\gamma_2(t)|dt.$
+Let us assume that the image of $f$ lies on a line passing through the origin. We have $f(t)=f_1(t)+if_2(t),$ and $\exists \alpha \in \mathbb{R} 
+f([0,1])\subseteq ((x,\alpha x), x \in \mathbb{R})$ or $f([0,1]) \subseteq i\mathbb{R}.$ In the second case, we have $f_1(t)=0.$ Then 
+$|\int_{0}^1f(t)dt| = |i\int_{0}^1f_2(t)dt| = |\int_{0}^1f_2(t)dt|.$ Also $\int_{0}^1 |f(t)|dt= \int_{0}^1 |f_2(t)|dt.$ Since $f$ lies on a ray, the 
+integral $|\int_{0}^1 f_2(t)dt|= \int_{0}^1 |f_2(t)|dt$ as $f_2$ is only positive or only negative.
 
-For the first case, we have $\gamma_1(t)=\alpha \gamma_2(t).$ Then $|\int_{0}^1 f(t)dt| = |(1+i\alpha)\int_{0}^1 \gamma_1(t)dt| = 
-\sqrt{1+\alpha^2}|\int_{0}^1 \gamma_1(t)dt|.$ Also see that $\int_{0}^1 |f(t)|dt= |\int_{0}^1 |\gamma_1(t)+i\alpha \gamma_1(t)| dt = \sqrt{1+\alpha^2} 
-\int_{0}^1 |\gamma_1(t)|dt.$ 
+For the first case, we have $f_1(t)=\alpha f_2(t).$ Then $|\int_{0}^1 f(t)dt| = |(1+i\alpha)\int_{0}^1 f_1(t)dt| = 
+\sqrt{1+\alpha^2}|\int_{0}^1 f_1(t)dt|.$ Also see that $\int_{0}^1 |f(t)|dt= |\int_{0}^1 |f_1(t)+i\alpha f_1(t)| dt = \sqrt{1+\alpha^2} 
+\int_{0}^1 |f_1(t)|dt.$ Since $f$ lies on a ray, the integral $|\int_{0}^1 f_1(t)dt|= \int_{0}^1 |f_1(t)|dt$ as $f_1$ is only positive or only negative.
 
-
+We are given $\left| \int_{0}^1 f(t)dt\right|= \int_{0}^1 |f(t)|dt.$ Then let $\alpha= \int_{0}^1 f(t)dt$ and let $\beta = \frac{|\alpha|}{\alpha}.$ See 
+that $|\alpha| = \int_{0}^1 \beta f(t)dt \implies |\alpha| = \Re \left(\int_{0}^1 \beta f(t)dt\right)= \int_{0}^1 \Re(\beta f(t))dt= \int_{0}^1 |\beta 
+f(t)|dt.$ Thus we have $$\int_{0}^1  |\beta f(t)| -\Re(\beta f(t))dt=0.$$ But since the integrand must always be greater than zero, we must have  $ |\beta 
+f(t)| = \Re(\beta f(t)).$ Thus $\Im(\beta f(t))=0 \implies f_1= c f_2,$ for some $c \in \mathbb{R}.$
 \section{} %Problem 5 
 \begin{enumerate}
 	\item The curve can be parametrised by $\gamma: [0,1] \to \mathbb{C}.$ We have $\gamma(t)=\omega( 1-t) +\omega^2 t.$ Expanding this, we can see that 
 	$\gamma(t)= \frac{-1+ \sqrt{3}i(1-2t)}{2}.$ See that $\gamma'(t)=-\sqrt{3}i,$ then we have 
 	\begin{align*}
-		\int_{\gamma}|z^2|dz &= \int_{0}^{1}|\frac{-1+ \sqrt{3}i(1-2t)}{2}|^2 | (-\sqrt{3}i)|dt\\
-		&= \frac{\sqrt{3}}{4}\int_{0}^1 (\frac{-1+ \sqrt{3}i(1-2t)}{2})^2dt\\
-		&= \frac{\sqrt{3}}{4}\int_{0}^1 (1-3(1-2t)^2 -2\sqrt{3}(1-2t))dt\\
-		&= \frac{\sqrt{3}}{4}\int_{0}^1 
+		\int_{\gamma}|z^2|dz &= \int_{0}^{1}\left|\frac{-1+ \sqrt{3}i(1-2t)}{2}\right|^2  (-\sqrt{3}i)dt\\
+		&= \frac{-\sqrt{3}i}{4}\int_{0}^1 (-1+ \sqrt{3}i(1-2t))^2dt\\
+		&= \frac{-\sqrt{3}i}{4}\int_{0}^1  \left( 1 + 3 (1-2t)^2 \right) dt\\
+		&= \frac{-\sqrt{3}i}{4}\left[t +  \frac{-1}{2}(1-2t)^{3} \right]^1_0\\
+		&= \frac{-\sqrt{3}i}{4} (1+ 1/2 - (- 1/2))= \frac{-\sqrt{3}i}{2}.
 	\end{align*}
 	\item The curve can be represented as $\gamma:\left[\frac{2\pi}{3},\frac{4\pi}{3}\right] \to \mathbb{C}.$ We have $\gamma(t)= e^{it}.$ For this we have 
-	$\gamma'(t)=ie^{it},$ so $|\gamma'(t)| =1.$ Then the integral is 
+	$\gamma'(t)=ie^{it},$ then the integral is 
 	\begin{align*}
-		\int_{\gamma}|z^2|dz &= \int_{\frac{2\pi}{3}}^{\frac{4\pi}{3}}|e^{it}|^2|1|dt\\
-		&= \int_{\frac{2\pi}{3}}^{\frac{4\pi}{3}}dt\\
-		&= \frac{2\pi}{3}.
+		\int_{\gamma}|z^2|dz &= \int_{\frac{2\pi}{3}}^{\frac{4\pi}{3}}|e^{it}|^2ie^{it}dt\\
+		&= i\int_{\frac{2\pi}{3}}^{\frac{4\pi}{3}}e^{it}dt\\
+		&= \left[e^{it}\right]^{\frac{4\pi}{3}}_{\frac{2\pi}{3}}= -\sqrt{3}i.
 	\end{align*} 
 	\item Here, $\gamma$ has four parts labelled $1$ to $4.$ The curves are separately parametrised by the same parameter $t,$ in a classic fashion of abuse 
 	of notation. These are the four curves: $\left(\frac{1}{2},t-\frac{1}{2}\right), \left(\frac{1}{2}-t,\frac{1}{2}\right), 
-	\left(-\frac{1}{2},\frac{1}{2}-t\right),$ and $\left(t-\frac{1}{2},-\frac{1}{2}\right).$ Their respective absolute values of derivatives are $1$ 
-	throughout. The integral is calculated thus:
+	\left(-\frac{1}{2},\frac{1}{2}-t\right),$ and $\left(t-\frac{1}{2},-\frac{1}{2}\right).$ Their derivatives are $i, -1, -i, 1.$ The integral is 
+	calculated thus:
 	\begin{align*}
-		\int_{\gamma}|z|^2dz &= \int_{0}^1 \left(\frac{1}{2}\right)^2+\left(t-\frac{1}{2}\right)^2dt+ \int_{0}^1 
+		\int_{\gamma}|z|^2dz &= i\int_{0}^1 \left(\frac{1}{2}\right)^2+\left(t-\frac{1}{2}\right)^2dt+ (-1)\int_{0}^1 
 		\left(\frac{1}{2}-t\right)^2+\left(\frac{1}{2}\right)^2dt+\\
-		&\int_{0}^1 \left(-\frac{1}{2}\right)^2+\left(\frac{1}{2}-t\right)^2dtz+ \int_{0}^1 \left(t-\frac{1}{2}\right)^2+\left(-\frac{1}{2}\right)^2dt\\
-		&= 4(\frac{1}{4} + \frac{1}{12})=\frac{4}{3}. 
+		&(-i)\int_{0}^1 \left(-\frac{1}{2}\right)^2+\left(\frac{1}{2}-t\right)^2dtz+ 1\int_{0}^1 \left(t-\frac{1}{2}\right)^2+\left(-\frac{1}{2}\right)^2dt\\
+		&= 0. 
 	\end{align*}
 \end{enumerate}
+In the first two parts, the path integrals differed based on path taken. So even though the previous integral was zero, there is no primitive for $f.$
 \section{} %Problem 6 
 Let $C:=\{e^{it}: t \in \left[0,\frac{pi}{2}\right]\},$ which parametrizes the curve. Then 
 \begin{align*}
-\int_C \overline{\text{Log}(z)} dz &= \int_{0}^{\frac{\pi}{2}}\overline{\text{Log}(e^{it})} |ie^{it}|dt\\
-	&=\int_{0}^{\frac{\pi}{2}}\overline{\log(1)+it}dt\\
-	&=\int_{0}^{\frac{\pi}{2}}-it dt\\
-	&= -i \frac{\pi^2}{4}.
+\int_C \overline{\text{Log}(z)} dz &= \int_{0}^{\frac{\pi}{2}}\overline{\text{Log}(e^{it})} ie^{it}dt\\
+	&=\int_{0}^{\frac{\pi}{2}}\overline{\log(1)+it}ie^{it}dt\\
+	&=\int_{0}^{\frac{\pi}{2}}te^{it} dt\\
+	&= [-ite^{it}+e^{it}]^{\frac{\pi}{2}}_0= (-\frac{\pi}{2}+i)-1\\
+	&= -\left(\frac{\pi}{2}+1\right)+i.
 \end{align*}
 
 \section{} %Problem 7 
+We let $z=Re^{it},$ and see that $z'=iRe^{it}.$ Then substituting into the integral, we get 
+$$\int_{\gamma_R} \frac{e^{iz}}{z}dz = \int_{0}^{\pi} \frac{e^{iRe^{it}}}{Re^{it}}iRe^{it}dt.$$ We just consider the integral $\int_{0}^{\pi} 
+\frac{e^{iRe^{it}}}{Re^{it}}Re^{it}dt.$ We have $\int_{0}^{\pi} \frac{e^{iRe^{it}}}{Re^{it}}Re^{it}dt=\int_{0}^{\pi} e^{iRe^{it}}dt=\int_{0}^{\pi} 
+e^{i(R\cos t + iR \sin t)}dt=\int_{0}^{\pi} e^{iR\cos t} e^{-R \sin t}dt.$ Now $\left|\int_{0}^{\pi} e^{iR\cos t} e^{-R \sin t}dt\right| \leq 
+\int_{0}^{\pi}e^{-R \sin t}dt.$ Since $\sin (\pi -t) = \sin t,$ then the function is symmetric about $\pi/2.$ Then we have  $\int_{0}^{\pi}e^{-R \sin t}dt = 
+2 \int_{0}^{\pi/2}e^{-R \sin t}dt.$ We have $\sin t \geq \frac{2t}{\pi}.$ Thus we have $ e^{-R \sin t} \leq e^{\frac{-2tR}{\pi}} \implies \int_{0}^{\pi/2} 
+e^{-R \sin t} \leq \int_{0}^{\pi/2} e^{\frac{-2tR}{\pi}}= \frac{\pi (e^{-R}-1)}{2R} \to 0,$ which is the desired result.
 \section{} %Problem 8 
+We need to look at $ \sqrt{1+z} + \sqrt{1-z}.$ The square root function is defined for all complex numbers except the points $(-\infty,0],$ that is, 
+non-positive real numbers. Then $\sqrt{1+z}$ must avoid $(-\infty, -1]$, and $\sqrt{1-z}$ must avoid $ [1,\infty).$ Thus $\sqrt{1+z} + \sqrt{1-z}$ is 
+defined on $\mathbb{C}\backslash (-\infty, -1] \cup  [1,\infty).$
 \section{} %Problem 9 
-We will try to describe the function $\log \log z,$ the objective is to make sure that the argument of the function lies in $(-\pi,\pi].$ 
-Let $z=x+iy.$ Then we have 
-\begin{align*}
-	\log \log (x+iy) &= \log \left( \log |z| + i 2n\pi \arg(z)  \right)\\
-	&= \log \left( \frac{1}{2} \log (x^2+y^2) + i 2n\pi \tan^{-1}\left(\frac{y}{x}\right)  \right)\\
-	&= \frac{1}{2} \log \left( \frac{1}{4} \log \left(x^2+y^2\right)^2 +4n\pi^2n^2 \tan^{-1}\left(\frac{y}{x}\right)^2 \right) \\
-	&+ i\left( \frac{4\pi n}{\log (x^2+y^2)}\tan^{-1}\left(\frac{y}{x}\right) \right),
-\end{align*}
-where $n \in \mathbb{Z}.$ 
+We have $\log \log z.$ We know that $\log $ is defined on $\mathbb{C} \backslash (-\infty, 0].$ Then $\log \log z $ needs to avoid $(-\infty,0].$ For this, 
+$\log z$ must avoid $[0,1).$ Therefore $z$ must avoid $[1,e).$ Therefore $\log \log z$ is defined on $\mathbb{C} \backslash \{[1,e)\}.$ 
 \section{} %Problem 10
-We know that $|dz| = -iR \frac{dz}{z},$  then our integral is $I=\int_{|z|=R}\frac{-iRdz}{|z-a|^2}.$ If $|a| > R,$ then our function $\frac{1}{|z-a|^2}$ is 
-holomorphic in the interior of the circle $|z|=R,$ so the integral must be $0.$ In the case where $|a| < R,$ we can use Cauchy's  
+ We proceed case-wise. For $a=0,$ we have 
+ $$\int_{|z| =R} \frac{|dz|}{|z|^2}=\int_{|z| = R} \frac{-i dz}{Rz} = \frac{-i}{R} \int_{|z| = R} \frac{dz}{z}=\frac{2\pi}{R}.$$
+ Now by rotating $a$ through some angle $\theta$ we can bring it to the real line. See that for $z'= e^{i\theta}z,$ we get 
+ $|dz'| =|e^{i\theta}dz|=|dz|.$ Also, $|z'-a|^2=|e^{i\theta}|^2|z-ae^{\i\theta}|^2,$ so we assume that $a \in \mathbb{R}, a >0.$
+  Note that on the circle $|z|=R,$ we have $\bar{z}= \frac{R^2}{z}.$ Now see that 
+  \begin{align*}
+  	\int_{|z| =R} \frac{|dz|}{|z|^2} &= \int_{|z| =R} \frac{-iR dz/z}{(z-a)(\bar{z}-a)}= -iR\int_{|z| =R} \frac{dz}{(z-a)(R^2-az)}\\
+  	&= \frac{iR}{a^2-a^2} \left( \int_{|z| = R}\frac{dz}{z-a}+ a \int_{|z| = R} \frac{dz}{R^2- az} \right).
+  \end{align*}
+Now, if $a < R,$ then the first integral in the bracket is $2\pi i$ while the second is $0$ and the reverse when $a > R.$
+
+Thus we have $$\frac{2\pi R}{R^2- |a|^2} $$ for $|a|<R$ and $$\frac{2\pi R}{|a|^2-R^2} $$ for $|a| >R.$ This also takes care of the case where $a=0.$
+
 \end{document}
+
+
+
+
+
+
+
+
+
+

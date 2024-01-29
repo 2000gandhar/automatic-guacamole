@@ -100,7 +100,12 @@ Let $X$ and $X/Y$ be Banach spaces. Then take $(y_n),$ a Cauchy sequence in $Y.$
 for $m,n \geq N,$ we have $||y_m-y_n||< \varepsilon.$ As a Cauchy sequence in $X,$ this must converge to some element $y_0 \in X.$ We now need to show that 
 $y_0 \in Y.$ But since $Y$ is closed and $y_0$ is a limit point, we must have $y_0 \in Y.$
 
-Let $X$ and $Y$ be Banach spaces. 
+Let $X$ and $Y$ be Banach spaces. Take $(x_n)$ as a sequence in $X$ such that $(x_n+Y)$ is Cauchy. Then pick $\varepsilon>0.$ Then there is a $N \in 
+\mathbb{N}$ such that for $m,n \geq N$ $||(x_m-x_n)+Y|| < \varepsilon.$ See that $||x_m-x_n|| \leq ||(x_m-x_n)+y||+||y||.$ Since the expression on the left 
+is independent of $y,$ then we can set $||(x_m-x_n)+y||$ to $||(x_m-x_n)+Y||,$ and $||y||$ to $0,$ as $0 \in Y.$ Then we have $||x_m-x_n|| < \varepsilon,$ 
+which means that $(x_n)$ is Cauchy. Then since $X$ is Banach, we have $x_n \to x.$ Then we propose that $x + Y$ is the limit of $(x_n+Y).$ See that 
+$||(x_n+Y)-(x+Y)|| = || (x_n-x)+Y || = \inf_{y \in Y} \{||(x_n-x)+y|| \}.$ Then, for any choice of $y \in Y,$ we have $$ || (x_n-x)+Y || \leq || (x_n-x)+y 
+||.$$ Then for $y=0,$ we have $$|| (x_n-x)+Y || \leq ||x_n-x|| < \varepsilon,$$ which implies that $X/Y$ is Banach. 
 \section{} %Problem 6 
 Assume that $X$ is a Banach space. Let $(x_n)$ be an absolutely convergent series in $X,$ that is, $\sum_{i=1}^n||x_i||$ converges to $c \in \mathbb{R}$ as 
 $n \to \infty.$ Thus  
@@ -110,7 +115,8 @@ Now we have $ $
 For the converse, take a Cauchy sequence $(x_n).$ Pick $\varepsilon>0.$ Pick $N(n) \in \mathbb{N}$ such that for $m,n \geq N,$ we have $ ||x_{m}-x_n ||< 
 \frac{\varepsilon}{2^n}$ Now see that $\sum_{i=1}^n ||x_{i+1}-x_i||$ 
 \section{} %Problem 7 
-Let $\ell^p$ be the space of all $p-$power summable sequences. Then $||(x_n)||=(\sum_{i=1}^{\infty}|x_i|^p)^\frac{1}{p}.$ Now we want to show that the space 
+Let $\ell^p$ be the space of all $p-$power summable sequences. Then $||(x_n)|| =(\sum_{i=1}^{\infty}|x_i|^p)^\frac{1}{p}.$ Now we want to show that the 
+space 
 $K=\{(x_n) \in \ell^p: x_i=0 \forall i>n, n \in \mathbb{N}\}$ is dense in $\ell^p.$ Take any $(x_n)^{(0)}_{n \in \mathbb{N}} \in \ell^p.$ There is a 
 sequence of elements in $\ell^p$ $(x_n)^{(m)} \subseteq K$ such that $x_n^{(m)}=x_n$ if $n \leq m,$ and $0$ otherwise. See that 
 $||(x_n)^{(m)}-(x_n)^{(0)}||_p=\left(\sum_{i=m+1}^{\infty}|x_i|^p\right)^{\frac{1}{p}}.$ Since $||(x_n)^{(m)}||_p \to ||(x_n)^{(0)}||_p$ as $m \to \infty,$ 
