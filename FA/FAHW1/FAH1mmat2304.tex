@@ -183,15 +183,24 @@ Since the linear functional $f:X \rightarrow \mathbb{R}$ is unbounded, we have a
 generality, and by discarding non-zero elements, we have a sequence $(x_n)$ of norm $1.$ Pick $x \in X.$ Then see that the sequence 
 $z_n=x-\frac{f(x)}{f(x_n)}x_n,$ which is clearly in $K,$ the kernel of $f.$ Also it can be seen that as $n \to \infty,$ we have $||z_n|| \leq$
 \section{} %Problem 12 
-Let $X$ be the subspace of all functions in $C[0,1]$ such that $f(0)=0.$ Let $Y$ be the closed subspace of functions in $X$ such that $\int_{0}^{1}f(t)dt = 
-0.$ Then take any function $f \in X$ such that $||f|| =1.$ Consider the map $F: X \to \mathbb{R}$ where $$F(f)= \int_{0}^1 f(t)dt. $$
-Then $Y= \ker F,$ and we have $ ||F|| = \sup_{||f|| =1} F(f) \leq 1 \cdot ||f||=1.$ Thus $||F|| =1.$
-Now see that for $f \notin Y$ we have $ X=Y \oplus \text{span}\{f\}.$ Thus for $g \in X$ we have $g=f-ty,$ where $t \in \mathbb{R}$ and $y \in Y.$ 
-Thus $||F|| = \sup_{y \in Y, t \in \mathbb{R}}\frac{|F(f-ty)|}{||f-ty||}.$ 
-Since $F(y)=0$ we have $$ ||F|| = \sup_{y \in Y, t \in \mathbb{R}}\frac{|F(f)|}{||f-ty||}=\sup_{g \in Y}\frac{|F(f)|}{||f-g||}=\frac{|F(x)|}{d(f,Y)}.$$
-Thus we have for $||F||=1,$ $$d(f,Y)= |F(f)|.$$
-Note that $x=1$ and $x=-1$ are the functions for which $|F(f)|=1,$ but these functions are not in $X.$ Thus we must have $d(f,Y)<1,$ which means Riesz's 
-lemma cannot hold for $r=1 $ here.
+
+For $X$ is finite dimensional, we take $r_n=1-\frac{1}{n},$ and let $Y \subsetneq Z$ be two closed subspaces of $X.$ Then we have by Riesz lemma  $(z_n)$ 
+such that $||z_n||=1,$ and $||z_n-Y|| \geq r_n.$ Then note that $r_n \to 1,$ since $(z_n)$ is on the closed sphere in a finite dimensional linear space 
+which is compact, there is a convergent subsequence whose limit is on the sphere, while the distance of this limit must be $1!$ Let $z$ be that convergent 
+point for the subsequence $(z_{n_i})_{i \in \mathbb{N}}$. Then for $\varepsilon= \frac{1}{n_i}>0$ we have $||z_{n_i}-z||< \frac{1}{n_i},$ and $|r_{n_i}- 1|< 
+\frac{1}{n_i},$ which means that for finite dimensional linear spaces the Riesz lemma holds for $r=1.$
+
+%Let $X$ be the subspace of all functions in $C[0,1]$ such that $f(0)=0.$ Let $Y$ be the closed subspace of functions in $X$ such that $\int_{0}^{1}f(t)dt = 
+%0.$ Then take any function $f \in X$ such that $||f|| =1.$ Consider the map $F: X \to \mathbb{R}$ where $$F(f)= \int_{0}^1 f(t)dt. $$
+%Then $Y= \ker F,$ and we have $ ||F|| = \sup_{||f|| =1} F(f) \leq 1 \cdot ||f||=1.$ Thus $||F|| =1.$
+%Now see that for $f \notin Y$ we have $ X=Y \oplus \text{span}\{f\}.$ Thus for $g \in X$ we have $g=f-ty,$ where $t \in \mathbb{R}$ and $y \in Y.$ 
+%Thus $||F|| = \sup_{y \in Y, t \in \mathbb{R}}\frac{|F(f-ty)|}{||f-ty||}.$ 
+%Since $F(y)=0$ we have $$ ||F|| = \sup_{y \in Y, t \in \mathbb{R}}\frac{|F(f)|}{||f-ty||}=\sup_{g \in Y}\frac{|F(f)|}{||f-g||}=\frac{|F(x)|}{d(f,Y)}.$$
+%Thus we have for $||F||=1,$ $$d(f,Y)= |F(f)|.$$
+%Note that $x=1$ and $x=-1$ are the functions for which $|F(f)|=1,$ but these functions are not in $X.$ Thus we must have $d(f,Y)<1,$ which means Riesz's 
+%lemma cannot hold for $r=1 $ here.
+
+   
 \end{document}
 
 
