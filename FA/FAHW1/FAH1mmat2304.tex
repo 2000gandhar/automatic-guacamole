@@ -79,7 +79,15 @@ inequality.
 		&= (||f||_p+||g||_p)\frac{||f+g||_p^p}{||f+g||_p},
 	\end{align*}
 	which yields the required result.
-	\item 
+	\item We consider $(f_n),$ which is a Cauchy sequence of $L^p$ functions. Take a subsequence of functions $(f_{n_i})$ where 
+	$||f_{n_{i}} -f_{n_{i+1}}||_p < 2^{-i}.$ Now define $g_n(x)= \sum_{i=1}^{n}|f_{n_{i}} -f_{n_{i+1}}|$ and $g(x)= \sum_{i=1}^{\infty}|f_{n_{i}} 
+	-f_{n_{i+1}}|.$  Using the triangle triangle inequality, we have $||g_n||_p \leq 1.$ By Fatou's lemma, we have 
+	$$\int_{a}^b \liminf_{n} g_n \leq \liminf_{n} \int_{a}^b g_n.$$ 
+	We must have $g_n$ converges almost everywhere on $X.$ We let $f(x) = \liminf_{n} f_{n_i}(x)$ for almost $x \in X,$ where the function $0$ wherever the 
+	pointwise limit does not exist. Then we claim that this is the limit. 
+	For $\varepsilon>0,$ take $N$ such that $||f_m-f_n||_p< \varepsilon$. By Fatou's lemma, we have 
+	$$ \int_{a}^b |f-f_n|^p \leq \liminf_{n} \int_{a}^b |f_{n_i}-f_n|^p \leq \varepsilon^p,$$ which means $f \in L^p$ and $(f_n) \to f.$
+	
 
 \end{enumerate}
 \section{} %Problem 4 
@@ -88,13 +96,22 @@ inequality.
 	$$||f_1-F||_{\infty}= \inf_{c \in \mathbb{R} }\{ \sup_{t \in [0,1]} |t-c|  \},$$ which for $c \in [-1,0] \cup [1,2] $ is $1,$ while in $(0,1)$ it 
 	decreases to $\frac{1}{2}$ then goes back up to $1.$ Thus, we must have $||f_1-F||_{\infty}=\frac{1}{2}.$
 	\item We want to now see the distance between $f_2=t^2$ and $G,$ the space of all polynomials with degree at most $1.$ Then for some polynomial $-ax-b 
-	\in G,$ we want to see $\sup_{t \in [0,1]}\{|t^2+ax+b|\}$ 
+	\in G,$ we want to see $\inf_{a,b \in \mathbb{R}}\sup_{t \in [0,1]}\{|t^2+ax+b|\}.$ See that we have $\sup_{t \in [0,1]} |t^2-t+1/8|=\frac{1}{8}.$ This 
+	is an upper bound.  
+	See that by varying $a,$ we translate it along the $x-$axis. We can vary $b$, which gives us translation in the $y-$axis. Note that to minimise the 
+	maximum value of $|t^2+at+b|$ we must have the value of the polynomial at $t=0,t=1,t=\frac{-a}{2}$ be the same. Then we take the polynomial to be 
+	symmetric about $t=\frac{1}{2}.$ For this, $a=-1.$ Now we have $|t^2-t+b|,$ which attains a critical value at $t=\frac{1}{2},$ that is $\left|b - 
+	\frac{1}{4}\right|.$ Thus we have $|b| =\left|b-\frac{1}{4} \right|.$ A solution is $b=\frac{1}{8}.$ See that the this then must indeed be $||t^2-G||.$  
 \end{enumerate}
 \section{} %Problem 5 
 Let $Y$ and $X/Y$ be Banach spaces. Then take $(x_n)$ to be a Cauchy sequence in $X.$ That is, for all $\varepsilon > 0$ there exists $N \in \mathbb{N}$ 
 such that for $m,n \geq N$ we have $$||x_m-x_n||< \varepsilon.$$
-By the canonical projection to $X/Y$ we can see that the sequence $(x_n+Y)$ is also Cauchy, since we have $$||x_m-x_n +Y|| \leq ||x_m-x_n+0|| < \varepsilon. 
-$$ Since $X/Y$ is Banach, we have $(x_n+Y) \to (x_0+Y).$ Now let $y_n:= $ 
+Consider the canonical projection $p: X \twoheadrightarrow X/Y.$ Its kernel is $Y.$ The sequence $(x_n)$ sent to $X/Y$ is also Cauchy, as $||(x_m-x_n)+Y|| 
+\leq ||x_m-x_n|| < \varepsilon.$ This must converge to some coset $K$ in $X/Y,$ since $X/Y$ is Banach. Now pick an element $y_n$ such that $||(x_m-x_n)+y_n 
+||<\varepsilon.$ Then this sequence $(y_n)$ is Cauchy since $ ||y_m-y_n|| < ||(x_n-y_n)-(x_m-y_m) ||< \varepsilon.$ Then we have that $y_n \to y,$ where $y 
+\in Y.$ Now we propose that there is an element in $X$ that is $K+y,$ where $K$ is of the form $x+Y.$ Then we say that $x \in x+Y + y$ is the limit of 
+$(x_n).$ Note that $Y$ contains $-y,$ so the element in $x+Y$ that corresponds to $-y \in Y$ is our choice of $X.$ See that $x_n +Y \to x+Y, $ and $y_n \to 
+y,$ by setting $-y$ instead of $Y$ and adding the two convergent sequences in $X$ we get our desired result.
 
 Let $X$ and $X/Y$ be Banach spaces. Then take $(y_n),$ a Cauchy sequence in $Y.$ Thus for all $\varepsilon > 0,$ there exists $N \in \mathbb{N}$ such that 
 for $m,n \geq N,$ we have $||y_m-y_n||< \varepsilon.$ As a Cauchy sequence in $X,$ this must converge to some element $y_0 \in X.$ We now need to show that 
@@ -106,14 +123,20 @@ is independent of $y,$ then we can set $||(x_m-x_n)+y||$ to $||(x_m-x_n)+Y||,$ a
 which means that $(x_n)$ is Cauchy. Then since $X$ is Banach, we have $x_n \to x.$ Then we propose that $x + Y$ is the limit of $(x_n+Y).$ See that 
 $||(x_n+Y)-(x+Y)|| = || (x_n-x)+Y || = \inf_{y \in Y} \{||(x_n-x)+y|| \}.$ Then, for any choice of $y \in Y,$ we have $$ || (x_n-x)+Y || \leq || (x_n-x)+y 
 ||.$$ Then for $y=0,$ we have $$|| (x_n-x)+Y || \leq ||x_n-x|| < \varepsilon,$$ which implies that $X/Y$ is Banach. 
+
+
+
 \section{} %Problem 6 
 Assume that $X$ is a Banach space. Let $(x_n)$ be an absolutely convergent series in $X,$ that is, $\sum_{i=1}^n||x_i||$ converges to $c \in \mathbb{R}$ as 
-$n \to \infty.$ Thus  
-for all $\varepsilon > 0,$ $\exists N \in \mathbb{N}$ such that for all $n \geq N,$ $$| ||x_n|| - \alpha| < \varepsilon.$$
-Now we have $ $
+$n \to \infty.$ Thus  $s_n = \sum_{i=1}^n x_i,$ so for any $\varepsilon>0 $ there is some $N \in \mathbb{N}$ such that for $n \geq N,$ we have 
+$\sum_{i=N}^{\infty}||x_i|| < \varepsilon.$
+Now we have $||s_n-s_m|| \leq \sum_{i=n+1}^{m} ||x_i|| < \varepsilon.$ Since $(s_n)$ is Cauchy, it must converge to some value $s \in X.$ Thus this sequence 
+converges.
 
-For the converse, take a Cauchy sequence $(x_n).$ Pick $\varepsilon>0.$ Pick $N(n) \in \mathbb{N}$ such that for $m,n \geq N,$ we have $ ||x_{m}-x_n ||< 
-\frac{\varepsilon}{2^n}$ Now see that $\sum_{i=1}^n ||x_{i+1}-x_i||$ 
+For the converse, take a Cauchy sequence $(x_n).$  For $k \in \mathbb{N}$ pick $n_k \in \mathbb{N}$ such that for $m,n \geq n_k,$ we have $ ||x_{m}-x_n ||< 
+2^{-k}.$ In particular, $||x_{n_{k+1}}-x_{n_k}||< 2^{-k}.$ Let $y_1=x_{n_1},$ and $y_n= x_{n_{k+1}}-x_{n_{k}}.$ From this, it follows that $\sum ||y_n|| 
+\leq ||x_{n_1}||+1,$ thus this sequence is absolutely convergent. From this, see that this series must converge. Thus $ \sum_{i=1}^{\infty}y_n= \lim_{n \to 
+\infty} x_n$ is defined, hence the space $X$ is Banach. 
 \section{} %Problem 7 
 Let $\ell^p$ be the space of all $p-$power summable sequences. Then $||(x_n)|| =(\sum_{i=1}^{\infty}|x_i|^p)^\frac{1}{p}.$ Now we want to show that the 
 space 
@@ -160,5 +183,38 @@ Since the linear functional $f:X \rightarrow \mathbb{R}$ is unbounded, we have a
 generality, and by discarding non-zero elements, we have a sequence $(x_n)$ of norm $1.$ Pick $x \in X.$ Then see that the sequence 
 $z_n=x-\frac{f(x)}{f(x_n)}x_n,$ which is clearly in $K,$ the kernel of $f.$ Also it can be seen that as $n \to \infty,$ we have $||z_n|| \leq$
 \section{} %Problem 12 
-
+Let $X$ be the subspace of all functions in $C[0,1]$ such that $f(0)=0.$ Let $Y$ be the closed subspace of functions in $X$ such that $\int_{0}^{1}f(t)dt = 
+0.$ Then take any function $f \in X$ such that $||f|| =1.$ Consider the map $F: X \to \mathbb{R}$ where $$F(f)= \int_{0}^1 f(t)dt. $$
+Then $Y= \ker F,$ and we have $ ||F|| = \sup_{||f|| =1} F(f) \leq 1 \cdot ||f||=1.$ Thus $||F|| =1.$
+Now see that for $f \notin Y$ we have $ X=Y \oplus \text{span}\{f\}.$ Thus for $g \in X$ we have $g=f-ty,$ where $t \in \mathbb{R}$ and $y \in Y.$ 
+Thus $||F|| = \sup_{y \in Y, t \in \mathbb{R}}\frac{|F(f-ty)|}{||f-ty||}.$ 
+Since $F(y)=0$ we have $$ ||F|| = \sup_{y \in Y, t \in \mathbb{R}}\frac{|F(f)|}{||f-ty||}=\sup_{g \in Y}\frac{|F(f)|}{||f-g||}=\frac{|F(x)|}{d(f,Y)}.$$
+Thus we have for $||F||=1,$ $$d(f,Y)= |F(f)|.$$
+Note that $x=1$ and $x=-1$ are the functions for which $|F(f)|=1,$ but these functions are not in $X.$ Thus we must have $d(f,Y)<1,$ which means Riesz's 
+lemma cannot hold for $r=1 $ here.
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
