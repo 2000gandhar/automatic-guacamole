@@ -1,0 +1,70 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lachaise Assignment
+% LaTeX Template
+% Version 1.0 (26/6/2018)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Marion Lachaise & François Févotte
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+%----------------------------------------------------------------------------------------
+%	ASSIGNMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{} % Title of the assignment
+
+\author{Gandhar Kulkarni (mmat2304)} % Author name and email address
+
+\date{} % University, school and/or department name(s) and a date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\section{} %Problem 1 
+\section{} %Problem 2 
+\begin{enumerate}
+	\item Let $H$ be a non-abelian simple group. Consider $DH \trianglelefteq H.$ Then since $H$ is simple, we must have $DH= H$ or $DH=0.$ If $DH=0,$ then 
+	$H$ would be abelian, which is not possible, thus $H$ is perfect.
+	\item We need to calculate $D(\langle H,K\rangle).$ Any element of $\langle H,K \rangle$ can be realised as a word $w=h_1k_1\dots h_nk_n$ for some $n 
+	\in \mathbb{N}$ and $h_1,\dots,h_n \in H, k_1,\dots,k_n \in K.$ We also assume that the terms are reduced. We consider two such words $w_1$ and $w_2,$ 
+	where $w_1=h_1k_1\dots h_nk_n, w_2=h_1k_1\dots h'_{n'}k'_{n'}.$ Then any term in $D\langle H,K\rangle$ is of the form $w_1w_2w_1^{-1}w_2^{-1}= 
+	(h_1k_1\dots h_nk_n)(h_1k_1\dots h'_{n'}k'_{n'})(k^{-1}_nh^{-1}_n\dots k^{-1}_{1}h^{-1}_{1})(k^{-1}_{n'}h^{-1}_{n'}\dots k'^{-1}_{1}h'^{-1}_{1}),$ which 
+	is another word in $\langle H,K \rangle.$ Now take any word $w=h_1k_1\dots h_nk_n$ in $\langle H,K \rangle.$ 
+	
+	\item We propose that $D(g^{-1}Hg)=g^{-1}DHg.$ Take any element of $D(g^{-1}Hg),$ which is of the form 
+	$(g^{-1}h_1g)(g^{-1}h_2g)(g^{-1}h_1^{-1}g)(g^{-1}h_2^{-1}g)=g^{-1}(h_1h_2h_1^{-1}h_2^{-1})g \in g^{-1}DHg.$ These operations are all if and only if 
+	statements, hence $D(g^{-1}Hg)=g^{-1}DHg.$ If $H=DH,$ $D(g^{-1}Hg)=g^{-1}Hg.$
+	\item If $G$ is simple, then either $DG=0$ or $DG=G.$ Then for abelian simple groups the maximal perfect subgroup is $0,$ and in the non-abelian case it 
+	is $G$ itself. Both are clearly normal in $G.$ 
+\end{enumerate}
+\section{} %Problem 3 
+\section{} %Problem 4 
+\section{} %Problem 5
+\end{document}
+
+
+
+
