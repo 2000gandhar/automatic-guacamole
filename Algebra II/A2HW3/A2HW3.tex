@@ -53,8 +53,21 @@
 	4,$ $(1 2)(3 4)$ has order $2,$ but are not $2-$cycles. For $n=2,$ there are no order $2$ permutations that aren't $2-$cycles, so this is vacuously true 
 	for $n=2.$ For $n=3,$ the same principle applies since it is not possible to find two disjoint $2-$cycles. We have $ |\mathcal{K}| = \binom{n}{2},$ 
 	while $|\mathcal{K'}| = \binom{n}{2}\binom{n-2}{2} + \dots + \binom{n}{2} \dots \binom{n- 2 \lfloor\frac{n}{2}\rfloor}{2},$ which is greater than 
-	$|\mathcal{K}|$ for $n \geq 2.$ Thus $|\mathcal{K}| \neq |\mathcal{K'}|.$ 
-	\item  
+	$|\mathcal{K}|$ for $n \geq 2, n \neq 6.$ Thus $|\mathcal{K}| \neq |\mathcal{K'}|.$ 
+	
+	See that for any transposition $(a b),$ it swaps two elements. When an automorphism $\sigma$ acts on $(a b),$ we know that $a \mapsto a',$ $b \mapsto 
+	b',$ where $a' \neq b',$ since automorphisms are bijective. Then $\sigma(a b)$ is also a transposition.
+	\item  We have $\sigma((1 2))= (a b_2).$ See that $\sigma((1 2 k))= \sigma ((1 k ) (1 2)  )= \sigma((1 k))\sigma((1 2))=\sigma((1 k)) (a b_2).$ If 
+	$\sigma((1 k))$ is disjoint with $(a b_2),$ then the resultant element is of order $2.$ Thus $\sigma((1 k))$ must overlap with $(a b_2)$ for $k.$ 
+	On the other hand, we have $$\sigma((1 k)(i j))= \sigma((1 k)(1 j)(1 i))= \sigma((1 k))(a b_i)(a b_j)(a b_i)= \sigma((1 k))(b_i b_j).$$
+	Now, if $\sigma((1 k))$ has elements in common with $(b_i b_j)$ then we get a $3-$cycle, which cannot happen. Thus all elements of $\sigma((1 k))$ 
+	overlap with $(1 2)$ have the same element $a$. Thus $\sigma((1 k))=(a b_k).$
+	
+	\item Any permutation in $S_n$ can be written as $(a_1 \dots a_k)= (1 a_k)\dots (1 a_1).$ Then any automorphism is decided by where it sends its 
+	generators, which is $(1 k)$. First to choose $a$ we have $n$ choices. We have $n-1$ choices for $b_2,$ and so on. Thus we have at most $n!$ 
+	automorphisms of $n.$ However, we know that $S_n$ has trivial centre which means that 
+	$$\text{Inn}(S_n) \cong \frac{S_n}{\{e\}} \cong S_n,$$ and $\text{Inn}(S_n) \leq \text{Aut}(S_n),$ which means that we must have at least $n!$ 
+	automorphisms! This means that $\text{Aut}(S_n)=\text{Inn}(S_n)=S_n.$
 \end{enumerate}
 \section{} %Problem 2 
 \begin{enumerate}
@@ -90,23 +103,69 @@ Also, see that \begin{align*}
 	&= (\sigma(h_1)\sigma(\varphi_1(k_1)(h_2)), (k_1k_2)^a). 
 \end{align*}
 
-This shows that we have a homomorphism. Define $\theta:H \rtimes_{\varphi_2} K \to H \rtimes_{\varphi_1} K,$ such that 
-$\theta(h,k)=(\sigma^{-1}(h),k^{a'}),$ for some $a' \in \mathbb{Z}.$ If $K$ is finite then there exists some $ $
+This shows that we have a homomorphism. We need to find the kernel of $\psi.$ See that if $\sigma(h)=e_H,$ then we must have $h=e_H,$ since $\sigma \in 
+\text{Aut}(H),$ thus it is bijective and preserves the identity. If $k^a=e_K,$ then applying $\varphi_2$ on both sides, we have $\varphi_2(k^a)= \sigma 
+\varphi_1(k)\sigma^{-1}=e_K \implies \varphi_1(k)=e_K.$ Since $\varphi_1$ is injective, we must have $k=e_K.$ Thus $\psi$ is injective since the kernel is 
+trivial.
+
+We know that $x$ is a generator of $K,$ so $\varphi_1(x)$ generates $\varphi_1(K),$ and hence $\varphi_2(x)^a$ generates $\varphi_2(K).$ Thus there is some 
+power $a'\in \mathbb{Z}$ such that $ (x^a)^{a'}=e$ and $\sigma^{-1} \varphi_2(x) \sigma=\varphi_1(x^{a'}).$ Then see that for any $(h,k) \in H 
+\rtimes_{\varphi_2} K,$ we have $(\sigma^{-1}(h),k^{a'})$ as the corresponding pre-image, which means that $\psi$ is onto, as required. 
+
 \section{} %Problem 4 
 We have $|G| =75.$ We clearly have a $5-$Sylow subgroup of order $25,$ as well as a $3-$Sylow group of order $3.$ Since the number of $5-$Sylow subgroups 
 must be $5k+1$ and $5k+1|3,$ we are forced to have a normal subgroup of order $25.$ Then let $H \trianglelefteq G$ where $|H|=25.$ Let $K$ be some $3-$Sylow 
 subgroup of order $3.$ Then by Lagrange's theorem, $|H \cap K|=1,$ so we can construct a semi-direct product of the groups.  
+
+We have that the number of $3-$Sylow subgroups of $G$ are $n_3=3k+1,$ where $3k+1|25.$ The only choices are $n_3=1,$ which would give us an abelian group, 
+so assume that $n_3=25,$ the only other choice. These subgroups are all conjugate to each other. 
+
+We have $H$ of order $25,$ hence it is abelian as it is the square of a prime. Then it is either $\mathbb{Z}^{25}$ or $\mathbb{Z}_5 \times \mathbb{Z}_5 .$ 
+Since the units of $\mathbb{Z}^{25}$ have order $25-5=20,$ we cannot have any non trivial map from $K$ to $H.$ Therefore we must have $H=\mathbb{Z}_5 \times 
+\mathbb{Z}_5.$ The automorphisms of this group are basically the invertible maps on $\mathbb{Z}_5 \times \mathbb{Z}_5,$ which means $\text{Aut}(\mathbb{Z}_5 
+\times \mathbb{Z}_5)=\text{GL}_2(\mathbb{Z}_5).$ This group has order $(p^2-1)(p^2-p)=480.$ 
+
+See that $|K|||H|,$ but only once. Using the previous result we want to show that $H \rtimes_{\varphi_1} K \cong H \rtimes_{\varphi_2} K,$ for some 
+$\varphi_1, \varphi_2: K \to \text{Aut}(H).$ See that any map from $k \to \text{Aut}(H)$ is determined solely by where it sends $a \neq e_K.$ Then we have 
+$480$ choices, with one choices being where $a$ is sent to the trivial automorphism. This corresponds to the direct product of $H$ and $K.$ 
+
+For $\varphi_1, \varphi_2: K \to \text{Aut}(H),$ both non-trivial, we have $\varphi_1(K),$ and $\varphi_2(K)$ with three elements each. Hence there can only 
+be one non-abelian group. We pick $a,$ the generator of $K$ to be sent to some non-trivial automorphism of $H.$ That gives us $H \rtimes_{\varphi} K,$ where 
+$\varphi(a) \in \text{GL}_2(\mathbb{Z}_5)\backslash \{0\}.$ 
 \section{} %Problem 5
 Let $n= p_1^{\alpha_1}\dots p_r^{\alpha_r}$ be such that $\alpha_i=1,2$ for all $1 \leq i \leq r$ and $p_i \nmid p_j^{\alpha_j}-1$ for all $i,j.$ 
-Assume WLOG that $p_1 < \dots < p_r.$ Then we have that the number of $p_r-$Sylow subgroups is of the form $p_rk+1,$ and since $p_rk+1 | p_1^{\alpha_1}\dots 
-p_{r-1}^{\alpha_{r-1}},$ we have $p_rk+1|p_i^{\alpha_i},$ for $1 \leq i \leq r-1.$ Since $p_r$ is the largest prime, we 
+Assume WLOG that $p_1 < \dots < p_r.$ We will proceed by induction on $r,$ the number of prime factor For $r=1,$ we have order $p$ and $p^2,$ which are 
+always abelian. For $r=2,$ we have four possibilities--- $p_1p_2, p_1p_2^2, p_1^2p_2, p_1^2p_2^2.$ The number of $p-$Sylow groups in any case must divide 
+$p_j^{\alpha}$ for the other prime, and be $1$ modulo $p_i$ which is only possible if the number is $1,$ since $p_i \nmid p_j^{\alpha_j}-1.$
+So we have that all these groups are the direct product of two abelian groups, which is thus abelian.
+
+For $r \geq 3,$ we consider the result that $G$ is solvable. To see this, we use our assumption that all proper subgroups of $G$ are abelian. Thus any 
+normal series we have should have abelian quotient. Then $DG,$ the commutator subgroup of $G$ is abelian. We suppose that $|DG|$ isn't the power of a prime. 
+Then we have $DG=H \times K,$ where $H,K$ are non-trivial with coprime order. Then we have $G/H$ is abelian since it is a proper quotient of $G,$ which 
+contradicts the fact that $DG$ is the smallest normal subgroup of $G$ such that the quotient is abelian. Thus $DG$ is a $p-$group. We pick a $p_i-$Sylow 
+subgroup (for some $p_i$), say $P,$ that contains $DG.$ It contains $DG,$ so $P$ is normal. 
+
+For $p_j \neq p_i,$ and $P_j$ is a $p_j-$Sylow subgroup of $G,$ then $DG \cdot P_j$ is an abelian normal subgroup of $G$ (Since it is a subgroup containing 
+$DG$). We have $\gcd(|DG|,|P_j|)=1,$ thus $ P_j \trianglelefteq DG \cdot P_j.$ Then we have that the $p_j-$Sylow subgroup is normal when $p_j \neq p_i,$ and 
+we already know that the $p_i-$Sylow subgroup is normal. Then we have $G= P_1 \times \dots \times P_r,$ where these are all normal. This is a product of 
+groups of the order $p_i$ or $p_i^2,$ which is abelian, giving us the result.
 
 The converse can be shown by proving the contrapositive. See that if we have $n=p_1^{\alpha_1}\dots p_r^{\alpha_r},$ and $\alpha_i>2$ for some $i,$ or $p_i 
-| p_j^{\alpha_j}-1$ for some $i,j,$ then we are done. To check the first case, take $D_8,$ which has order $8=2^3.$ This group has centre $\{1,r^2\},$ which 
-implies that this group is not abelian.
+| p_j^{\alpha_j}-1$ for some $i,j,$ then we are done. 
 
-Now for the other case, take the group of order $75$ as we showed in the previous question was non-abelian. In that case, we had $3|25-1.$ Thus we have that 
-a  $n$
+To check the first case, take $G,$ which has order $p^3.$ Let $H=\mathbb{Z}_{p^2}$ and $K=\mathbb{Z}_p.$ Then we can find a non-trivial map $\varphi$ from 
+$K$ to $\text{Aut}(H)$ since $p| (p^2-1)(p^2-p).$ Thus $H \rtimes_{\varphi} K$ will be a non-abelian group of order $p^3.$ 
+
+Let us assume then, that $\alpha_i=1$ or $2,$ but that $p_i | p_j-1,$ where $\alpha_j=1.$ Then there is a non trivial map $\varphi:K \to \text{Aut}(H),$ 
+where $K$ is the group of order $p_i$ and the group of automorphisms of $H$, the group of order $p_j.$ Then we have $\mathbb{Z}_{\frac{n}{p_ip_j}} \times (H 
+\rtimes_{\varphi} K)$ is a non-abelian group.  
+
+Now for $p_i | p_j^2-1,$, take the group of order $75$ as we showed in the previous question was non-abelian. Generalising this, we have a non-trivial map 
+$\varphi:K \to \text{Aut}(H),$ where $K$ is the group of order $p_i$ and the group of automorphisms of $H$, the group of order $p_j^2.$ The group of 
+automorphisms will be $\text{GL}_2(\mathbb{Z}_{p_j}),$ of order $(p_j^2-1)(p_j^2-p_j),$ which $p_i$ clearly divides. Then we have 
+$\mathbb{Z}_{\frac{n}{p_ip_j^2}} \times (H \rtimes_{\varphi} K),$ where $\varphi$ is the non-trivial map. 
+
+Thus if $n$ is abelian, the aforementioned condition must apply.   
 \end{document}
 
 
