@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.9.28)  10 FEB 2024 23:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.9.28)  10 FEB 2024 22:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**CAHW2.tex
-(./CAHW2.tex
+**A2HW4.tex
+(./A2HW4.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -626,8 +626,8 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 \c@Question=\count312
-) (./CAHW2.aux)
-\openout1 = `CAHW2.aux'.
+) (./A2HW4.aux)
+\openout1 = `A2HW4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
@@ -720,35 +720,76 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Overfull \hbox (23.47354pt too wide) in paragraph at lines 57--62
+[]\T1/cmr/m/n/10 It is also in-ter-est-ing to see that $\OML/cmm/m/it/10 t[]t[]
+ \OT1/cmr/m/n/10 = (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2)(3\OML/cmm/m/it/10 ; 
+\OT1/cmr/m/n/10 4)(5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6) \OMS/cmsy/m/n/10 ^^N 
+\OT1/cmr/m/n/10 (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3)(2\OML/cmm/m/it/10 ; \OT
+1/cmr/m/n/10 4)(5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6) = (1\OML/cmm/m/it/10 ; \
+OT1/cmr/m/n/10 4)(2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 3)\OML/cmm/m/it/10 ; t[]t
+[] \OT1/cmr/m/n/10 = (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2)(3\OML/cmm/m/it/10 
+; \OT1/cmr/m/n/10 4)(5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6) \OMS/cmsy/m/n/10 ^^
+N
+ []
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./CAHW2.aux) ) 
+
+Overfull \hbox (4.92252pt too wide) in paragraph at lines 57--62
+\OT1/cmr/m/n/10 (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2)(3\OML/cmm/m/it/10 ; \OT
+1/cmr/m/n/10 6)(4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5) = (3\OML/cmm/m/it/10 ; \
+OT1/cmr/m/n/10 5)(4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6)\OML/cmm/m/it/10 ; t[]t
+[] \OT1/cmr/m/n/10 = (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2)(3\OML/cmm/m/it/10 
+; \OT1/cmr/m/n/10 4)(5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6) \OMS/cmsy/m/n/10 ^^
+N \OT1/cmr/m/n/10 (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4)(2\OML/cmm/m/it/10 ; \
+OT1/cmr/m/n/10 3)(5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6) = (1\OML/cmm/m/it/10 ;
+ \OT1/cmr/m/n/10 3)(2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4)\OML/cmm/m/it/10 ; t[
+]t[] \OT1/cmr/m/n/10 = (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4)(2\OML/cmm/m/it/1
+0 ; \OT1/cmr/m/n/10 5)(3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6) \OMS/cmsy/m/n/10 
+^^N
+ []
+
+
+Overfull \hbox (23.80643pt too wide) in paragraph at lines 57--62
+\OT1/cmr/m/n/10 (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2)(3\OML/cmm/m/it/10 ; \OT
+1/cmr/m/n/10 6)(4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5) = (1\OML/cmm/m/it/10 ; \
+OT1/cmr/m/n/10 5)(2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4)\OML/cmm/m/it/10 ; t[]t
+[] \OT1/cmr/m/n/10 = (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4)(2\OML/cmm/m/it/10 
+; \OT1/cmr/m/n/10 5)(3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6) \OMS/cmsy/m/n/10 ^^
+N \OT1/cmr/m/n/10 (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4)(2\OML/cmm/m/it/10 ; \
+OT1/cmr/m/n/10 3)(5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6) = (2\OML/cmm/m/it/10 ;
+ \OT1/cmr/m/n/10 6)(3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5)\OML/cmm/m/it/10 ;$ \
+T1/cmr/m/n/10 and $\OML/cmm/m/it/10 t[]t[] \OT1/cmr/m/n/10 = (1\OML/cmm/m/it/10
+ ; \OT1/cmr/m/n/10 3)(2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4)(5\OML/cmm/m/it/10 
+; \OT1/cmr/m/n/10 6) \OMS/cmsy/m/n/10 ^^N
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./A2HW4.aux) ) 
 Here is how much of TeX's memory you used:
- 17072 strings out of 480247
- 331157 string characters out of 5896151
- 617833 words of memory out of 5000000
- 34692 multiletter control sequences out of 15000+600000
- 480975 words of font info for 61 fonts, out of 8000000 for 9000
+ 17068 strings out of 480247
+ 331117 string characters out of 5896151
+ 614833 words of memory out of 5000000
+ 34690 multiletter control sequences out of 15000+600000
+ 479441 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 125i,13n,129p,542b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 125i,8n,129p,542b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home
 /gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </h
 ome/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> 
 </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600p
-k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy7.pfb>
-Output written on CAHW2.pdf (2 pages, 132182 bytes).
+k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb>
+Output written on A2HW4.pdf (2 pages, 98203 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 134 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

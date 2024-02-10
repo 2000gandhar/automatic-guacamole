@@ -47,13 +47,56 @@
 We will use Cauchy's integral formula here. The point $z_0=2$ is in the circle of radius $3,$ so we can use the formula. We have $$\int_C 
 \frac{2z^2-z-2}{z-z_0}dz= f(z_0)=2 \pi i g(z_0),$$ where $g(z)=2z^2-z-2$ for all $z_0 \in D= \int(C).$ Then we have $f(2)=2 \pi i (2(2)^2-2-2)=8\pi i.$    
 \section{} %Problem 2
+\begin{enumerate}
+	\item We will use Cauchy's integral formula here. Since the specified curve is a square, and it contains $z=\frac{-1}{2}.$ 
+	Thus we have $$\int_C \frac{3z}{2z+1}dz =\pi i \frac{1}{2 \pi i}\int_C \frac{3z}{z+\frac{1}{2}}dz= \pi i \frac{-3}{2}=\frac{-3}{2},$$ where the formula 
+	is used on $3z.$
+	\item We will use the Cauchy's integral formula for higher derivatives. We have $z=0$ in the curve, thus we have 
+	$$ \int_C \frac{\cosh (z)}{z^{2024}}dz =\frac{2 \pi i}{2023!}\frac{d^{2023}\cosh(z)}{dz^{2023}} \mid_{z=0},$$
+	which requires us to evaluate repeated derivatives of $\cosh(z).$ We know that $\cosh(z)= \frac{e^z + e^{-z}}{2},$ 
+	so $\frac{d^n \cosh(z)}{dz^{n}}= \frac{e^z + (-1)^n e^{-z}}{2}.$ For $n=2023, z=0,$ we get 
+	$ \frac{e^{0}+ (-1)^{2023}e^{-0}}{2}=0.$ Thus we have $\int_C \frac{\cosh (z)}{z^{2024}}dz=0.$
+\end{enumerate}
 \section{} %Problem 3 
+\begin{enumerate}
+	\item We have the annulus $ 0< |z-1|< 2.$ The function $f(z)=\frac{z}{(z-1)(z-3)}$ can be written as $f(z)=\frac{A}{(z-1)}+ \frac{B}{(z-3)},$ where 
+	$A=-0.5$ and $B=1.5.$ The term on the left can be ignored for the time being. We have 
+	\begin{align*}
+		\frac{B}{(z-3)} &= \frac{-B}{2} \cdot \frac{1}{1- \frac{(z-1)}{2}}\\
+		&= \frac{-B}{2} \sum_{n=0}^{\infty} \frac{(z-1)^n}{2^n} \text{ for $0 < |z-1| < 2.$}\\
+	\end{align*}
+Since we are in the annulus, we can define the Laurent series $\sum_{n=-\infty}^{\infty}a_n(x-1)^n$ as follows--- $a_{-1}= \frac{-1}{2}$, 
+$a_n=\frac{-3}{2^{n+2}}$ for $n \geq 0,$ and $0$ otherwise. 
+\item 
+\end{enumerate}
 \section{} %Problem 4 
+Let $D=C_R(0)$ be the open disc of radius $R$ centered around $0.$ We claim that $f(z)=2z^2+z$ is injective on this disc. We must have that for $z_1,z_2 \in 
+D,$ we have $f(z_1)=f(z_2) \implies z_1=z_2.$ Then $f(z_1)-f(z_2)= 2z_1^2+z_1 - 2z_2^2 - z_2 = 2(z_1-z_2)(2(z_1+z_2)+1).$ If this expression is $0,$ we 
+claim that $2(z_1+z_2)+1 \neq 0$ for any $z_1, z_2 \in D.$ Clearly $\frac{-1}{2} \notin D,$ so $R < \frac{1}{2}.$ If we try to solve $z_1+z_2=\frac{1}{2},$ 
+then for $z_1=x_1+iy_1, z_2=x_2+iy_2,$ we have $y_1=-y_2$ and $x_1+x_2=\frac{-1}{2}.$ Thus see that we need to avoid the point $z=\frac{-1}{4}$ as well. 
+Thus $R < \frac{1}{4}.$ If $R>\frac{1}{4},$ it is possible to have points such that the above equations are satisfied. Thus $R=\frac{1}{4}.$ On the 
+boundary, any point except $z=\frac{-1}{4}$ works because of the above reason. However, if we choose $z_1=z_2=\frac{-1}{4},$ it would be not possible, but 
+note that here $f(z_1)-f(z_2)$ trivially. Thus this works even on the boundary.  
 \section{} %Problem 5 
 We decompose $f$ as $u+iv,$ where $u,v$ are real valued functions. Then we have $$(u+iv)^2=u-iv \implies u^2-u-v^2 + (2uv+v)i =0.$$
-This implies that $2uv+v=0,$ thus either $v=0$ on $D$ or $u= \frac{-1}{2}$ on $D.$
+This implies that $2uv+v=0,$ thus either $v=0$ on $D$ or $u= \frac{-1}{2}$ on $D.$ Substituting the two in the real part, we have $u^2=u$ which means 
+$u=0,1$ in the first case, and that $ v^2=\frac{3}{4}$ which implies that $v = \pm \frac{\sqrt{3}}{2}$ for the second case. 
+Thus there are four constant functions that satisfy the given condition--- $f=0, 1, \omega, \omega^2,$ where $\omega$ is a primitive third root of unity. 
 \section{} %Problem 6 
+We have $f$ is entire, and its image is in the upper half plane. Then we have $f=u+iv,$ where $v \geq 0.$ Then $g=\exp(if)$ is also an entire function. We 
+have $|g| = \left| e^{i(u +iv)} \right|= \left| e^{iu} \right| \cdot \left|e^{-v}\right|,$ which means that $|g| = \left|e^{-v}\right|,$ and since $v \geq 
+0,$ we must have that $g$ is a bounded function. This means that $g$ must be constant by Liouville's theorem, which implies that $f$ is constant.  
 \section{} %Problem 7 
 \section{} %Problem 8 
-
+We are asked to find the maximum modulus of a polynomial on the unit disc $D.$ By the maximum modulus principle, we know that the maximum must be attained 
+on the boundary of the circle, that is the set of points $z \in D$ such that $|z|=1.$ Thus let $z=e^{i\theta},$ and then see that $$f(e^{i\theta})= 
+ae^{2i\theta} + 2(|a|^2-1)e^{i\theta} -\bar{a}= e^{i\theta} \left( ae^{i\theta} + 2(|a|^2-1) -\overline{ae^{i\theta}} \right).$$ 
+Now we can say that 
+\begin{align*}
+	|p(z)|^2 &= |e^{i\theta}|^2 \left(\left(2|a|^2-2\right)^2+ \left( ae^{i\theta}-\overline{ae^{i\theta}} \right)^2 \right).
+\end{align*}
+Now see that the imaginary part is the only part dependent on $\theta.$ Let us only look at that. Let $a= re^{i\varphi}.$ Here, $r=|a|.$ Then we have 
+$g(z)= \left( ae^{i\theta}-\overline{ae^{i\theta}} \right)= 2 \Im\left(re^{i(\theta + \varphi)}\right)= 2r \sin (\theta + \varphi).$ We can differentiate 
+this with respect to $\theta$ to see that $g'(z)= 2r \cos(\theta + \varphi).$ Thus $g$ has a critical point at $\theta= - \varphi.$ Plugging this into 
+$|p(z)|^2,$ we get $$	|p(z)|^2 = \left(2(r^2-1)\right)^2 .$$ This means that $|p(z)| \leq 2(r^2-1) \leq 2,$ as required.
 \end{document}
