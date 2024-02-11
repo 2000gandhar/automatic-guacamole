@@ -87,6 +87,13 @@ We have $f$ is entire, and its image is in the upper half plane. Then we have $f
 have $|g| = \left| e^{i(u +iv)} \right|= \left| e^{iu} \right| \cdot \left|e^{-v}\right|,$ which means that $|g| = \left|e^{-v}\right|,$ and since $v \geq 
 0,$ we must have that $g$ is a bounded function. This means that $g$ must be constant by Liouville's theorem, which implies that $f$ is constant.  
 \section{} %Problem 7 
+Let us assume that $f,$ an entire function has non-dense image. Thus there exists $\lambda \in \mathbb{C}, r>0$ such that $f(\mathbb{C}) \cap B_r(\lambda) + 
+phi.$ Then see that $g(z)= \frac{1}{f(z)-\lambda}$ is an entire function, since it cannot be zero. Moreover, since $|f(z)- \lambda| > r \implies |g(z)|< 
+\frac{1}{r} $ which implies that $g$ is constant, hence $f$ is constant. This is a contradiction, hence we must have dense image. 
+
+Let us assume $g$ is as given. Let $B_M$ be the ball around the origin of radius $M.$ Then pick an $\varepsilon$ neighbourhood of $z \in \mathbb{C}$ that is 
+not in $f(B_M)$ and $\Re(z') > \Im(z')$ for all $z' \in B_{\varepsilon}(z).$ This cannot be in the image of $g,$ which contradicts the result that the image 
+of a non-constant entire function is dense in $\mathbb{C}.$ Thus we must have that $g$ is constant.   
 \section{} %Problem 8 
 We are asked to find the maximum modulus of a polynomial on the unit disc $D.$ By the maximum modulus principle, we know that the maximum must be attained 
 on the boundary of the circle, that is the set of points $z \in D$ such that $|z|=1.$ Thus let $z=e^{i\theta},$ and then see that $$f(e^{i\theta})= 
