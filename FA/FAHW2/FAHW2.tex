@@ -44,6 +44,12 @@
 %----------------------------------------------------------------------------------------
 
 \section{} %Problem 1 
+We need to check that rules of inner products hold--- 
+\begin{enumerate}
+	\item For $A=B,$ we have $\langle A,A\rangle=tr(AA^*)= \sum_{i,j}|a_{ij}|^2 \geq 0,$ where $a_{ij}$ denotes the elements of $A.$ 
+	Moreover, $||A|| =0 \implies |a_{ij}| =0 $ for all $1 \leq i,j \leq n \implies A=0.$ 
+	\item $\langle B,A \rangle = tr(BA^*)= tr(\overline{})$
+\end{enumerate}
 \section{} %Problem 2 
 \section{} %Problem 3 
 \section{} %Problem 4 
@@ -58,5 +64,7 @@ Expanding the entire thing, we have $$ \langle Tx,y\rangle= \sum_{1 \leq i \leq 
 $$\sum_{j=1}^n x_j \overline{\overline{k_{1i}}y_1 + \dots + \overline{k_{mi}}y_m} = \langle x, \overline{T}^{T}y \rangle!$$ Therefore from uniqueness of 
 adjoint we must have $T^{*}= \overline{T}^{T}.$
 \section{} %Problem 10 
+See that for any operator we have $$|\langle Tx,x\rangle| \leq ||Tx|| \cdot ||x|| \leq ||T||,$$
+taking $||x|| =1.$ Since the left of the inequality depends on $x$ while the right is independent, we have $\sup_{||x||=1}\langle Tx,x\rangle \leq ||T||.$
 
 \end{document}

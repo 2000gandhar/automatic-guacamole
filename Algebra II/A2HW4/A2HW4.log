@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.9.28)  11 FEB 2024 23:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.9.28)  12 FEB 2024 20:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -626,7 +626,27 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
 \c@Question=\count312
-) (./A2HW4.aux)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
+
+(/usr/share/texlive/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
+code.tex
+File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowinset=\dimen268
+\pgfarrowlength=\dimen269
+\pgfarrowwidth=\dimen270
+\pgfarrowlinewidth=\dimen271
+))) (./A2HW4.aux)
 \openout1 = `A2HW4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -647,28 +667,20 @@ LaTeX Font Info:    ... okay on input line 38.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count313
-\scratchdimen=\dimen268
+\scratchdimen=\dimen272
 \scratchbox=\box71
 \nofMPsegments=\count314
 \nofMParguments=\count315
 \everyMPshowfont=\toks39
 \MPscratchCnt=\count316
-\MPscratchDim=\dimen269
+\MPscratchDim=\dimen273
 \MPnumerator=\count317
 \makeMPintoPDFobject=\count318
 \everyMPtoPDFconversion=\toks40
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -721,7 +733,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (23.47354pt too wide) in paragraph at lines 57--62
+Overfull \hbox (23.47354pt too wide) in paragraph at lines 73--78
 []\T1/cmr/m/n/10 It is also in-ter-est-ing to see that $\OML/cmm/m/it/10 t[]t[]
  \OT1/cmr/m/n/10 = (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2)(3\OML/cmm/m/it/10 ; 
 \OT1/cmr/m/n/10 4)(5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6) \OMS/cmsy/m/n/10 ^^N 
@@ -734,7 +746,7 @@ N
  []
 
 
-Overfull \hbox (4.92252pt too wide) in paragraph at lines 57--62
+Overfull \hbox (4.92252pt too wide) in paragraph at lines 73--78
 \OT1/cmr/m/n/10 (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2)(3\OML/cmm/m/it/10 ; \OT
 1/cmr/m/n/10 6)(4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5) = (3\OML/cmm/m/it/10 ; \
 OT1/cmr/m/n/10 5)(4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6)\OML/cmm/m/it/10 ; t[]t
@@ -749,7 +761,7 @@ OT1/cmr/m/n/10 3)(5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 6) = (1\OML/cmm/m/it/10 ;
  []
 
 
-Overfull \hbox (23.80643pt too wide) in paragraph at lines 57--62
+Overfull \hbox (23.80643pt too wide) in paragraph at lines 73--78
 \OT1/cmr/m/n/10 (1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2)(3\OML/cmm/m/it/10 ; \OT
 1/cmr/m/n/10 6)(4\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 5) = (1\OML/cmm/m/it/10 ; \
 OT1/cmr/m/n/10 5)(2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4)\OML/cmm/m/it/10 ; t[]t
@@ -765,32 +777,33 @@ T1/cmr/m/n/10 and $\OML/cmm/m/it/10 t[]t[] \OT1/cmr/m/n/10 = (1\OML/cmm/m/it/10
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./A2HW4.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./A2HW4.aux) ) 
 Here is how much of TeX's memory you used:
- 17068 strings out of 480247
- 331117 string characters out of 5896151
- 614853 words of memory out of 5000000
- 34690 multiletter control sequences out of 15000+600000
+ 18085 strings out of 480247
+ 363404 string characters out of 5896151
+ 646045 words of memory out of 5000000
+ 35693 multiletter control sequences out of 15000+600000
  479441 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 125i,8n,129p,542b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home
-/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </h
-ome/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> 
-</home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600p
-k> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.6
-00pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/symbols/msbm10.pfb>
-Output written on A2HW4.pdf (2 pages, 102741 bytes).
+ 125i,15n,129p,542b,977s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </
+home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk>
+ </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600
+pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.
+600pk> </home/gandhar/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm17
+28.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/symbols/msbm10.pfb>
+Output written on A2HW4.pdf (3 pages, 123668 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 166 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
