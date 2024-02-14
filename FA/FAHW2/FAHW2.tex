@@ -48,16 +48,47 @@ We need to check that rules of inner products hold---
 \begin{enumerate}
 	\item For $A=B,$ we have $\langle A,A\rangle=tr(AA^*)= \sum_{i,j}|a_{ij}|^2 \geq 0,$ where $a_{ij}$ denotes the elements of $A.$ 
 	Moreover, $||A|| =0 \implies |a_{ij}| =0 $ for all $1 \leq i,j \leq n \implies A=0.$ 
-	\item $\langle B,A \rangle = tr(BA^*)= tr(\overline{})$
+	\item $\langle B,A \rangle = tr(BA^*)= tr(A\overline{B}^T).$ See that $A\overline{B}^T (c_{ij})$ is such that 
+	$c_{ij}= \sum_{i=1}^n a_{i1}\overline{b_{j1}}.$ See that $\overline{c_{ij}}=\sum_{i=1}^n \overline{a_{i1} } b_{j1},$ gives us $ \sum_{1 \leq i,j \leq n} 
+	a_{ij}\overline{b_{ij}}.$ Note that replacing $A$ and $B$ just gives us the conjugate, which is the desired result, that $$\langle B,A \rangle = 
+	\overline{\langle A,B  \rangle}. $$
+	\item We have $\langle A+B,C\rangle= tr((A+B)C^*).$ We know that $$tr((A+B)C^*)= \sum_{1 \leq i,j \leq n} (a_{ij}+b_{ij}) \overline{c_{ij}}=\sum_{1 \leq 
+	i,j \leq n} a_{ij}\overline{c_{ij}} +\sum_{1 \leq i,j \leq n} b_{ij} \overline{c_{ij}}= tr(AC^*) + tr(BC^*).$$ 
 \end{enumerate}
+Therefore we have defined an inner product. 
+To solve the second part, see that since we can apply the Cauchy Schwarz inequality on inner product spaces, we have $$|\langle A,B\rangle|^2 \leq ||A||^2 
+\cdot ||B||^2,$$ which gives us the required answer.
 \section{} %Problem 2 
 \section{} %Problem 3 
+We assume that there is $y \in Y$ such that $||x-y|| = d(x,Y).$ Then we have $x-y \perp Y.$ Thus $\Re \langle x-y,y \rangle =0.$ This implies the other side 
+trivially. 
+
+For the converse, we assume that $$ \Re \langle x-y,z \rangle \leq  \Re \langle x-y,y \rangle. $$
+
+
 \section{} %Problem 4 
 \section{} %Problem 5 
 \section{} %Problem 6 
+We want to construct an isometric isomorphism between $H,$ a separable Hilbert space and $\ell^2,$ the sequence of square summable sequences over a linear 
+field. We have $H$ is separable, hence there exists a countable dense subset. This, in fact gives us an orthonormal Schauder basis $\{b_n\}_{n \in 
+\mathbb{N}}$. Let the standard orthonormal basis for $\ell^2$ be given by $\{e_n\}_{n \in \mathbb{N}}.$ Define $T:H \to \ell^2$ be such that 
+$$T(\sum_{n=1}^{\infty}a_n b_n) = \sum_{n=1}^{\infty}a_n e_n.$$
+
+For $\mathbf{a}= \{k_n\}, \mathbf{b}= \{l_n\} \in H,$ we have 
+$$	\langle T\mathbf{a}, T \mathbf{b} \rangle =  \langle \sum_{n=1}^{\infty} k_ne_n, \mathbf{b} \rangle = \sum_{n=1}^{\infty} k_n \langle e_n, \mathbf{b} 
+\rangle.$$ We can see that $$\langle e_n, \sum_{m=1}^{\infty} l_n e_n \rangle = \sum_{m=1}^{\infty} \overline{l_m} \langle e_n,e_m \rangle = 
+\overline{l}_n.$$  Thus we have $\langle T\mathbf{a}, T \mathbf{b} \rangle = \sum_{n=1}^{\infty} k_n \overline{l}_n= \langle \mathbf{a}, \mathbf{b} 
+\rangle.$ Thus our map is an isometry. It is clearly one-one. It is also onto, as the pre-image of any $\sum_{n=1}^{\infty} c_n e_n$ is $\sum_{n=1}^{\infty} 
+c_n b_n.$ Therefore we have an isomorphism of Hilbert spaces. 
 \section{} %Problem 7 
+If $V$ is a finite-dimensional vector space, then any total orthonormal set must be finite as there can be at most some finite number of linearly 
+independent elements. Since a total orthonormal set must span the entire space, we have a Hamel basis since any element can be written as a finite linear 
+combination of elements from the total orthonormal set.
+
+Conversely, let $V$ be a vector space such that every total orthonormal set is a Hamel basis. 
 \section{} %Problem 8 
 \section{} %Problem 9
+
 We are given $T: \mathbb{K}^n \to \mathbb{K}^m,$ where $$(Tx)(i)=\sum_{j=1}^{n}k_{ij}x_j,$$
 where $i=1,2,\dots,m.$ Let $a_i$ denote the $i$th row of $T.$ Then we have $\langle Tx,y \rangle= \sum_{j=1}^m (Tx)(i)y_j.$
 Expanding the entire thing, we have $$ \langle Tx,y\rangle= \sum_{1 \leq i \leq m, 1 \leq j \leq n} k_{ij}x_j \bar{y_i}.$$ We can write this as 
