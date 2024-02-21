@@ -1,49 +1,127 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Lachaise Assignment
-% LaTeX Template
-% Version 1.0 (26/6/2018)
-%
-% This template originates from:
-% http://www.LaTeXTemplates.com
-%
-% Authors:
-% Marion Lachaise & François Févotte
-% Vel (vel@LaTeXTemplates.com)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\setlist{nosep}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{tikz-cd}
+\usepackage[margin=0.9in,
+left=1.25in,%
+right=1.25in,%
+top=1.25in,%
+bottom=1.25in
+]{geometry}	
+% $\usepackage{stmaryrd} %For mapsfrom
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+%\usepackage{quiver}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{amsbsy}
+\usepackage{titlesec}
+%\usepackage{yhmath}
+%\usepackage{mathabx,epsfig}
 
-\documentclass{article}
 
-\input{structure.tex} % Include the file specifying the document structure and custom commands
+%Hyperref Settings------
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+	colorlinks,
+	linkcolor={black},
+	citecolor={red!50!black}
+	urlcolor={green!80!black}
+}
 
-%----------------------------------------------------------------------------------------
-%	ASSIGNMENT INFORMATION
-%----------------------------------------------------------------------------------------
+%%%%%% TITLE %%%%%
 
-\title{Functional Analysis Homework 2} % Title of the assignment
+\title{Functional Analysis}
+%\date{\today}
 
-\author{Gandhar Kulkarni (mmat2304)} % Author name and email address
 
-\date{} % University, school and/or department name(s) and a date
+%MATH BACKGROUND DECLARATORS-------------------------------------------------------
+\theoremstyle{proposition}
+\newtheorem{proposition}{Proposition}[section]
 
-%----------------------------------------------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{remark}{\textbf{Remark}}[section]
+
+\theoremstyle{definition}
+\newtheorem{notation}{\textbf{Notation}}[section]
+
+\theoremstyle{definition}
+\newtheorem{discussion}{\textbf{Discussion}}[section]
+
+\theoremstyle{lemma}
+\newtheorem{lemma}{\textbf{Lemma}}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{\textbf{Example}}[section]
+
+%\theoremstyle{remark}
+%\newtheorem*{comment}{\textbf{Comments on Proof Technique}}
+
+\theoremstyle{definition}
+\newtheorem{construct}{Construction}[section]
+
+\theoremstyle{corollary}
+\newtheorem{corollary}{Corollary}[section]
+
+\theoremstyle{definition}
+\newtheorem{caution}{\textbf{Caution}}[section]
+
+
+\theoremstyle{definition}
+\newtheorem{question}{\textbf{Question}}[section]
+
+\theoremstyle{definition}
+\newtheorem{para}{}[section]
+
+
+%--------------------------------------------------------------------------------- SOME USEFUL MACROS.
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\GL}{\text{\rm GL}}
+\newcommand{\Ker}[1]{{\fontfamily{lmss}\selectfont 
+		\text{\rm Ker}\left (#1\right )
+}}
+\newcommand{\nsg}{\trianglelefteq}
+\newcommand{\abs}[1]{\left \vert #1 \right \vert}
+\newcommand{\norm}[1]{\left \vert \left \vert #1 \right \vert \right \vert}
+\newcommand{\gen}[1]{\left\langle #1\right\rangle}
+\renewcommand{\div}{\;\vert\;}
+\newcommand{\isom}{\cong}
+\DeclareMathOperator{\Stab}{\text{\rm Stab}}
+\newcommand{\Image}[1]{{\fontfamily{lmss}\selectfont 
+		\text{\rm Im}\left (#1\right )
+}}
+\DeclareMathOperator{\Bij}{\text{\rm Bij}}
+\DeclareMathOperator{\acts}{\rotatebox[origin=c]{-90}{$\circlearrowright$}}
+\DeclareMathOperator{\Orb}{\text{\rm Orb}}
+\DeclareMathOperator{\lcm}{\text{\rm lcm}}
+\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}
+\DeclareMathOperator{\Aut}{\text{\rm Aut}}
+\DeclareMathOperator{\Inn}{\text{\rm Inn}}
+\DeclareMathOperator{\id}{\text{\rm id}}
+\newcommand{\F}{\mathbb{F}}
+
+
+
 
 \begin{document}
-
-\maketitle % Print the title
-
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
-
-\section{} %Problem 1 
+	\maketitle
+	%\tableofcontents
+\begin{proof}[Solution of problem $1$:]
 We need to check that rules of inner products hold--- 
 \begin{enumerate}
 	\item For $A=B,$ we have $\langle A,A\rangle=tr(AA^*)= \sum_{i,j}|a_{ij}|^2 \geq 0,$ where $a_{ij}$ denotes the elements of $A.$ 
@@ -53,49 +131,149 @@ We need to check that rules of inner products hold---
 	a_{ij}\overline{b_{ij}}.$ Note that replacing $A$ and $B$ just gives us the conjugate, which is the desired result, that $$\langle B,A \rangle = 
 	\overline{\langle A,B  \rangle}. $$
 	\item We have $\langle A+B,C\rangle= tr((A+B)C^*).$ We know that $$tr((A+B)C^*)= \sum_{1 \leq i,j \leq n} (a_{ij}+b_{ij}) \overline{c_{ij}}=\sum_{1 \leq 
-	i,j \leq n} a_{ij}\overline{c_{ij}} +\sum_{1 \leq i,j \leq n} b_{ij} \overline{c_{ij}}= tr(AC^*) + tr(BC^*).$$ 
+		i,j \leq n} a_{ij}\overline{c_{ij}} +\sum_{1 \leq i,j \leq n} b_{ij} \overline{c_{ij}}= tr(AC^*) + tr(BC^*).$$ 
+	\item We have $$\gen{(\alpha A),B}= tr(\alpha AB^*)=\sum_{1 \leq i,j \leq n} \alpha a_{ij} \overline{b_{ij}} = \alpha \sum_{1 \leq i,j \leq n} a_{ij} 
+	\overline{b_{ij}}= \alpha \gen{A,B}.$$
 \end{enumerate}
 Therefore we have defined an inner product. 
+Now fix $\varepsilon >0.$ Then we take a Cauchy sequence of matrices $(A_n).$ There exists $N \in \N$ such that 
+$$ \left(\sum_{i,j}\abs{a^{(n)}_{ij}-a^{(m)}_{ij}}^2\right)^{1/2} < \varepsilon,$$ for $n,m \geq N.$
+
+Thus we have that $$\abs{a^{(n)}_{ij}-a^{(m)}_{ij}} < \left(\sum_{i,j}\abs{a^{(n)}_{ij}-a^{(m)}_{ij}}^2\right)^{1/2} < \varepsilon. $$
+
+Thus we know that $a^{(n)}_{ij} \to a_{ij} $ in $\C.$ We claim that $A=(a_{ij})$ is the desired limit. 
+
+We have $$\norm{A_n-A}^2 = \sum_{i,j} \abs{a^{(n)}_{ij}-a^{(m)}_{ij}}^2 < \varepsilon,$$ which gives us the required answer.
 To solve the second part, see that since we can apply the Cauchy Schwarz inequality on inner product spaces, we have $$|\langle A,B\rangle|^2 \leq ||A||^2 
 \cdot ||B||^2,$$ which gives us the required answer.
-\section{} %Problem 2 
-\section{} %Problem 3 
-We assume that there is $y \in Y$ such that $||x-y|| = d(x,Y).$ Then we have $x-y \perp Y.$ Thus $\Re \langle x-y,y \rangle =0.$ This implies the other side 
-trivially. 
+\end{proof}
+\begin{proof}[Solution of problem $2$:]
+	We calculate $\abs{\abs{x-y}}^2 + \abs{\abs{x-z}}^2- \abs{\abs{x-u}}^2.$ Then see that 
+	\begin{align*}
+		t\abs{\abs{x-y}}^2 + (1-t)\abs{\abs{x-z}}^2- \abs{\abs{x-u}}^2&= t(\norm{x}^2 + \norm{y}^2 - \gen{x,y}- \gen{y,x} )\\
+		&+ (1-t)(\norm{x}^2 + \norm{z}^2 - \gen{x,z}- \gen{z,x} )\\
+		&- (\norm{x}^2 + \norm{u}^2 - \gen{x,u}- \gen{u,x} ) \\
+		&= \norm{x}^2 - \gen{x,u} - \gen{u,x} + t \norm{y}^2 + (1-t)\norm{z}^2\\
+		&- \norm{x}^2- \norm{u}^2 + \gen{x,u} + \gen{u,x} \\
+		&= t \norm{y}^2 + (1-t)\norm{z}^2- \norm{u}^2\\
+		&= t \norm{y}^2 + (1-t)\norm{z}^2 - \left(\gen{ty+ (1-t)z,ty+ (1-t)z} \right)\\
+		&= t \norm{y}^2 + (1-t)\norm{z}^2\\ 
+		&- \left( t^2 \norm{y}^2 + t(1-t) \gen{y,z} + t(1-y) \gen{z,y} + (1-t)^2 \norm{z}^2 \right)\\
+		&= t(1-t) \norm{y-z}^2.
+	\end{align*}
+	
+	The second result follows easily by setting $t= \frac{1}{2},$ which gives us $u =\frac{1}{2}(y+z).$
+\end{proof}
+\begin{proof}[Solution of problem $3$:]
+	For any $z \in Y,$ we want to show that $\Re \gen{x-y,y-z} \geq 0.$
+	We know that for any $a,b \in H$ we have $\norm{a+b}^2 = \norm{a}^2+\norm{b}^2 + 2 \Re\gen{a,b}.$
+	Using this, we have $$\Re \gen{x-y,y-z}  = \frac{1}{2} \left(\norm{x-z}^2-\norm{x-y}^2- \norm{y-z}^2\right). $$
+	We now just have to show that $$ \norm{x-z}^2 \geq \norm{x-y}^2+ \norm{y-z}^2.$$ 
+	
+	Let us set $u:= ty+(1-t)z$ by Apollonius' identity, for some $t \in [0,1],$ then we have
+	$$ t\norm{x-y}^2 + (1-t)\norm{x-z}^2 = \norm{x-u}^2 + t(1-t)\norm{y-z}^2 \geq \norm{x-y}^2 + t(1-t)\norm{y-z}^2.$$
+	Thus we have $$\norm{x-z}^2 \geq \norm{x-y}^2 + t\norm{y-z}^2.$$ Putting $t \to 1$ gives us the desired result.
+	
+	Conversely, since $\Re \gen{x-y,y-z} \geq 0,$ we have  $$\norm{x-z}^2 \geq \norm{x-y}^2 + \norm{y-z}^2,$$ implying that $\norm{x-z}^2 \geq \norm{x-y}^2$
+	for all $z \in Y.$ Thus $\inf_{z \in Y} \norm{x-z} \geq \norm{x-y}.$ For the other side, since $y \in Y,$ we have 
+	$$\inf_{z \in Y} \norm{x-z} \leq \norm{x-y},$$ which gives us the desired inequality. 
+	
 
-For the converse, we assume that $$ \Re \langle x-y,z \rangle \leq  \Re \langle x-y,y \rangle. $$
+\end{proof}
+\begin{proof}[Solution of problem $4$:]
+	We propose that $\R^{\infty}$ is an IPS that does not satisfy the projection theorem. 
+	This is an IPS as a subspace of $\ell^2.$ Let $a^{(n)}=\left(1, \frac{1}{2}, \dots, \frac{1}{n}, 0, \dots\right).$ Then see that 
+	\begin{align*}
+		\norm{a^{(n)}-a^{(m)}} &= \sum_{k=1}^{\infty} \abs{a^{(n)}_k-a^{(m)}_k}^2\\
+		&= \sum_{k=m+1}^{n} \frac{1}{k^2} \leq \sum_{k=1}^{n} \frac{1}{k^2},
+	\end{align*}
+which is a convergent sequence, hence the above is bounded above, meaning that this sequence is Cauchy. However, in $\ell^2$ this sequence converges to a 
+point $\alpha = \left(1, \frac{1}{2}, \dots\right)$ outside $\R^{\infty},$ thus this space is not complete. 
 
+Define the linear functional $f: \R^{\infty} \to \mathbb{K}$ where $(x_n) \mapsto \gen{(x_n),\alpha}.$
 
-\section{} %Problem 4 
-\section{} %Problem 5 
-\section{} %Problem 6 
-We want to construct an isometric isomorphism between $H,$ a separable Hilbert space and $\ell^2,$ the sequence of square summable sequences over a linear 
-field. We have $H$ is separable, hence there exists a countable dense subset. This, in fact gives us an orthonormal Schauder basis $\{b_n\}_{n \in 
-\mathbb{N}}$. Let the standard orthonormal basis for $\ell^2$ be given by $\{e_n\}_{n \in \mathbb{N}}.$ Define $T:H \to \ell^2$ be such that 
-$$T(\sum_{n=1}^{\infty}a_n b_n) = \sum_{n=1}^{\infty}a_n e_n.$$
+Let $W=\ker f.$ Our claim is that $W$ is a proper subspace. $(1,0,\dots)$ is not in $W,$ so that is done. We need to find $W^{\perp}.$ Let $x \in 
+W^{\perp},$ and $\beta^{(n)}= \left(1,\dots, -n,0,\dots\right)$ which is in $W.$ Then we have $x \perp W \implies x \perp \beta_n.$
+Then $$\sum_{k=1}^{\infty}x_k\beta^{(n)}_k= x_1-nx_n=0, $$ which means that $x$ has infinitely many non-zero terms. Thus $W^{\perp}= 0,$ and this 
+contradicts the statement of the projection theorem. 
+\end{proof}
+\begin{proof}[Solution of problem $5$:]
+	Since $A_1$ is bounded, all subsets are bounded. We can pick any $a_n \in A_n$ such that it's norm is minimum. Then we claim that $(a_n)$ is a Cauchy 
+	sequence, and hence convergent. If we do show that it is Cauchy, then we have that the limit is contained within $\cap_{n=1}^{\infty} A_n,$ which would 
+	complete the proof.
+	
+	Now we have that $\forall x \in A_1, ||x|| \leq K,$ for some $K>0.$ Since the norm is a monotone convergent sequence, the norm converges. By the 
+	parallelogram law, $$ \norm{x_n-x_m}^2 = 2 \norm{x_n}^2 + 2\norm{x_m}^2 - \norm{x_n+x_m}^2,$$
+	for $n \geq m.$ Since $x_m \in A_m$ and $A_n \subseteq A_m,$ have $x_n,x_m \in A_m.$ 
+	Then from the convexity of $A_m$ we have $\frac{1}{2}(x_n+x_m) \in A_m.$ Thus $\frac{1}{2}\norm{x_n+x_m} \geq \norm{x_m}.$
+Thus, we have $$\norm{x_n-x_m}^2 \leq 2\norm{x_n}^2 + 2\norm{x_m}^2 - 4\norm{x_m}^2 = 2 (\norm{x_n}^2-\norm{x_m}^2). $$
 
-For $\mathbf{a}= \{k_n\}, \mathbf{b}= \{l_n\} \in H,$ we have 
-$$	\langle T\mathbf{a}, T \mathbf{b} \rangle =  \langle \sum_{n=1}^{\infty} k_ne_n, \mathbf{b} \rangle = \sum_{n=1}^{\infty} k_n \langle e_n, \mathbf{b} 
-\rangle.$$ We can see that $$\langle e_n, \sum_{m=1}^{\infty} l_n e_n \rangle = \sum_{m=1}^{\infty} \overline{l_m} \langle e_n,e_m \rangle = 
-\overline{l}_n.$$  Thus we have $\langle T\mathbf{a}, T \mathbf{b} \rangle = \sum_{n=1}^{\infty} k_n \overline{l}_n= \langle \mathbf{a}, \mathbf{b} 
-\rangle.$ Thus our map is an isometry. It is clearly one-one. It is also onto, as the pre-image of any $\sum_{n=1}^{\infty} c_n e_n$ is $\sum_{n=1}^{\infty} 
-c_n b_n.$ Therefore we have an isomorphism of Hilbert spaces. 
-\section{} %Problem 7 
+Since $\norm{x_n}$ is convergent, we must have that $(x_n)$ is Cauchy, which completes the proof. 	 
+\end{proof}
+\begin{proof}[Solution of problem $6$:]
+	We want to construct an isometric isomorphism between $H,$ a separable Hilbert space and $\ell^2,$ the sequence of square summable sequences over a 
+	linear 
+	field. We have $H$ is separable, hence there exists a countable dense subset. This, in fact gives us an orthonormal Schauder basis $\{b_n\}_{n \in 
+		\mathbb{N}}$. Let the standard orthonormal basis for $\ell^2$ be given by $\{e_n\}_{n \in \mathbb{N}}.$ Define $T:H \to \ell^2$ be such that 
+	$$T(\sum_{n=1}^{\infty}a_n b_n) = \sum_{n=1}^{\infty}a_n e_n.$$
+	
+	For $\mathbf{a}= \{k_n\}, \mathbf{b}= \{l_n\} \in H,$ we have 
+	$$	\langle T\mathbf{a}, T \mathbf{b} \rangle =  \langle \sum_{n=1}^{\infty} k_ne_n, \mathbf{b} \rangle = \sum_{n=1}^{\infty} k_n \langle e_n, 
+	\mathbf{b} 
+	\rangle.$$ We can see that $$\langle e_n, \sum_{m=1}^{\infty} l_n e_n \rangle = \sum_{m=1}^{\infty} \overline{l_m} \langle e_n,e_m \rangle = 
+	\overline{l}_n.$$  Thus we have $\langle T\mathbf{a}, T \mathbf{b} \rangle = \sum_{n=1}^{\infty} k_n \overline{l}_n= \langle \mathbf{a}, \mathbf{b} 
+	\rangle.$ Thus our map is an isometry. It is clearly one-one. It is also onto, as the pre-image of any $\sum_{n=1}^{\infty} c_n e_n$ is 
+	$\sum_{n=1}^{\infty} 
+	c_n b_n.$ Therefore we have an isomorphism of Hilbert spaces. 
+	\end{proof}
+\begin{proof}[Solution of problem $7$:]
 If $V$ is a finite-dimensional vector space, then any total orthonormal set must be finite as there can be at most some finite number of linearly 
-independent elements. Since a total orthonormal set must span the entire space, we have a Hamel basis since any element can be written as a finite linear 
+independent elements. Since a total orthonormal set must span the entire space, we have a Hamel basis since any element can be written as a finite 
+linear 
 combination of elements from the total orthonormal set.
 
-Conversely, let $V$ be a vector space such that every total orthonormal set is a Hamel basis. 
-\section{} %Problem 8 
-\section{} %Problem 9
+Conversely, let $V$ be a vector space such that every total orthonormal set is a Hamel basis. Take $B$ to be a total orthonormal set, which is a Hamel basis 
+by assumption. Let this be finite. Then we have $\{\bar{e}_n\} \subseteq B.$ Now consider the series $\sum_{n}\frac{\bar{e}_n}{2^n}.$ This converges in $V,$ 
+as $\sum_{n}\frac{1}{n}$ converges, hence let $x= \sum_{n} \frac{\bar{e}_n}{2^n}.$ Since $B$ is Hamel basis, we have $x \sum \alpha_ie_i,$ which is a finite 
+summation of terms $e_n \in B$ from the orthonormal set. However, from equating the two we see that clearly $x$ has infinitely many non-zero coefficients, 
+which contradicts that there is an infinite total orthonormal set. 
+\end{proof}
+\begin{proof}[Solution of problem $8$:]
+Let $C$ be a closed convex non-empty subset of $H,$ a real Hilbert space. By Riesz Representation Theorem, we know that there exists $y \in H$ such that 
+$f(x)= \gen{x,y}.$ 
+	Then \begin{align*}
+		g(x) &= \gen{x,x} - \gen{x,y}\\
+		&= \gen{x,x-y}\\
+		&= \frac{1}{2} (\norm{x}^2+ \norm{x-y}^2 - \norm{y}^2)\\
+		\geq  \frac{1}{2} (\norm{x_0}^2+ \norm{x_1-y}^2 - \norm{y}^2),
+	\end{align*} 
+where $x_0 \in C$ such that it has minimum norm, and $x_1 \in C$ is the point which is the best approximation of $y$ to $C.$
 
-We are given $T: \mathbb{K}^n \to \mathbb{K}^m,$ where $$(Tx)(i)=\sum_{j=1}^{n}k_{ij}x_j,$$
-where $i=1,2,\dots,m.$ Let $a_i$ denote the $i$th row of $T.$ Then we have $\langle Tx,y \rangle= \sum_{j=1}^m (Tx)(i)y_j.$
-Expanding the entire thing, we have $$ \langle Tx,y\rangle= \sum_{1 \leq i \leq m, 1 \leq j \leq n} k_{ij}x_j \bar{y_i}.$$ We can write this as 
-$$\sum_{j=1}^n x_j \overline{\overline{k_{1i}}y_1 + \dots + \overline{k_{mi}}y_m} = \langle x, \overline{T}^{T}y \rangle!$$ Therefore from uniqueness of 
-adjoint we must have $T^{*}= \overline{T}^{T}.$
-\section{} %Problem 10 
-See that for any operator we have $$|\langle Tx,x\rangle| \leq ||Tx|| \cdot ||x|| \leq ||T||,$$
-taking $||x|| =1.$ Since the left of the inequality depends on $x$ while the right is independent, we have $\sup_{||x||=1}\langle Tx,x\rangle \leq ||T||.$
+We know that $\delta= \inf_{x \in C} g(x)$ exists. Let $\{x_n\}$ be a sequence in $H$ such that $\lim_{n \to \infty}g(x_n)=\delta. $
+To see that this sequence is Cauchy, see that for $\varepsilon > 0,$ we have $$\norm{x_n-x_m}^2=2 \norm{x_n}^2+2 \norm{x_m}^2- \norm{x_n-x_m}^2 .$$
+Since $\frac{1}{2}(x_n+x_m) \in C,$ we have $g((x_n+x_m)/2) \geq \delta. $
+Thus $\norm{x_n+x_m}^2 \geq 4\delta + 2\gen{x_n,y}+2\gen{x_m,y}.$
+Then we use the above to see that $$\norm{x_n-x_m}^2 \leq 2(g(x_n)g(x_m))-4\delta.$$
+Thus, for a large enough $n,m \in \N,$ we get that $\norm{x_n-x_m}$ is arbitrarily small, and hence $\{x_n\}$ is a Cauchy sequence. 
+Clearly, this must converge in a Hilbert space, to some $x_0.$ Since this is a closed convex set, this minimum is unique. 
+\end{proof}
+\begin{proof}[Solution of problem $9$:]
+	We are given $T: \mathbb{K}^n \to \mathbb{K}^m,$ where $$(Tx)(i)=\sum_{j=1}^{n}k_{ij}x_j,$$
+	where $i=1,2,\dots,m.$ Let $a_i$ denote the $i$th row of $T.$ Then we have $\langle Tx,y \rangle= \sum_{j=1}^m (Tx)(i)y_j.$
+	Expanding the entire thing, we have $$ \langle Tx,y\rangle= \sum_{1 \leq i \leq m, 1 \leq j \leq n} k_{ij}x_j \bar{y_i}.$$ We can write this as 
+	$$\sum_{j=1}^n x_j \overline{\overline{k_{1i}}y_1 + \dots + \overline{k_{mi}}y_m} = \langle x, \overline{T}^{T}y \rangle!$$ Therefore from uniqueness of 
+	adjoint we must have $T^{*}= \overline{T}^{T}.$
+
+\end{proof}
+\begin{proof}[Solution of problem $10$:]
+		See that for any operator we have $$|\langle Tx,x\rangle| \leq ||Tx|| \cdot ||x|| \leq ||T||,$$
+	taking $||x|| =1.$ Since the left of the inequality depends on $x$ while the right is independent, we have $\sup_{||x||=1}\langle Tx,x\rangle \leq 
+	||T||.$
+	For the other direction, let $\alpha := \sup\{\abs{\gen{Tx,x}} \div \norm{x}=1\}.$ We want to show that for $\norm{x}=\norm{\gen{Tx,y}} \leq \alpha.$	
+	Since $T$ is self-adjoint, we have $\gen{Tx,y} \in \R.$ Then we have 
+	$$\gen{Tx,y}= \frac{\left( \gen{T(x+y),x+y} - \gen{T(x-y),x-y} \right)}{4}.$$
+	But then $$\abs{\gen{Tx,y}} \leq \alpha \frac{\norm{x+y}^2+\norm{x-y}^2}{4}= \alpha,$$
+	by the parallelogram identity. 
+\end{proof}
 
 \end{document}
