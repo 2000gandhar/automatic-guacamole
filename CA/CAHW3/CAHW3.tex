@@ -1,0 +1,288 @@
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\setlist{nosep}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{tikz-cd}
+\usepackage[margin=0.9in,
+left=1.25in,%
+right=1.25in,%
+top=1.25in,%
+bottom=1.25in
+]{geometry}	
+%\usepackage{stmaryrd} %For mapsfrom
+
+%\usepackage{quiver}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{amsbsy}
+\usepackage{titlesec}
+%\usepackage{yhmath}
+%\usepackage{mathabx,epsfig}
+
+
+%Hyperref Settings------
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+	colorlinks,
+	linkcolor={black},
+	citecolor={red!50!black}
+	urlcolor={green!80!black}
+}
+
+%%%%%% TITLE %%%%%
+
+\title{Complex  Analysis 3}
+%\date{\today}
+
+
+%MATH BACKGROUND DECLARATORS-------------------------------------------------------
+\theoremstyle{proposition}
+\newtheorem{proposition}{Proposition}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{remark}{\textbf{Remark}}[section]
+
+\theoremstyle{definition}
+\newtheorem{notation}{\textbf{Notation}}[section]
+
+\theoremstyle{definition}
+\newtheorem{discussion}{\textbf{Discussion}}[section]
+
+\theoremstyle{lemma}
+\newtheorem{lemma}{\textbf{Lemma}}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{\textbf{Example}}[section]
+
+%\theoremstyle{remark}
+%\newtheorem*{comment}{\textbf{Comments on Proof Technique}}
+
+\theoremstyle{definition}
+\newtheorem{construct}{Construction}[section]
+
+\theoremstyle{corollary}
+\newtheorem{corollary}{Corollary}[section]
+
+\theoremstyle{definition}
+\newtheorem{caution}{\textbf{Caution}}[section]
+
+
+\theoremstyle{definition}
+\newtheorem{question}{\textbf{Question}}[section]
+
+\theoremstyle{definition}
+\newtheorem{para}{}[section]
+
+
+%--------------------------------------------------------------------------------- SOME USEFUL MACROS.
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\GL}{\text{\rm GL}}
+\newcommand{\Ker}[1]{{\fontfamily{lmss}\selectfont 
+		\text{\rm Ker}\left (#1\right )
+}}
+\newcommand{\nsg}{\trianglelefteq}
+\newcommand{\abs}[1]{\left \vert #1 \right \vert}
+\newcommand{\gen}[1]{\left\langle #1\right\rangle}
+\newcommand{\norm}[1]{\left \vert \left \vert #1 \right \vert \right \vert}
+\renewcommand{\div}{\;\vert\;}
+\newcommand{\isom}{\cong}
+\newcommand{\type}[1]{\text{\rm #1}}
+\DeclareMathOperator{\Stab}{\text{\rm Stab}}
+\newcommand{\Image}[1]{{\fontfamily{lmss}\selectfont 
+		\text{\rm Im}\left (#1\right )
+}}
+\DeclareMathOperator{\Bij}{\text{\rm Bij}}
+\DeclareMathOperator{\acts}{\rotatebox[origin=c]{-90}{$\circlearrowright$}}
+\DeclareMathOperator{\Orb}{\text{\rm Orb}}
+\DeclareMathOperator{\lcm}{\text{\rm lcm}}
+\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}
+\DeclareMathOperator{\Aut}{\text{\rm Aut}}
+\DeclareMathOperator{\Inn}{\text{\rm Inn}}
+\DeclareMathOperator{\id}{\text{\rm id}}
+\newcommand{\F}{\mathbb{F}}
+
+
+
+
+\begin{document}
+	\maketitle
+	%\tableofcontents
+	\begin{proof}[Solution of problem $1$:]
+		\begin{enumerate}
+			\item Let $f(z)= z^n,$ and $g(z)= -\abs{a_{n-1}}z^{n-1} - \dots - \abs{a_1}z - \abs{a_0}.$ Since for large enough $M>0 (M= \abs{a_0}+ \dots + 
+			\abs{a_n} \type{ works, for example})$ we have $|f(z)| > 
+			\abs{g(z)},$ we have that all the roots of $f$ and $f+g$ (the polynomial whose roots we want) are all contained within the disc $\abs{z} \leq 
+			M,$ which has $n$ roots since $f$ has $n$ roots. 
+			
+			If we consider the real version of the same polynomial, see that the polynomial at $x=0,$ where it is negative. For $x=M,$ we must have 
+			$\abs{(f+g)(M)} \geq \abs{\abs{f(M)}-\abs{g(M)}} > 0.$ Thus by intermediate value theorem, we must have that there is a root between $0$ and 
+			$M.$ 
+			We can refine $M$ to be smaller to get closer to $0,$ which we can then set as the desired root. 
+			\item Consider the disc of radius $\frac{1}{M+1}$ centered at the origin. Let $g(z)= \frac{a_n}{a_0}z^n + \dots + \frac{a_1}{a_0}z+1,$ and $f(z) 
+			=1.$ Then $$ \abs{f(z)-g(z)}= \abs{\frac{a_n}{a_0}z^n + \dots + \frac{a_1}{a_0}z } \leq M \abs{z} (1+\abs{z}+ \dots) = \frac{M}{ 
+			\abs{z}^{-1}-1}.$$ 
+			Since $\abs{z} < \frac{1}{M+1},$ then we must have $\abs{z}^{-1}-1 > M,$ thus $ \frac{M}{ \abs{z}^{-1}-1} < 1. $ 
+			
+			Thus by Rouch\'{e}'s theorem, we must have that $f$ and $g$ have the same number of roots in this disc. However, a constant function cannot 
+			have any roots, thus $f,$ and by extension our original polynomial must have all of its roots outside that disc. 
+		\end{enumerate}
+	\end{proof}
+	\begin{proof}[Solution of problem $2$:]
+	Let us assume that our polynomial has Rolle's property. Then let not all zeroes be collinear. We say that $z_1,z_2,z_3 $ form a triangle with the 
+	smallest area. We can say that there cannot be any other roots on this triangle, since if it were it would contradict our assumption that the above 
+	triangle had minimal area. We pick a way to connect the remaining roots $z_4, \dots, z_r$ to one of the vertices of the triangle. Since Rolle's property 
+	holds here, there are at least $r-3$ zeroes of $f'$ outside the triangle and different from the roots of $f.$ Looking at the edges of the triangle, we 
+	see that there are three more zeroes of $f'.$ However, this gives us $r$ roots for $f',$ which is not possible since the derivative must lower the 
+	number of roots strictly. Thus we have at least $\sum_{i=1}^r (m_i-1)+r > \deg f$ roots, which is not possible for a polynomial of degree $r-1.$ Thus 
+	the roots must be collinear.
+	
+	If all the roots fall on a line, then $z_i= x_i + i (mx_i + c),$ where $m,c$ are real constants (The roots could also be all vertical, that will be 
+	tackled later). Then see that $f((1+mi)z + (ic))$ should produce the desired effect, since $-z_i= (1+mi)z + (ic) - (1_mi)x_i - ic = (1+mi)(z-x_i).$ 
+	Since this applies for all $i= 1,\dots, r,$ we have that $f((1+mi)z + (ic))$ has all real roots. In fact it is a complex number times a real polynomial. 
+	Trivially real polynomials have Rolle's theorem, which proves the statement. If all the roots lie on a vertical line, then we just replace by the 
+	substitution $z \mapsto iz_i + c,$ where $y=c$ is the line on which the roots of $f$ lie. 
+	\end{proof}
+	\begin{proof}[Solution of problem $3$:]
+	\begin{enumerate}
+		\item Our function is clearly holomorphic (entire, in fact) hence it must attain its maximum modulus on the square with vertices $a,b,c,d.$ Without 
+		loss of generality, assume that the maximum is attained somewhere on the line segment joining $a$ and $b.$ Then let the maxima be at some point, 
+		$x.$ Then we see that $$g(x,y) = x^2y^2 (y^2+l^2)(x^2+l^2)$$ where $x+y=l.$ We use Lagrange's multiplier here to get 
+		\begin{align*}
+			y^2(l^2+y^2)(4x^3 + 2x l^2) &= \lambda\\
+			x^2(l^2+x^2)(4y^3 + 2y l^2) &= \lambda.
+		\end{align*}
+	Eliminating $\lambda,$ we have $$2xy (y(l^2+y^2)(2x^2+ l^2)) = 2xy (x(l^2+x^2)(2y^2+ l^2)).$$ Assuming neither $x,y =0,$ so we have after a tedious 
+	calculation that   $$(y-x) \left( (l^4 + 2x^2y^2 -2xyl^2) + (x^2+xy+y^2)l^2 \right) =0.$$ See that the term in the brackets can be written as $l^4 + 
+	2x^2y^2 + l^2 ((x+y)^2-y^2),$ which must be greater than zero. Thus we must have that $x=y,$ thus $x=y= \frac{l}{2}.$ The maximum will be 
+	$\frac{5l^4}{16}.$ 
+ 		\item We have $f(z)= z^2 +2az -1,$ with $a \in \R.$ See that $f$ is a polynomial, thus it is entire. Specifically, it is holomorphic on the unit 
+		disc, thus by maximum modulus principle, the maximum modulus must be attained on the boundary, that is on $\{z: \abs{z}=1\}. $
+		Then we have $f(e^{i\theta})= e^{2i\theta}+2a e^{i \theta} -1,$ that is $ e^{i \theta}\left( e^{i\theta} - e^{-i\theta} +2a \right).$
+		Now see that $e^{i\theta} - e^{-i\theta} = 2i \sin (\theta).$ Thus, we have 
+		\begin{align*}
+			\abs{f(e^{i\theta})}&= \abs{e^{2i\theta}+2a e^{i \theta} -1}\\
+			&= \abs{e^{i \theta}} \cdot \abs{e^{i\theta} - e^{-i\theta} +2a}\\
+			&= \abs{2a + 2i \sin (\theta)}= 2 \sqrt{a^2+\sin^2(\theta)}.
+		\end{align*}
+	Since $\sin^2(\theta)$ is at most $1$ for $\theta= \pi/2, 3 \pi/2,$ we have $|f|$ is at most $2 \sqrt{a^2+1}.$ 
+	\end{enumerate}
+	\end{proof}
+	\begin{proof}[Solution of problem $4$:]
+	\begin{enumerate}
+		\item To see a function on the open disc that has one fixed point, consider the function $f_{\varphi}$ where $z \mapsto ze^{i\varphi},$ for $\varphi 
+		\neq 0.$ For this, $$re^{i(\theta+ \varphi)} = re^{i(\theta)} \implies r=0 \type{ or } \varphi=0,$$ which implies that $r=0,$ hence $z=0$ is the one 
+		and only fixed point. 
+		
+		Now assume that a function $f: \mathcal{D} \to \mathcal{D}$ is such that it has two fixed points. If one of the fixed points is $0,$ then it 
+		satisfies all conditions of Schwarz's lemma. Since $\abs{f(z)}= \abs{z}$ for $0$ and another point in the disc, we must have that $f(z)=cz,$ where 
+		$\abs{c}=1.$ But since $f(a)=a,$ where $a \neq 0$ is the other fixed point of $f,$ we must have $c=1.$ Thus in this special case the only such 
+		function must be the identity. 
+		
+		Now we consider a more general function, where there is no restriction of where the fixed point is. Let $a \in \mathbb{D}$ be one of the fixed 
+		point. Then $T_a: \mathbb{D} \to \mathbb{D}$ be a bijective map, where $$T_a(z)= \frac{z-a}{1- \overline{a}z}$$. This is clearly a bijection on a 
+		open unit disc, since $T_a^{-1}=T_{-a}.$ Let $f$ be such that $a,$ and $b$ are fixed points. Now see that $T_afT^{-1}_a(0)=T_af(a)=T_a(a)=0.$ Thus 
+		we have that $T_afT^{-1}_a$ has a fixed point at the origin. Also, let $b$ be the other fixed point of $f.$ Let $x=T_a(b).$ Then 
+		$T_afT^{-1}_a(x)=T_a(f(b))=x,$ which is another fixed point of $T_afT^{-1}_a.$ By the previous result, we must have that $T_afT^{-1}_a(z)=z,$ for 
+		all $z \in \mathbb{D}.$ Thus $f(T_{-a}(z))=T_{-a}(z).$ By setting $z=T_a(z),$ we get $f(z)=z.$
+		\item The solution to this problem emulates the proof for Schwarz's lemma. Define $g(z)= \begin{cases}
+			\frac{f(z)}{z^2} & n \neq 0\\
+			        f''(z)/2 & z=0;
+		\end{cases}$
+	See that this is holomorphic since $f(0)=f'(0)=0,$ hence this function has only a removable singularity at $z=0.$ See that by the maximum modulus 
+	principle the maximum must lie on the boundary, that is the unit circle. Thus there is some $c,$ with $\abs{c}=1$ where $$\abs{g(z)} \leq \abs{g(c)} 
+	\leq \frac{\abs{f(c)}}{\abs{c^2}} \leq \frac{1}{r^2},$$ for some $r<1.$ As $r \to 1,$ fixing $z=0$ on the left, we see that $\frac{\abs{f''(0)}}{2} \leq 
+	1,$ which gives us our required answer. 
+	
+	If the equality is true for any point on the disc, then $g(z)$ must be constant by the maximum modulus principle. Then we must have $\abs{f(z)}= 
+	\abs{z^2},$ which means we must have some $\lambda \in S^1$ where $f(z)=\lambda z^2.$ 
+	
+	The converse is trivial, since if $f(z)=\lambda z^2,$ then $|f''(0)| = 2,$ which means it attains the equality.
+	\item Consider the function $ g:\mathbb{D} \to \mathbb{H}, g(z)= i\frac{1-z}{1+z}.$ See that 
+	\begin{align*}
+		g(z) &= i\frac{1-x + iy}{1+x + iy} = i \frac{((1-x)+iy)((1+x)-iy)}{(1+x)^2+ y^2}\\
+		\implies \Im{g(z)}= \frac{1-x^2 + y^2}{(1+x)^2+ y^2},
+	\end{align*}
+		which is greater than zero as $ 1-x^2 + y^2 > 1- x^2 -y^2 > 0,$ so this indeed falls in the upper half plane. Now see that $g(0)=i,$ and $f(i)=0,$ 
+		as given. Thus $f\circ g$ has $0$ as a fixed point. Thus we can apply Schwarz's lemma here to see that $\abs{f(g(z))} \leq \abs{z}.$ See that 
+		$g\left(\frac{-1}{3}\right)= 2i.$ Plugging this into the above inequality, we get $\abs{f(2i)} \leq \frac{1}{3}.$ 
+ 	\end{enumerate}
+	\end{proof}
+	\begin{proof}[Solution of problem $5$:]
+	\begin{enumerate}
+		\item Let $f(z)=16z^7+16^3+1,$ and $g(z)=16z^3+1.$ Then $$|f(z)-g(z)| = \abs{16z^7}.$$ On $|z|=\frac{1}{2},$ we have $\abs{f(z)-g(z)} < 
+		\frac{16}{128}=\frac{1}{8}.$ Also, $$\abs{g(z)} \geq \abs{16 \abs{z}^3-1}= 2-1=1. $$ Thus by Rouch\'{e}'s theorem, we have that $f(z)$ has the same 
+		number of roots as $g(z)$ in the disc $\abs{z} < \frac{1}{2}.$ See that $g(z)$ has three roots in that region, seeing as its roots are $ k \cdot 
+		\frac{-1}{2^{4/3}},$ which all lie in the disc. Thus $f$ also has three roots.
+		\item Let $f(z)= z+e^{-z}-2024$ and $g(z)=z-2024.$ Now see that if $z$ is a root of $f$ with positive real part, then we have 
+		\begin{align*}
+			z-2024 &= e^{-z}\\
+			&= e^{-x-iy}\\
+			&= e^{-x}e^{-iy}\\
+			\implies \abs{z-2024} &= \abs{e^{-x}} < 1.
+		\end{align*}
+	Thus from a previous problem we can say that there is some $M$ for which such a root exists. 
+	Now consider the unit circle centered at $(2024,0).$ See that $$\abs{f(z)-g(z)} = \abs{e^{-z}} = \abs{e^{-(2024+ e^{i\theta})}} \leq e^{-2023}.$$
+	Now, $\abs{g(z)}= \abs{2024 + e^{i\theta} -2024}=1.$ By applying Rouch\'{e}'s theorem, the two polynomials must have the same number of roots. But we 
+	know that $g$ has one root. Thus $f$ has one root. Since $\abs{z-2024}<1$ contains only one zero, there is only zero with positive real part. 
+	\item Let $f(z)= \sum_{i=0}^n \frac{z^i}{i!},$ and $g(z)=e^z.$ Then for some $R>0,$ we see that $\abs{g(z)} = \abs{e^{R\cos(\theta)+iR\sin (\theta)}} 
+	\geq e^{-R}.$ We know that as $n \to \infty,$ $f(z)$ converges to $g(z)$ uniformly. Thus there exists for $\varepsilon = \frac{e^{-R}}{2},$ a $N \in 
+	\mathbb{N}$ such that for all $n \geq N,$ we have $\abs{f(z)-g(z)} < \frac{e^{-R}}{2},$ and $\frac{e^{-R}}{2} < e^{-R} \leq \abs{g(z)}.$
+	Thus by Rouch\'{e}s theorem $f$ and $g$ must have the same number of roots. However, $g$ has no roots in all of $\mathbb{C}$. Thus all the roots that 
+	$f$ has must be outside this disc!
+	\item Let $f(z)=cz^n-e^z$, and $g(z)=cz^n.$ We have $\abs{g(z)-f(z)}=\abs{e^{z}}.$ On the unit circle, we have $$\abs{g(z)-f(z)} = \abs{e^{e^{i\theta}}} 
+	\geq e^{-1}.$$ See that $\abs{g(z)} = \abs{c} > e.$ Thus $\abs{g(z)-f(z)} < \abs{g(z)}$ on the unit circle, and hence by Rouch\'{e}s theorem, the two 
+	must have the same number of roots. Clearly, $g$ has $n$ roots, so must $f.$
+	\item Since $f(z)=z^4+iz^2+2.$ Solving this, we get $f(z)=(z^2-i)(z^2+2i).$ Thus $z= \pm \left( \frac{1+i}{\sqrt{2}} \right), i-1, 1-i. $ The first two 
+	clearly lie on the unit circle, and the other two lie on the circle $\abs{z}= \sqrt{2}.$ It is also easy to see that they all lie in different 
+	quadrants. $\frac{1+i}{\sqrt{2}}, -1+i, \frac{-1-i}{\sqrt{2}}, 1-i $ lie in the four quadrants, in that order respectively. 
+	
+	To do this using Rouch\'{e}'s theorem, see that for $f(z)=z^4, g(z)=z^4+iz^2+2,$ and a disc of radius $2+ \varepsilon$ centered at the origin, for some 
+	$\varepsilon >0,$ we can see that the modulus of the difference is lesser than $z^4,$ thus we can say that all four roots are in this circle. We can see 
+	that on the unit circle this changes, and the modulus of $f$ is bounded by modulus of $g-f,$ which means there are two roots in a circle of radius $1 + 
+	\varepsilon$. We then need to confirm that it is only true for $\varepsilon>0,$ which confirms that the roots must lie on the two circles. 
+	\end{enumerate}
+	\end{proof}
+	\begin{proof}[Solution of problem $6$:]
+	We have $\mathcal{J}: z \mapsto \frac{1}{2} \left(z+ \frac{1}{z}\right).$ If we write $z=re^{i\theta},$ then we have $$J\left(re^{i\theta}\right)= 
+	\frac{1}{2}\left(r + \frac{1}{r}\right)\cos \theta + i \left( \frac{1}{2}\left(r - \frac{1}{r}\right)\sin \theta \right)=u+iv.$$ See by some 
+	manipulation that $$\frac{u}{\left(r+ \frac{1}{r}\right)}^2 + \frac{v}{\left(r- \frac{1}{r}\right)}^2 =4.$$ We will call this ellipse $E_r.$ Thus for a 
+	fixed $r,$ the range falls on an 
+	ellipse. Note that as $r$ approaches zero, the modulus of the function is grows unbounded. Fixing our $r,$ we guess that all points in the unbounded 
+	region also are in the range.
+	\begin{enumerate}
+		\item For $|z| =r, r<1,$ we say that the closure of the unbounded region of $E_r$ is the image. To see this, we need to check that $E_c$ is in the 
+		image, for $c < r.$ Since $c<r<1,$ See that the functions $r+ \frac{1}{r}$ and $r+ \frac{1}{r}$ are both increasing, since their derivative is 
+		lesser than $0$ in $0 < r < 1.$ Thus $c+ \frac{1}{c} > r+ \frac{1}{r},$ and $c- \frac{1}{c}< r- \frac{1}{r},$ which means that the ellipse $E_c$ is 
+		contained in the closure of the unbounded part of $E_r.$ 
+		\item If $|z| > r,$ where $r>1,$ then we claim that the closure of the unbounded region of the ellipse $E_r$ is the region spanned, just like the 
+		previous case, but for a different reason. See that any ellipse $E_c,$ where $c>r>1,$ is in this region since the function $r+ \frac{1}{r}$ is 
+		increasing when $r>1,$ and $\abs{r+ \frac{1}{r}}$ is increasing in the same region.
+		\item This case is a limiting case of the first case. If we let $r \to 1,$ we see that we get all of the complex plane except $ [-1 ,1] \times 0,$ 
+		which is the range of the cosine. 
+		\item If we let $\theta \in [0,\pi],$ then we can split our region into three: $|z| >1, \abs{z} < 1,$ and $\abs{z}=1.$ For the last one, it can be 
+		seen that when $r=1,$ the Joukowsky map becomes the cosine function. Thus that portion maps to $[-1,1] \times 0.$ When $\abs{z}<1,$ $v<0,$ since 
+		$\sin \theta \geq 0$ in the upper half plane, thus it maps to the lower half plane, without the unit disc in the lower half plane. The portion 
+		$\abs{z}>1$ is such that $v>0,$ so it gets mapped to the upper half plane, without the unit disc in the upper half plane. 
+ 		
+		\item Wherever $J'(z) \neq 0,$ the map is conformal. We see that $J'(z)= 1 - \frac{1}{z^2},$ which is zero only at $\pm 1.$ Excluding those points, 
+		the map is clearly conformal from $\mathbb{C} $ to $\mathbb{C} \backslash \{\pm 1\}.$ If we map the open disc, we see that we get the complex plane 
+		excluding the real line. 
+		
+	\end{enumerate}
+	\end{proof}
+\end{document}
