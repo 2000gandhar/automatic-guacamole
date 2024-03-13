@@ -125,11 +125,33 @@ bottom=1.25in
 		\begin{enumerate}
 			\item Let $f(x)= a_0 + a_1x + a_2x^2 + \dots + a_n x^n,$ where $a_i$ is the coefficient of the term of degree $i,$ and $a_n \neq 0.$ See that 
 			the reverse of this polynomial will have degree $n,$ Since $x^nf(1/x)= x^n\left(a_0 + a_1x^{-1} + \dots + a_n x^{-n} \right)$
-			\item 
+			\item Let the constant coefficient and leading term both be non-zero (If not, then one could have $x^2+x,$ which is reducible, while its 
+			reverse, $x+1$ is irreducible). It is easy to see that the reverse of the reverse is just the original polynomial. That is, $x^n 
+			(x^{-n}f(x))=f(x).$ Thus we only need to show that if $f$ is reducible, $g$ is reducible. If $f(x)=p(x)q(x),$ where $p,q$ are not units, and 
+			$d_p := \deg p(x)>1$ and $d_q := \deg q(x)>1.$ Since the constant term of $f$ is non-zero, the constant term of $p$ and $q$ must also be 
+			non-zero. Replacing $x$ by $\frac{1}{x},$ and multiplying on both sides by $x^n,$ we get 
+			$$x^nf\left(\frac{1}{x}\right)= x^{d_p}p\left(\frac{1}{x}\right) \cdot x^{d_q}q\left(\frac{1}{x}\right) = \ell (x) m(x),$$ which gives us a 
+			factorisation for the reverse of $f.$  
 		\end{enumerate}
 	\end{proof}
 	\begin{proof}[Solution of problem $2$:]
-	
+	We begin by enumerating all irreducible polynomials of degree $1, 2$ and $4.$ See that $x$ and $x+1,$ the only degree one polynomials, are irreducible. 
+	For degree $2,$ we have four choices. Of these, $x^2, x^2+x$ and $x^2+1$ are reducible. $x^2+x+1$ is irreducible since it has no roots, plugging in $0$ 
+	and $1$. For degree $4,$ we have sixteen choices. Of these, we must weed out the reducible polynomials. We can also calculate the irreducibles of degree 
+	$3$ easily, since we can use them to find the reducible polynomials of degree $4.$ We have eight possibilities for polynomials of degree four, we can 
+	eliminate six of them easily, with a mixture of clever thinking and brute force ($x^3,x^3+1,x^3+x^2+x+1, x^3+x,x^3+x^2, x^3+x^2+x$ are reducible) we can 
+	see that $x^3+x+1$ and $x^3+x^2+1$ are irreducible. A clever trick that shall aid us in our effort to weed out reducible polynomials is to notice that 
+	if there is a polynomial which has evenly many non-zero terms, than it must be reducible since then we have $1+ \dots +1$ even number of times. 
+	Therefore an irreducible polynomial must necessarily have odd number of terms with constant term $1.$ This gives us $x^4+x^3+x^2+x+1, x^4+x^3+1, 
+	x^4+x^2+1,$ and $x^4+x+1.$ In the case of  $x^4+x^2+1,$ see that it is $(x^2+x+1)^2,$ so this must be excluded. Thus we only have three irreducible 
+	polynomials in $\mathbb{F}_2[x].$ $x(x+1)(x^2+x+1)=(x^2+x)(x^2+x+1)= x^4 +x^2 +x^2+x= x^4+x.$ Then multiplying the remaining polynomials, we have 
+	\begin{align*}
+		(x^4+x)(x^4+x^3+x^2+x+1)(x^4+x^3+1)(x^4+x+1)&=((x^4+x^3+1)^2 +(x^4+x^3+1)(x^2+x) ) ((x^4+x)^2 + (x^4+x))\\
+		&= (x^8+x^6+1 + x^6 + x^5 +x^2 +x^5+x^4+x )(x^8 +x^4 +x^4+x)\\
+		&=  (x^8 + x^4 + x^2+x +1)(x^8+x)\\
+		&= x^{16}+ x^{12}+ x^{10} +x^{9} + x^8 + x^9 + x^5 +x^3+ x^2 + x\\
+		&=x^{16}+ x^{12} + x^{10} + x^8+ x^5+x^5+x^3+x^2+x
+	\end{align*}
 \end{proof}
 	\begin{proof}[Solution of problem $3$:]
 	
