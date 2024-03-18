@@ -35,7 +35,7 @@ bottom=1.25in
 
 %%%%%% TITLE %%%%%
 
-\title{Algebra 2 Homework 5}
+\title{Algebra 2 Homework 7}
 %\date{\today}
 
 
@@ -124,5 +124,60 @@ bottom=1.25in
 	\begin{proof}[Solution of problem $1$:]
 		
 	\end{proof}
+\begin{proof}[Solution of problem $2$:]
+	Since $A^k = I$ for some $k \geq 1,$ we have that $x^k-1=0$ must be the minimal polynomial. Solving this over $\mathbb{C},$ we have the $k$th roots of 
+	unity, which are exactly $k$ many. The characteristic polynomial must have $n$ roots, all of whom must be $k$th roots of unity. 
+	
+	For $A= \begin{pmatrix}
+		1 & \alpha \\
+		0 & 1
+	\end{pmatrix},$ see that $A^k=  \begin{pmatrix}
+	1 & k\alpha \\
+	0 & 1
+\end{pmatrix},$ for any $k \in \mathbb{N}.$ This can easily be checked by induction. See that for $k=p,$ we must have $I$ since the field has characteristic 
+$p.$ See that the characteristic of $A$ is just $x^2-1=0,$ which gives us $\pm 1$ as the eigenvalues. We see that the $\ker \dim (A-I)= \{ (x,y) \in 
+\mathbb{R}^2 \div A-I(x,y)^T=0  \}= \dim(\text{ \textrm span } (1,0))=1,$ while $\ker \dim (A+I)= \{ (x,y) \in \mathbb{R}^2 \div A+I(x,y)^T=0  \}= 
+\dim(\text{ \textrm span } (0,0) )=0, $ which clearly does not add up to $2,$ since $1$ and $2$ are not the same number. Thus for $\alpha \neq 0,$ this 
+matrix is not diagonalisable. If $\alpha=0,$ in the eigenvalue $-1,$ we would have the null space as $ \text{ \textrm span } (0,1),$ which would give us a 
+basis for $\mathbb{R}^2.$
+\end{proof}
+\begin{proof}[Solution of problem $3$:]
+	If we see $K/F_1,$ then it is clear that since $K= F_1(\sqrt[8]{2}),$ we have a degree $8$ extension. To understand $\Aut(K/F_1),$ see that we only need 
+	to understand where $\sqrt[8]{2}$ goes. We have eight choices. We can send $\sqrt[8]{2}$ to any 
+\end{proof}
+\begin{proof}[Solution of problem $4$:]
+	
+\end{proof}
+\begin{proof}[Solution of problem $5$:]
+	\begin{enumerate}
+		\item $[K:F]=n < \infty,$ then we say that $K$ is represented as by a finite $F-$basis, by $\{b_1,\dots, b_n\}.$ 
+		Let $x \in K,$ where  $x= \sum_{i=1}^{n}c_ib_i,$ where $c_i \in F$ for $i=1,\dots,n.$
+		Now we have $\alpha \cdot x= \sum_{i=1}^{n}c_i (\alpha \cdot b_i).$ Since $\alpha \cdot b_i \in K,$ $\alpha \cdot b_i= \sum_{j=1}^{n} a_{ji} b_j.$ 
+		Then we can put this in matrix form, by $T_{\alpha}:= (a_{ji}).$ By this, it is clear that $T_{\alpha}$ is a linear transformation, since it can be 
+		written as a matrix.
+		
+		\item Let $m(x)$ be the minimal polynomial for $\alpha$ with degree $d_1,$ and $m'(x),$ be the minimal polynomial for $A$ with degree $d_2.$ If $d_1 
+		\geq d_2,$ then $$m(x) = q_1(x) m'(x) + r_1(x),$$
+		
+	\end{enumerate}
+\end{proof}
+\begin{proof}[Solution of problem $6$:]
+	We have proven in the previous assignment that $f(x)=x^p-x-a$ is irreducible over $\mathbb{F}_p,$ and that it is separable.
+	We know that if $\alpha$ is a root, then so is $\alpha + 1.$ So it is easy to see that the 
+\end{proof}
+\begin{proof}[Solution of problem $7$:]
+	In $E=\mathbb{Q}(\sqrt{1+\sqrt{2}}),$let $x= \sqrt{1 + \sqrt{2}}.$ Then $x(x^2-1)^2=2.$ We get that $x^4-2x^2-1=0.$ We can explicitly see that none of 
+	its roots are rational, so the polynomial we have must be the minimal polynomial. We can calculate the conjugates, which are $$\pm \sqrt{1+ \sqrt{2}}, 
+	\pm i \frac{1}{\sqrt{1+ \sqrt{2}}}.$$ So it is easy to see that $i$ is missing. Thus, by adjoining $i,$ we can have a normal and separable extension 
+	containing $\sqrt{1+ \sqrt{2}}.$ We propose that $K=\mathbb{Q}(\sqrt{1+ \sqrt{2}},i)$ is the Galois extension. We know $K$ contains all the conjugates, 
+	so the Galois field must be sandwiched between $K$ and $F.$ But since $[K:F]=2,$ which is prime, we must have that either the field is equal to $E$ or 
+	$F,$ and it cannot be $F,$ since the imaginary conjugates are not in $F,$ the Galois closure must be $E.$
+\end{proof}
+\begin{proof}[Solution of problem $8$:]
+	
+\end{proof}
+\begin{proof}[Solution of problem $9$:]
+	
+\end{proof}
 
 \end{document}

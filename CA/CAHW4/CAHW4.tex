@@ -35,7 +35,7 @@ bottom=1.25in
 
 %%%%%% TITLE %%%%%
 
-\title{Algebra 2 Homework 5}
+\title{Complex Analysis Homework 4}
 %\date{\today}
 
 
@@ -122,24 +122,35 @@ bottom=1.25in
 	\maketitle
 	%\tableofcontents
 	\begin{proof}[Solution of problem $1$:]
-		
+		\begin{enumerate}
+			\item 
+		\end{enumerate}
 	\end{proof}
-\begin{proof}[Solution of problem $2$:]
+	\begin{proof}[Solution of problem $2$:]
+		Let us assume that a function $f$ holomorphic on some domain $D$ exists, and we take $a \in D,$ and take some $r>0$ such that the ball of radius $r$
+		centered at $a$ is in $D.$ Considering the Taylor Series expansion of $f(z)$ at $a,$ we have $$f(z)= \sum_{n=0}^{\infty} 
+		\frac{f^{(n)}(a)}{n!}(z-a)^n.$$ We want to see if this series converges. See that $a_n= \frac{f^{(n)}(a)}{n!}.$ We want to examine $\abs{a_n}$ as $n 
+		\to \infty.$ See that $\abs{a_n} \geq \frac{n^nn!}{n!} = n^n.$ See that $\limsup_{n \to \infty} (a_n)^{\frac{1}{n}}= \lim_{n \to \infty} n$ which 
+		diverges to $+\infty.$ Then this means that the radius of convergence of this function is $0,$ which means our function cannot exist.
+			
+ 	\end{proof}
+	\begin{proof}[Solution of problem $3$:]
 	
-\end{proof}
-\begin{proof}[Solution of problem $3$:]
+	\end{proof}
+	\begin{proof}[Solution of problem $4$:]
 	
-\end{proof}
-\begin{proof}[Solution of problem $4$:]
+	\end{proof}
+	\begin{proof}[Solution of problem $5$:]
 	
-\end{proof}
-\begin{proof}[Solution of problem $5$:]
-	We know that $x_n \xrightarrow{w} x,$ so for any $f \in X*,$ we have $f(x_n) \to f(x).$ 
-	Using the Hahn-Banach theorem, we can find a linear functional $f$ where $\norm{f}=1,$ and $f(x)= \norm{x}.$ 
-	Then we have $$|f(x_n-x)| \leq \norm{f} \cdot \norm{x_n-x}= \norm{x_n-x}.$$ 
-\end{proof}
-\begin{proof}[Solution of problem $6$:]
+	\end{proof}
+	\begin{proof}[Solution of problem $6$:]
 	
-\end{proof}
+	\end{proof}
+	\begin{proof}[Solution of problem $7$:]
+	
+	\end{proof}
+	\begin{proof}[Solution of problem $8$:]
+	
+	\end{proof}
 
 \end{document}
