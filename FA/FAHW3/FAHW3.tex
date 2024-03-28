@@ -122,24 +122,105 @@ bottom=1.25in
 	\maketitle
 	%\tableofcontents
 	\begin{proof}[Solution of problem $1$:]
-		
+		\begin{itemize}
+			\item BIT $\implies$ OMT: We first need to show that $\pi: X \to X/M$ is an open map, where $M$ is a closed subspace. Let $U$ be open in $X.$ 
+			Then we want to understand $q(U).$ Let $x \in U.$ Then there must be $r >0$ such that $B(x,r) \subsetneq U.$ Let $x'+M$ be such that 
+			$\norm{(x+M)-(x'+M)} <r,$ that is, $\inf_{m \in M} \norm{(x-x')+m} <r.$ We must obtain some $m \in M,$ where $ \norm{(x-x')+m} <r,$ since the 
+			inequality is strict. But now $x'-m \in B(x,r) \subset U,$ and so $q(x'-m) \in q(U),$ and note that $q(x'-m)=x'+M,$ which lies in $B(x'+M,r),$ a 
+			ball in $q(U).$ Thus we have an open map.
+			
+			Now we assume that bounded inverse theorem. Let $T:X \to Y$ be a bounded surjective map. Then let $M=\ker T.$ Then we have the map $\bar{T}: X/M 
+			\to Y$ where $x+M \mapsto T(x).$  This map is clearly well-defined since if $x+M=x'+M$ then $x-x' \in M.$ Then $T(x)=T(x').$ This is clearly a 
+			bijection by the first isomorphism theorem.  Now by the Bounded Inverse Theorem, we have that $S= \bar{T}^{-1}: Y \to X/M$ exists and is a 
+			bounded and linear map. Hence it is also continuous. 
+			\item 
+		\end{itemize}
 	\end{proof}
 \begin{proof}[Solution of problem $2$:]
-	
+	Let $T: C^1[-1,1] \to \mathbb{R},$ where $T(f)=f'.$ This is clearly linear. Note that $\norm{f}:= \sup_{x \in [-1,1]} |f(x)|.$ Then see that $\norm{T}= 
+	\sup_{\norm{f}=1}|Tf|,$ which is unbounded. Then note for $(u_n),$ a sequence of differentiable functions that converge uniformly to $u,$ and 
+	$Tu_n=u_n'$ converges to $f,$ then we have $Tu=u'=f.$ Thus this a discontinuous linear operator than has closed graph.   
 \end{proof}
 \begin{proof}[Solution of problem $3$:]
 	
 \end{proof}
 \begin{proof}[Solution of problem $4$:]
-	
+ \begin{enumerate}
+ 	\item Let $X$ be a Banach space, and $p: X \to [0,\infty)$ is a semi-norm (a norm, but without the rule that $p(x)=0 \implies x=0$). If we take any 
+ 	absolutely convergent series $\sum_{n=1}^{\infty}x_n \in X,$ we have $$p\left( \sum_{n=1}^{\infty}x_n  \right) \leq \sum_{n=1}^{\infty}p(x_n)  \in [0, 
+ 	\infty],$$ then $p$ is continuous. To prove this, we let  $A_n= p^{-1}([0,n])$ and $F_n= \overline{A_n}.$ See that $A_n$ and $F_n$ are symmetric convex 
+ 	sets since $p$ is a seminorm. We have $X = \cup_{n=1}^{\infty} F_n,$ and by Baire's theorem there must be some $N$ such that $F_N$ has non-empty 
+ 	interior. Therefore, there exist $x_0 \in X,$ and $R>0$ such that $B_R(x_0) \subset F_n.$ By symmetry of $F_N, B_R(-x_0)= -B_R(x_0) \subset F_N.$ If 
+ 	$\norm{x} < R,$ then $x+x_0 \in B_R(x_0), x-x_0 \in B_R(-x_0),$ so we have $x \pm x_0 \in F_N.$ Since $F_N$ is convex, we have $\frac{1}{2}(x_0 + 
+ 	(-x_0)) =0 \in F_N.$ Then we have $B_R(0) \subset F_N.$ We want to show that $B_R(0) \subset A_N.$ Suppose $\norm{x} < r < R.$ Fix $0 < q < 1- 
+ 	\frac{r}{R},$ so that $ \frac{1}{1-q} \cdot \frac{r}{R} < 1.$ Then $y = \frac{R}{r}x \in B_R(0) \subset F_N = \overline{A_N}.$ Thus there is $y_0 \in 
+ 	A_N$ such that $\norm{y-y_0} < qR,$ so $q^{-1}(y-y_0) \in B_R.$ Choose a  $y_1 \in A_N$ such that $\norm{q^{-1}(y-y_0)-y_1} < qR,$ so 
+ 	$\norm{y-y_0-qy_1} < q^2R.$ By induction we have $(y_n)$ such that $$ \norm{y - \sum_{k=0}^{n}q^ky_k } < q^nR,$$ for all $n \geq 0,$  thus we have 
+ 	$y=\sum_{k=0}^{\infty} q^ky_k.$ We see that $\norm{y_k} \leq R+ qR$ for all $k,$ so $y$ as a series exists since the constructed series is absolutely 
+ 	convergent. Now, using the subadditivity that was given in the hypothesis, we have 
+ 	
+ 	$$p(y) = p \left( \sum_{k=0}^{\infty} q^ky_k \right) \leq \sum_{k=0}^{\infty} q^kp(y_k) \leq \frac{1}{1-q}N, $$
+ 	and hence $p(x) \leq \frac{N(1+ \varepsilon)}{R}\norm{x},$ which proves the continuity. 
+ 	
+ 	\item \begin{enumerate}
+ 		\item 	$T: \to Y$ is a bounded linear operator. Then suppose the $T(U),$ where $U$ is the open unit ball, is open. In that case, let $V$ be some 
+ 		open 
+ 		neighbourhood of $X.$ Then for $x \in V,$ we have that some ball of radius $r $ centered at $x$ is in $V.$ We can then see that $T(rU+x) \subset V,$ 
+ 		which means that we only need to see that $T(U)$ is open. 
+ 		
+ 		Define $p(y) := \inf \{ \norm{x} \div Tx=y \}.$ We need to show that this is a seminorm with countable subadditivity. Let $\alpha \neq 0$ be a 
+ 		scalar. 
+ 		Then we have $\{x \div x \in X, Tx=\alpha y\}= \{\alpha x \div x \in X, Tx=y\},$ and taking infimums, we have $p(\alpha y) = \abs{\alpha} p(y).$ For 
+ 		$\alpha =0,$ this can be easily checked. Let $\sum_n y_n$ be a convergent series. We need to show that $p\left( \sum_n y_n \right) \leq \sum_n 
+ 		p(y_n),$ 
+ 		so we assume $\sum_n p(y_n)$ is finite, since if it was infinite there would be nothing to prove. Fixing some $\varepsilon >0,$ we take a sequence 
+ 		$(x_n)$ in $X$ such that $Tx_n=y_n,$ and $ \norm{x_n} < p(y_n) + 2^{-n} \varepsilon.$ Then we have $\sum_n \norm{x_n} < \sum_n p(y_n) + 
+ 		\varepsilon,$ 
+ 		which is finite. Since in Banach spaces absolutely convergent series are also convergent, we have $\sum_n x_n$ converges. Then $T(\sum_n x_n)= 
+ 		\sum_n Tx_n= \sum_n y_n,$ so $$ p \left( \sum_n y_n \right) \leq  \norm{\sum_n x_n}  \leq \sum_n \norm{x_n} < \sum_n p(x_n) + \varepsilon.$$ 
+ 		Therefore subadditivity is confirmed, so by Zabreiko's lemma, we have $$T(U)= \{ y: y \in Y, Tx=y \text{ for some } x \in U \}= \{ y: y \in Y, 
+ 		p(y)=1 \},$$ which is open. This proves the open mapping theorem.
+ 		\item 	If we have a one-one onto linear mapping from a topological space to another is a homeomorphism if and only if it is continuous and open. 
+ 		Using the open mapping theorem, we have that this map is open, and continuous. Thus $T^{-1}$ exists and must be bounded, as it is a homeomorphism 
+ 		too. This proves the bounded inverse theorem.
+ 		
+ 		\item 	Let $\mathcal{F}$ be a non-empty family of bounded linear operators from a Banach space $X$ to a normed space $Y,$ where $\sup\{ \norm{Tx} 
+ 		\div T \in \mathcal{F} \}.$ Now, let  $p(x):= \sup \{\norm{Tx}\div T \in \mathcal{F}\}.$ See that $p(\alpha x) = \abs{\alpha} p(x)$ from definition. 
+ 		For $\sum_n x_n$ a convergent series, we have $$ \norm{ T \left( \sum_n x_n \right)} = \norm{ \sum_n x_n } \leq \sum_n \norm{Tx_n} \leq \sum_n 
+ 		p(x_n),$$ which implies that $p \left( \sum_n x_n\right) \leq \sum_n p(x_n).$ In particular, we have $p(x_1+x_2) \leq p(x_1) + p(x_2).$ Now, since 
+ 		$p$ is continuous, we have $\delta > 0$ such that $p(x) \leq 1$  for $\norm{x} \leq \delta.$ Whenever $x \in X, \norm{x}=1$ we have $p(x) \leq 
+ 		\delta^{-1}$,  which means that $\norm{T} \leq \delta^{-1}$ for each $T \in \mathcal{F}.$ 
+ 		
+ 		\item Let, $T:X \to Y.$ Now pick $p(x) = \norm{Tx}.$ If $p$ was continuous, then there would be a neighbourhood $U$ of $0$ such that the set $p(U)$ 
+ 		is bounded, which implies that $T(U)$ is bounded, and this implies continuity of $T.$ $p$ is a semi-norm, so we need to check its continuity. We 
+ 		only need to check that this has countable subadditivity. Take $\sum_n x_n,$ a convergent series, then we can assume that $ \sum_n \norm{Tx_n}$ is 
+ 		finite without loss of generality. Now see that if $\sum_n \norm{Tx_n}$ is convergent, then so is $\sum_n Tx_n$ is convergent in $Y,$ as it is 
+ 		complete. Since $\sum_{k=1}^{n}x_k \to \sum_n x_n,$ then we have $T \left( \sum_{k=1}^{n}x_k \right) \to T \left( \sum_n x_n \right).$ Then, from 
+ 		hypothesis we have $ T\left( \sum_n x_n \right)= \sum_n Tx_n.$ Taking norm, we have the norm subadditivity. Since $p$ is continuous by Zabreiko's 
+ 		lemma, we have proven the closed graph theorem. 
+ 	\end{enumerate}
+ \end{enumerate}
 \end{proof}
 \begin{proof}[Solution of problem $5$:]
-	We know that $x_n \xrightarrow{w} x,$ so for any $f \in X*,$ we have $f(x_n) \to f(x).$ 
+	We know that $x_n \xrightarrow{w} x,$ so for any $f \in X^*,$ we have $f(x_n) \to f(x).$ 
 	Using the Hahn-Banach theorem, we can find a linear functional $f$ where $\norm{f}=1,$ and $f(x)= \norm{x}.$ 
-	Then we have $$|f(x_n-x)| \leq \norm{f} \cdot \norm{x_n-x}= \norm{x_n-x}.$$ 
+	Then we have $$\norm{x}= \lim_{n \to \infty} \abs{f(x_n)}  \leq \liminf_{n \to \infty} \norm{f}\norm{x_n} = \liminf_{n \to \infty}\norm{x_n}, $$
+	as desired.
 \end{proof}
 \begin{proof}[Solution of problem $6$:]
+	$X$ is a normed linear space. We say that $(x_n),$ a sequence in $X$ is \textit{weakly Cauchy} if the sequence $(fx_n)$ converges for all $f \in X^*.$ 
+	$X$ is \textit{weakly complete} if all weakly Cauchy sequences converge weakly. 
 	
+	Let $X$ be reflexive. Let $(x_n)$ be a weakly Cauchy sequence in $X.$ Pick $f \in X^*.$ Then since $ (f(x_n))$ is a Cauchy sequence in $\mathbb{C},$ we 
+	have that $f(x_n) \to \alpha(f),$ where $\alpha \in X^{**}.$ We do not know what element in $X$ this element corresponds to, but we know that since $X$ 
+	is reflexive we can think of it as an element of the bidual acting on $f.$ For any $f \in X^*$ we have $E_{x_n}(f) = f(x_n) \to \alpha(f).$ We define 
+	$\alpha$ as the element of $X^{**},$ as the limit of $(f(x_n))$ as $n \to \infty.$ Now see that $\abs{\alpha(f)}$ is bounded as for each $f \in X^*,$ we 
+	have that pointwise the set $(f(x_n))$ is bounded for each $f \in X^{*}.$ Then by the Uniform Bounded Principle, we have $(x_n)$ must be bounded in 
+	$X^{**}.$ Since $\norm{x_n}_{X^{**}}= \norm{x_n},$ we know that $(x_n)$ is bounded in $X$ by $M>0.$ 
+	Then, $$\abs{f(x_n)} \leq M \norm{f} \implies \alpha(f) \leq M \norm{f}.$$
+	
+	Since $X$ is reflexive, $\alpha \in X.$ Then by definition for each $f \in X^{*}$ we have $f(x_n) \to \alpha(f)=f(\alpha),$ which confirms weak 
+	converges. 
 \end{proof}
 
 \end{document}

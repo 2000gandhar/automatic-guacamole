@@ -122,9 +122,10 @@ bottom=1.25in
 	\maketitle
 	%\tableofcontents
 	\begin{proof}[Solution of problem $1$:]
-		\begin{enumerate}
-			\item 
-		\end{enumerate}
+		Since $n$ is odd, $\gcd(2,n)=1.$ Now see that $-1$ is a primitive $2$nd root of unity, while let $x$ be a primitive $n$th root of unity. Then we 
+		claim that $-x$ is our required $2n$th primitive root of unity. See that $(-x)^n=-1,$ which means that the order of this term must be strictly 
+		greater than $n.$ However, see that $(-x)^{2n}=1,$ which means that the order of $-x$ must divide $2n,$ which means that the order must be exactly 
+		$2n.$ Since $-x$ is clearly in the $n$th cyclotomic field, we have our solution.
 	\end{proof}
 	\begin{proof}[Solution of problem $2$:]
 		Let us assume that a function $f$ holomorphic on some domain $D$ exists, and we take $a \in D,$ and take some $r>0$ such that the ball of radius $r$
