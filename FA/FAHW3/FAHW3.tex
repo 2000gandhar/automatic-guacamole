@@ -133,7 +133,17 @@ bottom=1.25in
 			\to Y$ where $x+M \mapsto T(x).$  This map is clearly well-defined since if $x+M=x'+M$ then $x-x' \in M.$ Then $T(x)=T(x').$ This is clearly a 
 			bijection by the first isomorphism theorem.  Now by the Bounded Inverse Theorem, we have that $S= \bar{T}^{-1}: Y \to X/M$ exists and is a 
 			bounded and linear map. Hence it is also continuous. 
-			\item 
+			\item CGT $\implies$ OMT: Let $T:X \to Y$ is continuous and onto. Then the map $\pi: X \to X/\ker T$ is open, onto, and continuous. Then the map 
+			$\overline{T} := \pi \circ T$ is a continuous linear bijection. The graph of $\overline{T}$ must be closed. The map that switches the two 
+			coordinates gives us the graph of $\overline{T}^{-1}$ which must also be closed, since the map switching coordinates is a homeomorphism. By 
+			closed map theorem, $\overline{T}^{-1}$ is continuous. For any open $U \subseteq X,$ $T(U)$ must be open since it is the pre-image of $\pi(U),$ 
+			which is open, and $\overline{T}^{-1}$ is continuous. This proves that the map $T$ is open. 
+			
+			\item CGT $\implies$ UBP: Consider the map $\Phi: X \to \ell^{\infty} (\mathcal{F}),$ where $x \mapsto (f(x))_{f \in \mathcal{F}}.$ 
+			Since $f$ is a continuous linear functional, $\Phi$ has a closed graph. 
+			
+			Thus it is continuous, thus bounded so $$\sup_{\norm{x} \leq 1} \norm{\Phi(x)}= \sup_{f \in \mathcal{F}} \norm{f} $$ 
+			must be finite. Thus CGT implies UBP.
 		\end{itemize}
 	\end{proof}
 \begin{proof}[Solution of problem $2$:]
