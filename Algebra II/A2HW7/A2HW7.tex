@@ -122,11 +122,13 @@ bottom=1.25in
 	\maketitle
 	%\tableofcontents
 	\begin{proof}[Solution of problem $1$:]
-		
+		Let $\zeta_n$ denote a primitive $n$th root of unity. Then see that $-1$ is a primitive $2$nd root of unity. Also see that $-\zeta_n$ cannot have 
+		order $n,$ since it is odd, so $-1^n=-1.$ Thus, its order must be more than $n.$ However, $(-\zeta_n)^{2n}=1,$ so its order must divide $2n.$ The 
+		only such number is $2n.$ Since the $n$th cyclotomic extension contains these elements, it must contain the $2n$th roots of unity. 
 	\end{proof}
 \begin{proof}[Solution of problem $2$:]
-	Since $A^k = I$ for some $k \geq 1,$ we have that $x^k-1=0$ must be the minimal polynomial. Solving this over $\mathbb{C},$ we have the $k$th roots of 
-	unity, which are exactly $k$ many. The characteristic polynomial must have $n$ roots, all of whom must be $k$th roots of unity. 
+	Since $A^k = I$ for some $k \geq 1,$ the minimal polynomial $m(x)$ of $A$ divides $x^k-1.$ Clearly, $x^k-1$ is a polynomial with all distinct roots. The 
+	minimal polynomial has no repeated roots, hence it must be diagonalisable. 
 	
 	For $A= \begin{pmatrix}
 		1 & \alpha \\
@@ -142,8 +144,18 @@ matrix is not diagonalisable. If $\alpha=0,$ in the eigenvalue $-1,$ we would ha
 basis for $\mathbb{R}^2.$
 \end{proof}
 \begin{proof}[Solution of problem $3$:]
-	If we see $K/F_1,$ then it is clear that since $K= F_1(\sqrt[8]{2}),$ we have a degree $8$ extension. To understand $\Aut(K/F_1),$ see that we only need 
-	to understand where $\sqrt[8]{2}$ goes. We have eight choices. We can send $\sqrt[8]{2}$ to any 
+We will make some mention of notation explictly detailing the structure of the Galois group of $K=\mathbb{Q}(\theta, i),$ where $\theta = \sqrt[8]{2}.$ Let 
+$\zeta= \frac{1}{2}\sqrt{2}(1+i),$ a primitive $8$th root of unity. This is a group of order $16$ over $\mathbb{Q}.$ Let $\sigma, \tau \in \Aut(K/ 
+\mathbb{Q}),$ where $\sigma$ sends $\theta$ to $ \zeta \theta,$ $i$ to $i,$ and $\zeta$ to $\zeta^5.$ The last follows from the first two. Define $\tau$ 
+such that it sends $\theta$ to $\theta,$ $i$ to $-i$ and $\zeta $ to $\zeta^7.$ We can then see that $\sigma^8=\tau^2=e,$ the identity automorphism. Also 
+see that $ \sigma \tau == \tau \sigma^3,$ which can be checked by brute force. This completely characterises the Galois Group. 
+
+Now see that by the fundamental theorem of Galois theory, the subgroups corresponding to $F_1,$ $F_2,$ and $F_3$ are $\gen{\sigma}, \gen{\sigma^2, \tau}$ , 
+and $ \gen{\sigma^2, \tau \sigma^3}.$ 
+
+Since $F_1$ is the fixed field of $\gen{\sigma},$ we have $K^{F_1} \cong \mathbb{Z}_8.$ In the second case, the fixed field corresponds to the subgroup 
+$\gen{\sigma^2, \tau}.$ We have $(\sigma^2)^4=\tau^2=e,$ and $\sigma^2 \tau = \tau \sigma^{-2},$ which is the presentation for $D_8.$ The subgroup 
+corresponding to $F_3$ is $\gen{\sigma^2, \tau \sigma^3}.$ See that there is more than one element of order $4$ in the group. The only such group is $Q_8.$
 \end{proof}
 \begin{proof}[Solution of problem $4$:]
 		We can see that $x^4-14x^2+0=0$ is solved as a quadratic in $x^2,$ that is, $x^2= 7 \pm 2 \sqrt{10}.$ 
@@ -161,14 +173,21 @@ basis for $\mathbb{R}^2.$
 		Then we can put this in matrix form, by $T_{\alpha}:= (a_{ji}).$ By this, it is clear that $T_{\alpha}$ is a linear transformation, since it can be 
 		written as a matrix.
 		
-		\item Let $m(x)$ be the minimal polynomial for $\alpha$ with degree $d_1,$ and $m'(x),$ be the minimal polynomial for $A$ with degree $d_2.$ If $d_1 
-		\geq d_2,$ then $$m(x) = q_1(x) m'(x) + r_1(x),$$
+		\item See that $m(x)= x^d + a_{d-1}x^{d-1}+ \dots + a_0$ is the minimal polynomial of $\alpha,$ and $f(x)$ is the minimal polynomial of 
+		$T_{\alpha}.$ We know that $T_{\alpha}$ is a root of $m(x),$ and since $m(x) | f(x),$ since $f(x)$ also has $T_{\alpha}$ as a zero, and $f(x)$ is 
+		irreducible, then they must be equal.
+		
+		\item See that the multiplication operator has a minimal polynomial $m(x),$ and characteristic polynomial $c(x).$ They must have the same roots, and 
+		since $m(x)$ is irreducible, we must have $c(x)=m(x)^{n/d},$ comparing the degrees. Then comparing terms, we have $Tr(\alpha) = 
+		\frac{-n}{d}a_{d-1}=-b_{n-1}= Tr(T_{\alpha})$, and $N(\alpha) = (-1)^{n}a_{d-1}^{n/d}=(-1)^n b_0= \det T_\alpha.$ 
+		
 		
 	\end{enumerate}
 \end{proof}
 \begin{proof}[Solution of problem $6$:]
 	We have proven in the previous assignment that $f(x)=x^p-x-a$ is irreducible over $\mathbb{F}_p,$ and that it is separable.
-	We know that if $\alpha$ is a root, then so is $\alpha + 1.$ So it is easy to see that the 
+	We know that if $\alpha$ is a root, then so is $\alpha + 1.$ So it is easy to see that the automorphism $\sigma: x \mapsto x+1 $ is an automorphism. 
+	Clearly, $\sigma^p=e.$ Since these are $p$ such automorphisms $\sigma^i,$ for $0 \leq i \leq p-1,$ then the Galois group must be cyclic.
 \end{proof}
 \begin{proof}[Solution of problem $7$:]
 	In $E=\mathbb{Q}(\sqrt{1+\sqrt{2}}),$let $x= \sqrt{1 + \sqrt{2}}.$ Then $x(x^2-1)^2=2.$ We get that $x^4-2x^2-1=0.$ We can explicitly see that none of 
@@ -179,10 +198,14 @@ basis for $\mathbb{R}^2.$
 	$F,$ and it cannot be $F,$ since the imaginary conjugates are not in $F,$ the Galois closure must be $E.$
 \end{proof}
 \begin{proof}[Solution of problem $8$:]
-	
+	If $p \div n,$ then $\sum_{i=1}^{p-1} \epsilon_i^n = \sum_{i=1}^{p-1} 1= p-1. $
+	Else, let $\epsilon_j = e^{2\pi ij/p}$ for $1 \leq i \leq n-1,$ then we have 
+	$$ \sum_{i=1}^{p-1} \epsilon_i^n= \sum_{i=1}^{p-1} \epsilon_i^{ni}= \frac{\epsilon_i^{np}- \epsilon_i^n}{\epsilon_i^n-1}=-1. $$
 \end{proof}
 \begin{proof}[Solution of problem $9$:]
-	
+	If $\mathbb{Q}(\zeta_n)$ contained $\mathbb{Q}(\sqrt[3]{2}),$ then it must also contains its Galois closure, $\mathbb{Q}(\sqrt[3]{2}, \omega).$ The 
+	Galois group of this field is $S_3,$ a non-abelian group contained in $\mathbb{Q}(\zeta_n),$ which must have a abelian Galois group, which is 
+	impossible. 
 \end{proof}
 
 \end{document}
