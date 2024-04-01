@@ -122,10 +122,25 @@ bottom=1.25in
 	\maketitle
 	%\tableofcontents
 	\begin{proof}[Solution of problem $1$:]
-		Since $n$ is odd, $\gcd(2,n)=1.$ Now see that $-1$ is a primitive $2$nd root of unity, while let $x$ be a primitive $n$th root of unity. Then we 
-		claim that $-x$ is our required $2n$th primitive root of unity. See that $(-x)^n=-1,$ which means that the order of this term must be strictly 
-		greater than $n.$ However, see that $(-x)^{2n}=1,$ which means that the order of $-x$ must divide $2n,$ which means that the order must be exactly 
-		$2n.$ Since $-x$ is clearly in the $n$th cyclotomic field, we have our solution.
+		\begin{enumerate}
+			\item Plugging $z= \frac{1}{2}$ into the equation, we have $f\left(\frac{1}{2}\right)= \frac{1}{2}.$ Now we differentiate the function $n$ times 
+			to see that $f^{(n)}(z) + (-1)^{n}f^{(n)}(1-z)=0,$ for $n \geq 0.$ Thus we must have $f^{(n)}\left(\frac{1}{2}\right)=0$ for $n$ odd. Thus our 
+			function can be written with a power series expansion at $z= \frac{1}{2},$ that is, $$f(z)= \sum_{n=0}^{\infty} \frac{c_n}{n!}\left(z- 
+			\frac{1}{2}\right)^n $$ where $c_{2n+1}=0$ for $n \in \mathbb{N},$ and $c_0= \frac{1}{2}.$
+			
+			\item   Consider a rectangle that passes $(-1,0)$ and $(1,0)$ vertically, and with height $2\varepsilon>0.$ That is, the endpoints of this 
+			rectangle are $(1, \varepsilon ),(1, -\varepsilon), (-1, \varepsilon),$ and $(-1, -\varepsilon).$ Let this rectangle be $\gamma.$  Since $g$ is 
+			continuous and $g$ is holomorphic in $ \mathbb{C} \backslash [-1,1] \times 0,$ hence we can say the same of $g'.$ We use Stokes' theorem to say 
+			that $\int_{\gamma}g = \int_{\text{Int}(\gamma)}g'.$ We can claim that the function is bounded within the rectangle. If we pick any point, then 
+			either it is in the holomorphic region (in which case it must be bounded in that region), or it is on the segment. Since any neighbourhood of 
+			such a point contains points in the holomorphic region, each neighbourhood must itself be bounded. Thus in the rectangle there is some upper 
+			bound $M.$ Thus $ \int_{\gamma}g = \int_{\text{Int}(\gamma)}g' \leq M 2 \cdot 2 \varepsilon. $ Thus as $\varepsilon \to 0,$ we must have 
+			$\int_{\gamma}g \to 0.$ 
+					
+			Now, if we take any rectangle that intersects the line segment, we can write it as the sum of integrals of rectangles entirely in the 
+			holomorphic region and a rectangle cutting through the line segment. We can use the above special case to see that it must be zero.    
+			
+		\end{enumerate}
 	\end{proof}
 	\begin{proof}[Solution of problem $2$:]
 		Let us assume that a function $f$ holomorphic on some domain $D$ exists, and we take $a \in D,$ and take some $r>0$ such that the ball of radius $r$
@@ -136,21 +151,226 @@ bottom=1.25in
 			
  	\end{proof}
 	\begin{proof}[Solution of problem $3$:]
-	
+		\begin{enumerate}
+			\item Let $z_0$ be a root such that $\Re(z_0) >0.$ Then we have $$\abs{z_0-3}= \abs{e^{-z_0}} = \abs{e^{-x_0} \cdot e^{-y_0}} < 1.$$ Thus $z_0$ 
+			lies in the unit circle centered at $3 (B_1(3)).$ Let $f(z)= e^{-z}+z-3,$ and $g(z)= z-3.$ On $C_1(3),$ $\abs{f(z)-g(z)} = \abs{e^z} < e^{-2}.$ 
+			The bounded on the right comes because the circle has $z=2$ as the smallest value, hence $e^{-2}$ is the largest such number. Since 
+			$\abs{g(z)}1 > e^{-2},$ thus $\abs{f(z)-g(z)} < \abs{g(z)}.$ Now by Rouch\'{e}'s theorem, we have that there is exactly one root in $B_1(3).$ If 
+			$z$ is any root in $B_1(3),$ then  $1 > \abs{z-3} = \abs{e^{z}} \implies \Re(z) >0.$ Thus this root is unique. 
+			
+			\item Let $f(z)=1 + z+ z^4 $ and $g(z)=z^4.$ On $C_0(3/2),$ we have $\abs{f(z)-g(z)} = \abs{1+z}< 1 + \frac{3}{2}  \frac{5}{2}.$ See that 
+			$\abs{g(z)}< \frac{3}{2}^4 = \frac{81}{16},$ thus $\abs{f(z)-g(z)}< \abs{g(z)},$ and thus by Rouch\'{e}'s theorem, $f(z)$ has exactly four roots 
+			in $B_{0}(3/2).$ Now for the second part, we consider the curve $\gamma$ that is the circle $C_{0}(3/2)$ in the first quadrant with the lines on 
+			the $x$ and $y$ axes that join the origin to the curve. We plan to use a more general version of Rouch\'{e}'s theorem on $f(z) =z^4+ z+ 1,$ and 
+			$g(z)= z^4+1$. We now see that 
+			on the circle $\abs{f(z)-g(z)}= \abs{z} = \frac{3}{2}$ and $\abs{z^4+1} < \frac{65}{16} > 4$, thus $\abs{f(z)-g(z)}< \abs{g(z)}.$ On the axes, 
+			see that $\abs{f(z)-g(z)}= \abs{z} < \abs{x^4+1},$ so we can apply the theorem. Thus there is exactly one root in the first quadrant. This 
+			strategy works perfectly well for every other quadrant. 
+			
+			\item Let us find solutions for $z\sin z =0.$ This is because $z=0$ or $\sin z=0.$ The latter equation has solutions $n \pi, n \in \mathbb{Z}$ 
+			which are all real. Now let $f(z)= z\sin z -1$ and $, g(z)= z\sin z.$ Let $\gamma_n$ be the circle of radius $\left( n + \frac{1}{2} \right)\pi$ 
+			centred at $0.$ We claim that Rouch\'{e}'s theorem will apply here. See that $\abs{\sin z}= \frac{1}{2} \sqrt{ e^{2y}+e^{-2y} - 2\cos 2x }.$ 
+			Then, $\abs{z \sin z}= \left(n + \frac{1}{2}\right) \frac{1}{2} \sqrt{ e^{2y}+e^{-2y} - 2\cos 2x }.$ Now see that $1< \abs{g(z)}$ on $\gamma_n.$ 
+			As $\abs{z} = \left( n + \frac{1}{2} \right)\pi > 4.$ We want to show that $\cos 2x < 1/2,$ then we would have $\abs{\sin z} > 1/4.$ Then see 
+			that if $ y^2<1,$ then $$ x^2 \in \left( \left( \left(n + \frac{1}{2}\right)\pi - \pi/6 \right)^2, \left( \left(n + \frac{1}{2}\right)\pi + 
+			\pi/6 \right)^2\right).$$ This can be checked to be always true, and hence $\abs{g(z)}>1.$ 
+			
+			Now see that $g(z)$ has only real roots. Then see that the roots in $C_{\left(n+ \frac{1}{2}\right)\pi}(0)$ are $0, \pm \pi, \dots, \pm n\pi,$ 
+			where $0$ is a double root. Then, there are $2n+2$ roots. 
+			
+			Now see that by identity principle $z\sin z - 1$ is the unique holomorphic extension of the real function $x\sin x -1$ on $\mathbb{C}.$ If we 
+			can show that $x \sin x -1$ has at least $2(n+1)$ roots in $ \text{Int }(\gamma_n),$ we would be done. Then see that for $n=1,$ by intermediate 
+			value theorem we can say that there is one root in $(0, \pi)$ and one root in $(-\pi,0).$ At $0$ there is a root of multiplicity $2.$ By 
+			induction, we can  deduce that there are at at least $2(n+1)$ real roots, proving our result. 
+ 		\end{enumerate}
 	\end{proof}
 	\begin{proof}[Solution of problem $4$:]
+	\begin{enumerate}
+		\item \textit{This section is left blank}
+		\item $f:(0,1) \to \mathbb{C} $ is bounded and holomorphic. Let $\{\zeta_n\}$ be the zeroes of $f$ in $ B(0,1).$ Let $Z= \{\zeta_n\},$ which is 
+		countable discrete by identity theorem. 
+		
+		\begin{theorem}[Jensen's Theorem]
+			Let $f: \Omega \to \mathbb{C}$ be holomorphic on a domain, and let $\overline{B_R(0)} \subseteq \Omega $ be such that $f$ has no zeroes on its 
+			boundary. Then if $\zeta_1, \dots ,\zeta_N$ are zeroes in the disc, then we have $$ \log \abs{f(0)} = \sum_{k=1}^{N}\log \frac{\abs{z_k}}{R} + 
+			\frac{1}{2R} \int_{0}^{2\pi} \log \abs{f(re^{i\theta})}d\theta.$$ 
+		\end{theorem}
+	Pick $r \in (0,1)$ such that $f(z)$ is non-zero for all $\abs{z}=r,$ which is possible since the set of roots is discrete. Thus the closure of 
+	$\overline{B_r(0)}$ has finitely many roots due to compactness. Let $\zeta_1, \dots \zeta_{m_r}$ be those roots. By Jensen's theorem, we have 
+	$$ \log \abs{f(0)} = \sum_{k=1}^{m_r} \frac{\abs{z_k}}{R} + 
+	\frac{1}{2R} \int_{0}^{2\pi} \log \abs{f(re^{i\theta})}d\theta.$$ Pick a sequence $R_n \in (0,1)- \{\abs{\zeta_i}, \zeta_i \in Z\},$ and $R_n \to 1.$ 
+	In the above expression, we have $\abs{f}$ is bounded, by some $M>0,$ then $\abs{fe^{i\theta}}$ and $\abs{f(0)}$ are bounded above by $M.$ 
+	
+	Then it follows that $$ \sum_{k=1}^{m_{R_n}} \log \frac{\abs{\zeta_k}}{R_n} \geq \abs{f(0)} - M $$ for all $R_n.$ When $n \to \infty,$ we have that all 
+	zeroes will be covered in this disc.  Since $\log \frac{\abs{\zeta_k}}{R_n} <0,$ we have $\abs{\zeta_k} < R_n,$ and we can let $n \to \infty$ to see 
+	that $$ \sum_{k=1}^{\infty} \log \abs{\zeta_k} < \infty. $$  
+	
+	\item $g: R \to \mathbb{C}$ is a bounded holomorphic function on the right half plane and $\abs{g(z)} \leq M.$ Let $\{w_n\}$ be the zeroes in $R.$ 
+	
+	We claim that the maximum modulus of the function $f$ is on the imaginary axis, that is the boundary of $R.$ If we assume this, then consider $h(z)=g(z) 
+	\cdot \prod_{r=1}^{n} \abs{\frac{z+\overline{w_r}}{z- w_r}}$ for $z \in \overline{R}.$ $h$ is holomorphic on $R \backslash \{w_1, \dots, w_n\}.$ See 
+	that these are removable singularities as $h(z)= \prod_{r=1}^{n} \abs{z- w_r} \ell(z)$ is holomorphic. Then 
+	\begin{align*}
+		\abs{h(z)} & = \abs{g(z)} \cdot \prod_{r=1}^{n} \abs{\frac{z+\overline{w_r}}{z- w_r}} \\
+		& \leq M \prod_{r=1}^{n} \abs{\frac{z+\overline{w_r}}{z- w_r}},
+	\end{align*}  
+and as $n \to \infty,$ we have $ \lim_{n \to \infty} \prod_{r=1}^{n} \abs{\frac{z+\overline{w_r}}{z- w_r}} \leq 1 $  thus it is bounded on the exterior 
+$\abs{z} > R$ as shown, and it is bounded on its complement as it is continuous. Thus $h$ is bounded. 
+
+Now we claim that $h$ is bounded on the imaginary axis. When $z=iy,$ we have $  \abs{\frac{z+\overline{w_r}}{z- w_r}} =1,$ and thus $\abs{h(z)} = \abs{g(z)} 
+\leq M.$ If we assume that the maximum modulus is attained on the boundary. This gives us $\abs{g(z)} \leq M \prod_{r=1}^{n} \abs{\frac{z+\overline{w_r}}{z- 
+w_r}}.$ 
+
+\item See that for $g : R \to \mathbb{C},$ we have $\Re \left( \frac{1}{w_r} \right) = \frac{1}{w_r} + \frac{1}{w_r} = \frac{2 \Re ( w_r)}{\abs{w_r}^2}.$ 
+We claim that for $z_0 \neq w_1, \dots, w_n, \dots,$ we have $$ \sum_{r=1}^{\infty} \frac{2\Re (w_r)}{\abs{z_0-w_r}^2} $$ converges. With the result from 
+the previous section, we have that this is convergent by taking $\log$ and seeing that we get the product term as in the previous section. We have that $$ 
+\sum_{r=1}^{n} \abs{\frac{z+\overline{w_r}}{z- w_r}}$$ is bounded, and rearranging terms we have that $$ \sum_{r} \left(  1+ \frac{4 \Re (w_r) 
+\Re(z_0)}{\abs{z_0-r}^2}  \right),$$ thus we have proven our claim. 
+
+We also will show that there is some $z_0$ and $N \in \mathbb{N}$ such that $\abs{w_0-r} \leq \abs{w_r}$ for $r \geq N.$ Since $\{w_r\}$ is infinite 
+discrete, it must be unbounded else it would have a limit point. For $\Re w_r \geq \frac{1}{4}$, we have  $\abs{ w_r - \frac{1}{2} }= \sqrt{ \abs{  \Re 
+\left( w_r - \frac{1}{2} \right)^2 + \Im (w_r)^2  }} \geq \abs{w_r}.$ Then we have 
+
+$$ \infty > \sum_{r, \Re(w_r) \geq 1/4} \frac{2\Re (w_r)}{\abs{1/2 - w_r}^2} \geq  \sum_{r, \Re(w_r) \geq 1/4} \frac{2\Re (w_r)}{\abs{w_r}^2},$$ 
+
+so we have that $ \sum_{r, \Re(w_r) \geq 1/4} \Re \left( \frac{1}{2_r} \right) $ is bounded, hence we have our result.  
+	\end{enumerate}
+	
 	
 	\end{proof}
 	\begin{proof}[Solution of problem $5$:]
+	For the sake of contradiction, let $f: \mathbb{C} \backslash \{0,1,2\} \to \mathbb{C} \backslash \{0,1,2024\}$ be a conformal isomorphism. 
 	
+	Claim 1: Neither of $0,1,2$ is an essential singularity for $f.$ If $0$ is an essential singularity, then there exists a neighbourhood $0 \in P$ such 
+	that $f(P)$ is dense in $\mathbb{C}.$ Assuming $\delta \in (0,1),$ as $f$ is a conformal isomorphism, for any open set $U,$ where $U$ does not contain 
+	$0,1, 2024 ,$ we have that $U \cap f(P) \neq \phi \implies f^{-1}(U) \cap P \neq \phi. $ Every open set in $\mathbb{C} \backslash \{0,1,2\}$ is 
+	$f^{-1}(U)$ for some open $U \in \mathbb{C} \backslash \{0,1,2024\}.$ Thus we have that $ P $ is dense in $\mathbb{C} \backslash \{0,1,2\}$ which is a 
+	contradiction. Thus none of the points are essential singularities. Thus $f$ is meromorphic from $\mathbb{C} \to \mathbb{C} \backslash \{0,1,2024\}$. 
+	
+	Now we claim that any such map should be constant. Let $g(z)= \frac{1}{f(z)}.$ This is entire, and misses two points, $1$ and $1/2024.$ This is 
+	impossible for entire functions by Little Picard's theorem, hence $f$ must be constant.  Thus $f$ must map to at least one of $0,$ $1,$ or $2024.$ Since 
+	our $f$ is bijective, we must have $0,1,2$ going to $0,$ $1$,  or $2024.$ We want to show none are possible. In particular, we show that $0$ can't go to 
+	any of the three points. Let's say $f(0)=0.$ Then $f$ is a conformal isomorphism between $\mathbb{C} \backslash \{1,2\}$ and $\mathbb{C} \backslash 
+	\{1,2024\}.$ If we do some trickery (send $z$ to $z-1$, and send $f(z)$ to $ \frac{f(z)-1}{2023}$) and let $g(z)= \frac{f(z-1)-1}{2023}$, we have a 
+	conformal isomorphism from $\mathbb{C} \backslash \{1,2\}$  to itself. 
+	
+	We want to show that the only such isomorphisms are---
+	$g(z)=z,1-z, 1/z, z/z-1,1/1-z$ and $1- 1/z.$ If we assume this to be true, then $ g(z) $ is either of these six, so by some calculation we can see that 
+	none of these maps can work.
+	
+	If $g(z)=z,$ then $ f(0)=2024,$ which is a contradiction. If $g(z)= z/z-1,$ then $f(z)= \frac{2023}{z} +1$ is unbounded in a neighbourhood of $0,$ which 
+	is a contradiction. 
+	
+	If $g(z) = 1/z,$ then $f(0)= 2024,$ and if $g(z)=1-z,$ $f(0)=1.$ If $g(z)= 1/1-z,$ then $f(z)$ is unbounded in a neighbourhood of $0,$ same as 
+	previously seen, and if $g(z)= 1- 1/z,$ then $f(0)=1,$ which is not possible. Now to prove the claim, we can construct a function $g(z)=z(z-1)f(z),$ 
+	which we claim is entire. We just need to show that $f(z)$ has poles of order $1$ at $0$ and $1.$ First, if there was an essential singularity at $z=0,$ 
+	we can show by the first claim that we reach a contradiction. So there are poles at $0$ and $1.$ If the order was $>1,$ then in a punctured 
+	neighbourhood of $0,$ we would have $f(z)= \frac{1}{z^n}g(z),$ where $g$ is holomorphic at isn't $0$ at $0.$ If the order was more than $1,$ then in 
+	this neighbourhood there would exist a $n$ to $1$ mapping, which contradicts the injectivity of $g.$ Thus both poles must have order $1.$ 
+	
+	Now, since $g(z)=z(z-1)f(z)$ is entire, it has a pole at $\infty,$ which means that $g(1/z)$ has a pole at $0.$ If that is the case, then we can deduce 
+	that $g(z)$ must be a polynomial, since the order of the root at $0$ of $g(1/z)$ is finite. Thus we have $f(z)= \frac{p(z)}{z(z-1)},$ where $p(z)$ is 
+	some polynomial. 
+	
+	Now, since $f(z)$ must be a fractional linear transformation, it is determined solely by its value at $0,1, \infty,$ we get the six transformations 
+	mentioned previously. 	
+	 
 	\end{proof}
 	\begin{proof}[Solution of problem $6$:]
-	
+	We have points, labelled $p_0, p_1, \dots, p_{n-1}$ on the unit circle. Let $\ell_k$ be the line joining $p_0$ to $p_k.$ We want to show that $ 
+	\prod_{\gcd(k,n)=1} = \begin{cases}
+		p & \text{ if } n=p^m, \text{ a prime,} \\
+		1 & \text{ else.}
+	\end{cases}$ 
+We can assume that $p_k$ is a $n$th root of unity, as the lengths would be unchanged. Then the points $p_0, \dots, p_{n-1}$ are $1, \zeta, \dots, 
+\zeta^{n-1}.$ Let $\varphi(n)=m,$ then let $ \{ \zeta_1, \dots, \zeta_m \} $ be the primitive $n$th roots of unity. We want to find $ \prod_{k=1}^{m}(1- 
+\zeta_k).$ If $n=p,$ then $m=p-1,$ then we get $ \prod_{k=1}^{m}(1- \zeta_k) = \Phi_p(1) = 1^{p-1} + \dots + 1^{0} =p.$ We want to prove that this holds for 
+all powers of prime. We have just proven the base case of induction. 
+
+Now for $n=p^l,$ $m= p^l - p^{l-1}.$ Then we want to find $\prod_{k=1}^{m}(1- \zeta_k).$ See that $$\Phi_{n}(x) = \frac{ x^n -1 }{\prod_{d|n, d \neq n 
+}\Phi_{d}(x)} = \frac{ x^n -1 }{\prod_{k=0}^{l-1}\Phi_{p^k}(x)}.$$ Putting $x=1,$ we have 
+
+$$ \Phi_n(x) = \frac{x^{p^l-1}+ \dots + 1}{(x-1) \prod_{k=0}^{l-1}\Phi_{p^k}(x)},$$ so we have $$\Phi_n(1)= \frac{p^l -1 + 1}{\prod_{k=1}^{n}\Phi_{p^k}(1)}= 
+\frac{p^l}{p^{l-1}}=p, $$ as desired. 
+
+If $n \neq p^m, $ then we first check that for $n=6$ (this is the smallest such number) we know $\Phi_2$ and $\Phi_3$ explicitly. Then $\phi_6(1)= 
+\frac{6}{2 \cdot 3}=1.$ Assume now that this holds for all integers less than $n.$ Thus, we have 
+
+$$\Phi_n(1) = \frac{n}{\prod_{d|n, d \neq n}|\Phi_d(1)|}.$$ Let $n= p_1^{k_1}\dots p_l^{k_l},$ then we have $ \Phi_n(1) = \frac{n}{\prod_{d|n, d \neq 
+n}|\Phi_d(1)|} = \frac{n}{(p_1)^{k_1} \dots (p_l)^{k_l}}=1,$ as desired.  
+
 	\end{proof}
 	\begin{proof}[Solution of problem $7$:]
+	Let $a(n):= \min\{k \div f_1^n+ \dots + f_k^n = x, f_i \in \mathbb{C}[x], n \geq 3\}.$ First, we show that $a(n) \geq 3.$ Assume that $a(n) \leq 2,$ for 
+	sake of contradiction. Clearly $a(n) \neq 1,$ since if it were, comparing degrees we'd get $\deg f_1 \cdot n = 1,$ which is absurd. If $a(n)=2,$ then we 
+	have $x= f_1^n + f_2^n.$ Using a nifty trick we can write $x= f_1^n + f_2^n = f_2^n\left( \frac{f_1^n}{f_2^n}+ 1 \right)= f_2^n \prod_{k=0}^{n-1}\left( 
+	\frac{f_1^n}{f_2^n} - \zeta^k \right)= \prod_{k=0}^{n-1}\left({f_1} - \zeta^kf_2 \right).$ Here $\zeta$ is a primitive $n$th root of unity. 
 	
+	Now, since $\mathbb{C}[x]$ is a UFD, we have for some $k_0,$ $f_1+ \zeta^{k_0}f_2 = x$ and for all $k \neq k_0,$ $f_1+\zeta^kf_2 \in \mathbb{C}.$ This 
+	forces $f_1$ and $f_2$ to be constant, which means we cannot have a solution!. Thus $a(n) \geq 3.$
+	
+	Now define $\Delta: \mathbb{C}[x] \to \mathbb{C}[x],$ where$\Delta(f(x))= f(x+1)-f(x).$ Then we can see that $\Delta^n(f(x))= f(x+n) + c_1f(x+n-1) + 
+	\dots + c_nf(x),$ where $c_1, \dots, c_n$ are some integers. This is easily proven by computation. Also see that applying $Delta$ reduces the degree of 
+	a polynomial by $1,$ which can again be checked quite easily. Thus we must have $\Delta^{n-1}(x^n)$ is a linear polynomial, which after a linear 
+	transformation becomes $x.$ Thus $ ax+b = (x+n-1)^n + c_1 (c+n-2)^{n-1}+ \dots + c_nx^n,$ which gives us a sureshot answer to the Waring problem, at $n$.
+    Thus $a(n) \leq n.$
+    
+    Now for the last bound, we need to show that $n < a(n)^2 - a(n).$ Let $f_1, \dots , f_k$ be such that $k=a(n)$ and $f_1^n+ \dots + f_k^n = x.$ Consider 
+    $$W_1=\text{ Wron} (f_1^n, \dots, f_k^n)= \det \begin{pmatrix}
+    	f_1^n & \dots & f_k^n\\
+    	\vdots & & \vdots \\
+    	f_1^{(k-1)} & \dots & f_k^{(k-1)}.
+    \end{pmatrix}.$$ 
+
+We claim that $ \deg W_1 \geq (n-k+1)\sum_{i=1}^{k} \deg f_i $ and $ \deg W_1 \leq 1 + n \sum_{i=1}^{k}\deg f_i - \frac{k(k-1)}{2}.$ 
+
+If we do prove this, then comparing the two bounds we get that $$n \deg f_1  \leq  k(k-1) \deg f_1 + 1 - \frac{k(k-1)}{2} <0 $$ for $k \geq 3,$ so $\lneq 
+k(k-1),$ as desired. 
+
+Thus we now only need to check our two claims. For the first claim, we need to show that the $i$th column of $W_1$ is divisible by $f_i^{n-k+1}$ We can 
+prove this by induction. We have $f_i^{n-k+1} \div f_1^n,$ and $f_i^{n-k+1} \div f_1^{n(1)},$ since $f_1^{n(1)}= nf_1^{n-1} f_1^{(1)},$ and further steps 
+follow. We now show that $W_1 \neq 0,$ and since $ \prod_{i=1}^k f_i^{n-k+1} \div W_1, $ we have $ \deg W_1 \geq (n-k+1) \sum_{i=1}^k \deg f_i.$ The 
+Wronskian is non-zero iff the columns are linearly independent over some open interval. We shall use the minimality of $k$ here. Since $x= f_1^n + \dots + 
+f_k^n,$ then we have $W_1 = \text{Wron}(x, f_2^n,\dots, f_k^n) =: W_2.$ Now we just want to see that $W_2 \neq 0.$ If not, then the columns must be linearly 
+dependent. That is, $x = l_2 f_2^n + \dots + l_k f_k^n,$ which contradicts the minimality of $k,$ a contradiction. Thus we prove the first claim.
+
+Now consider $W_2$ as previously defined. We will get the desired bound by expanding $W_2.$ We divide and multiply $W_2$ by $x^j$ in each row to get 
+
+$$W_2= \frac{1}{x^{1+ 2+ \dots + k-1}} \cdot \det \begin{pmatrix}
+	x & f_2^n & \dots & f_k^n\\
+	x & xf_2^{n(1)} & \dots & x f_k^{n(1)}\\
+	0 & & & \vdots \\
+	\vdots & & & \vdots\\
+	0 & x^{k-1}f_2^{n(k-1)}& \dots & x^{k-1} f_k^{n(k-1)}
+\end{pmatrix}, $$
+whose degree is at most $n \sum_{i=1}^{k}\deg f_i +1.$ This gives us the required bound, proving the result.  
+
+ 
 	\end{proof}
 	\begin{proof}[Solution of problem $8$:]
+	First proof: We will prove a claim--- If $\abs{f(z)}< \abs{g(z)}$ on the unit circle, $f$ and $g$ are same degree polynomials and $g$ has no roots on 
+	the unit circle, then $\abs{f'(z)}< \abs{g'(z)}$ for $\abs{z} \geq 1.$ If we prove this, the required result follows since let $g(z)= cz^n,$ where $n = 
+	\deg f, $and $c > \norm{f}.$ Then we have $\abs{g(z)}=c > \abs{f(z)}$ on the unit circle. By the above claim, $\abs{f'(z)}< nc \abs{z}^{n-1}$ for all 
+	$\abs{z} \geq 1,$ so we have $$\norm{f'}= \sup \{\abs{f'(z)} \div \abs{z}=1\} \leq nc,$$ which is enough. 
+	
+	Now for the claim, consider the polynomial $\varphi_t(z)= f(z)+ tg(z),$ for $\abs{t} \geq 1.$ By Rouch\'{e}'s theorem, $\varphi_t$ and $tg(z)$ have the 
+	same number of roots in the unit ball. As $\deg f= \deg g,$ we have $\deg \varphi_t= \deg f,$ and no other roots of it are in $\abs{z} \geq 1.$ 
+	By Gauss-Lucas theorem, we have $\varphi_t'(z)= f'(z) + tg'(z)$ has all of its roots in the unit ball. If not, then let $\abs{z_0} \geq 1$ such that 
+	$\abs{f'(z_0)} \geq \abs{g'(z_0)}.$ Observe that where $t = \frac{-f'(z_0)}{g'(z_0)},$ so by our assumption $\abs{t} \geq 1.$ Then $\varphi_t(z_0)=0$ at 
+	this point, which is a contradiction. This concludes the first proof.
+	
+	Second proof: We want a $z_0 \in \mathbb{C}$ such that $\abs{f'(z_0)} \leq n \norm{f}.$ We want to construct a polynomial $g_0(z),$ where $g_0(z) := 
+	\frac{f(z_0z)-f(z_0)}{z-1}.$ This is a polynomial since $f(z_0z)-f(z_0)$ has $z=1$ as a root. Thus $\deg g_0 \leq n-1.$ By L'Hopital's rule we have 
+	$g_0(1)=z_0f'(z_0).$ Consider $\varphi(z)= \sum{r=1}^{n} \frac{z^n+1}{(z-z_r)nz_r^{n-1}}g_0(z_r).$ See that $\varphi(1)= \frac{1}{n} \sum{r=1}^{n} 
+	\frac{2z_r}{(z_r-1)}g_0(z_r)= \frac{1}{n} \sum{r=1}^{n} \frac{2z_r (f(zz_0)-f(z_0))}{(z_r-1)^2}.$ As $\varphi(z)=g_0(z),$ we have $g_0(1)= z_0 f'(z_0),$ 
+	which gives us $$z_0f'(z_0)= \frac{1}{n} \sum{r=1}^{n} \frac{2z_r (f(zz_0)-f(z_0))}{(z_r-1)^2}.$$ 
+	
+	Claim 1: $$ \frac{1}{n} \sum{r=1}^{n} \frac{2z_r}{(z_r-1)^2}= \frac{-n^2}{2}.$$ Assuming this, we have $$z_0f'(z_0)= \frac{n}{2}f(z_0)+  \frac{1}{n} 
+	\sum{r=1}^{n} \frac{2z_r f(zz_0)}{(z_r-1)^2}.$$ Since $z_0 $ is arbitrary, let it be on the unit circle. Then, 
+	
+	$$ \abs{f'(z_0)} \leq \frac{n}{2}\abs{f(z_0)}+  \frac{1}{n} \sum_{r=1}^{n} \abs{\frac{2z_r}{(z_r-1)^2}} \norm{f}.$$
+	This gives us the required constant. 
+	
 	
 	\end{proof}
 
