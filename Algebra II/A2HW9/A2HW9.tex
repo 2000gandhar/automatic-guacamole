@@ -1,0 +1,177 @@
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\setlist{nosep}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{tikz-cd}
+\usepackage[margin=0.9in,
+left=1.25in,%
+right=1.25in,%
+top=1.25in,%
+bottom=1.25in
+]{geometry}	
+%\usepackage{stmaryrd} %For mapsfrom
+
+%\usepackage{quiver}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{amsbsy}
+\usepackage{titlesec}
+%\usepackage{yhmath}
+%\usepackage{mathabx,epsfig}
+
+
+%Hyperref Settings------
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+	colorlinks,
+	linkcolor={black},
+	citecolor={red!50!black}
+	urlcolor={green!80!black}
+}
+
+%%%%%% TITLE %%%%%
+
+\title{Algebra 2 Homework 9}
+%\date{\today}
+
+
+%MATH BACKGROUND DECLARATORS-------------------------------------------------------
+\theoremstyle{proposition}
+\newtheorem{proposition}{Proposition}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{remark}{\textbf{Remark}}[section]
+
+\theoremstyle{definition}
+\newtheorem{notation}{\textbf{Notation}}[section]
+
+\theoremstyle{definition}
+\newtheorem{discussion}{\textbf{Discussion}}[section]
+
+\theoremstyle{lemma}
+\newtheorem{lemma}{\textbf{Lemma}}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{\textbf{Example}}[section]
+
+%\theoremstyle{remark}
+%\newtheorem*{comment}{\textbf{Comments on Proof Technique}}
+
+\theoremstyle{definition}
+\newtheorem{construct}{Construction}[section]
+
+\theoremstyle{corollary}
+\newtheorem{corollary}{Corollary}[section]
+
+\theoremstyle{definition}
+\newtheorem{caution}{\textbf{Caution}}[section]
+
+
+\theoremstyle{definition}
+\newtheorem{question}{\textbf{Question}}[section]
+
+\theoremstyle{definition}
+\newtheorem{para}{}[section]
+
+
+%--------------------------------------------------------------------------------- SOME USEFUL MACROS.
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\GL}{\text{\rm GL}}
+\newcommand{\Ker}[1]{{\fontfamily{lmss}\selectfont 
+		\text{\rm Ker}\left (#1\right )
+}}
+\newcommand{\nsg}{\trianglelefteq}
+\newcommand{\abs}[1]{\left \vert #1 \right \vert}
+\newcommand{\gen}[1]{\left\langle #1\right\rangle}
+\newcommand{\norm}[1]{\left \vert \left \vert #1 \right \vert \right \vert}
+\renewcommand{\div}{\;\vert\;}
+\newcommand{\isom}{\cong}
+\DeclareMathOperator{\Stab}{\text{\rm Stab}}
+\newcommand{\Image}[1]{{\fontfamily{lmss}\selectfont 
+		\text{\rm Im}\left (#1\right )
+}}
+\DeclareMathOperator{\Bij}{\text{\rm Bij}}
+\DeclareMathOperator{\acts}{\rotatebox[origin=c]{-90}{$\circlearrowright$}}
+\DeclareMathOperator{\Orb}{\text{\rm Orb}}
+\DeclareMathOperator{\lcm}{\text{\rm lcm}}
+\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}
+\DeclareMathOperator{\Aut}{\text{\rm Aut}}
+\DeclareMathOperator{\Inn}{\text{\rm Inn}}
+\DeclareMathOperator{\id}{\text{\rm id}}
+\newcommand{\F}{\mathbb{F}}
+
+
+
+
+\begin{document}
+	\maketitle
+	%\tableofcontents
+	\begin{proof}[Solution of problem $1$:]
+	We have $\alpha+\beta = \theta,$ since $ \beta= \gamma $ and $ \alpha + \gamma = \theta $ due to the exterior angle. 
+	Now see that $\theta + \alpha + (\pi - 2\beta) = \pi, $ and we also have $  (\pi - 2\beta) \theta + \alpha= \pi \implies 2\alpha = \beta. $
+	Thus $\alpha + \beta = \theta \implies \alpha = \theta/3.$
+	Now we have 	
+	\end{proof}
+	\begin{proof}[Solution of problem $2$:]
+	We can see that $x^3x^2-2x-1$ cannot be reduced for $\mathbb{Q}$ as the thing is irreducible in $\mathbb{Z}_3$. 
+	Then see that the $\alpha$ that satisfies this polynomial gives us a degree $3$ extension of $\mathbb{Q}.$ 
+	This cannot be constructed by straight edge and compass, as the degree is not a power of $2.$ 
+	Thus $\cos \left(\frac{2 \pi}{7}\right)$ cannot be constructed.
+	
+	See that for a regular $7-$gon we will have exterior angle $\cos \left(\frac{2 \pi}{7}\right)$ which we cannot construct, hence this polygon is not 
+	possible.
+\end{proof}
+	\begin{proof}[Solution of problem $3$:]
+	Since $b \in \mathbb{R}$ is constructible, we have $b \in K_n= \mathbb{Q}(\sqrt{a_1},\dots, \sqrt{a_n}),$ where $ a_i >0, a_i \in 
+	K_{i-1}=\mathbb{Q}(\sqrt{a_1},\dots, \sqrt{a_{i-1}}).$ Then we have that by the fundamental theorem of Galois theory, we must have that the Galois group 
+	of $K_i$ is $\oplus_{k=1}^i \mathbb{Z}_2.$ This is a finite $p-$group, which is clearly a solvable group. 
+	
+	Now let the roots of the minimal polynomial for $b$ over $\mathbb{Q}$ be $b_1=b, \dots, b_n.$ Since $\mathbb{Q}(b) \cong \mathbb{Q}(b_i)$ for $1 \leq i 
+	\leq n,$ then $K=\mathbb{Q}(b_1,\dots, b_n)$ is Galois. As $\mathbb{Q}(b)$ is a radical extension, so is $\mathbb{Q}(b_i).$ Thus we can get 
+	$\mathbb{Q}(b_i) $ by successively adjoining square roots of elements from the smaller field. We can see that $K$ can be obtained by adjoining all these 
+	numbers, which is also a radical extension. Thus its corresponding Galois group must be solvable.   
+\end{proof}
+	\begin{proof}[Solution of problem $4$:]
+	If we have $K/F$ is inseparable, then for all $\alpha \in K\backslash F,$ there is some $m \in \mathbb{N}$ such that $\alpha^{p^m} \in F.$ Let $L$ be 
+	the algebraic closure of $F.$ Then $F $
+\end{proof}
+	\begin{proof}[Solution of problem $5$:]
+		We know that if $A_{F/K}$ is the $[F:K] \times [F:K]$ matrix that represents the $K-$linear operator of multiplication by $x,$ then $T_{F/K}(x)= 
+		\text{ tr}(A_{F/K}),$ and $N_{F/K}(x)= \det A_{F/K}.$ We want to show that for $ F \subset K \subset L,$ we want to see that trace and norm are 
+		multiplicative.
+	\begin{enumerate}
+		\item If $L/F$ is not separable, $K/F$ or $L/K$ is inseparable. In either case, the trace would turn out to be zero, hence vacuously true. To see 
+		this, we have that if we assume $K/F$ is inseparable, then the field has characteristic $p > 0$ and the minimal polynomial must necessarily have 
+		degree $p^m,$ since otherwise it would not have repeated roots. Then see that the coefficient for $x^{p^m-1}$ must be zero since the derivative of 
+		the polynomial needs to have a common factor with the minimal polynomial. Thus trace must be zero. The same applies in the other case.
+		
+		Assume now that the extension is inseparable. Then choose $K'$ as Galois containing $L.$ We have $G= \text{Gal}(K/F), H'= \text{Gal}(L/F), H= 
+		\text{Gal}(K'/K).$ Now, we know that trace is just sum of embeddings. Then $  \text{ tr}_{L/F}(x)= \sum_{\sigma \in G/H'}\sigma(x),$
+		where $G/H'$ is the set of left cosets. Now we have that $ \text{ tr}_{L/K}(x)= \sum_{\sigma \in H/H'}\sigma(x),$ so putting the two together, we 
+		have 
+		$$ \text{ tr}_{L/K}( \text{ tr}_{K/F}(x))= \sum_{\sigma \in G/H} \sigma \left( \sum_{\sigma' \in H/H'} \sigma'(\sigma(x)) \right),$$ which means 
+		that the automorphism $\sigma' \circ \sigma $ ranges over all of $G/H'.$ This is the same as the formula for RHS, the desired result.
+		
+		\item  
+	\end{enumerate}
+\end{proof}
+\end{document}
+
+
+
+

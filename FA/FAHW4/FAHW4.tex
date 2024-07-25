@@ -1,0 +1,218 @@
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\setlist{nosep}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{tikz-cd}
+\usepackage[margin=0.9in,
+left=1.25in,%
+right=1.25in,%
+top=1.25in,%
+bottom=1.25in
+]{geometry}	
+%\usepackage{stmaryrd} %For mapsfrom
+
+%\usepackage{quiver}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{amsbsy}
+\usepackage{titlesec}
+%\usepackage{yhmath}
+%\usepackage{mathabx,epsfig}
+
+
+%Hyperref Settings------
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+	colorlinks,
+	linkcolor={black},
+	citecolor={red!50!black}
+	urlcolor={green!80!black}
+}
+
+%%%%%% TITLE %%%%%
+
+\title{Functional Analysis}
+%\date{\today}
+
+
+%MATH BACKGROUND DECLARATORS-------------------------------------------------------
+\theoremstyle{proposition}
+\newtheorem{proposition}{Proposition}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{remark}{\textbf{Remark}}[section]
+
+\theoremstyle{definition}
+\newtheorem{notation}{\textbf{Notation}}[section]
+
+\theoremstyle{definition}
+\newtheorem{discussion}{\textbf{Discussion}}[section]
+
+\theoremstyle{lemma}
+\newtheorem{lemma}{\textbf{Lemma}}[section]
+
+\theoremstyle{definition}
+\newtheorem{example}{\textbf{Example}}[section]
+
+%\theoremstyle{remark}
+%\newtheorem*{comment}{\textbf{Comments on Proof Technique}}
+
+\theoremstyle{definition}
+\newtheorem{construct}{Construction}[section]
+
+\theoremstyle{corollary}
+\newtheorem{corollary}{Corollary}[section]
+
+\theoremstyle{definition}
+\newtheorem{caution}{\textbf{Caution}}[section]
+
+
+\theoremstyle{definition}
+\newtheorem{question}{\textbf{Question}}[section]
+
+\theoremstyle{definition}
+\newtheorem{para}{}[section]
+
+
+%--------------------------------------------------------------------------------- SOME USEFUL MACROS.
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\GL}{\text{\rm GL}}
+\newcommand{\Ker}[1]{{\fontfamily{lmss}\selectfont 
+		\text{\rm Ker}\left (#1\right )
+}}
+\newcommand{\nsg}{\trianglelefteq}
+\newcommand{\abs}[1]{\left \vert #1 \right \vert}
+\newcommand{\gen}[1]{\left\langle #1\right\rangle}
+\newcommand{\norm}[1]{\left \vert \left \vert #1 \right \vert \right \vert}
+\renewcommand{\div}{\;\vert\;}
+\newcommand{\isom}{\cong}
+\DeclareMathOperator{\Stab}{\text{\rm Stab}}
+\newcommand{\Image}[1]{{\fontfamily{lmss}\selectfont 
+		\text{\rm Im}\left (#1\right )
+}}
+\DeclareMathOperator{\Bij}{\text{\rm Bij}}
+\DeclareMathOperator{\acts}{\rotatebox[origin=c]{-90}{$\circlearrowright$}}
+\DeclareMathOperator{\Orb}{\text{\rm Orb}}
+\DeclareMathOperator{\lcm}{\text{\rm lcm}}
+\newcommand{\floor}[1]{\left \lfloor #1 \right \rfloor}
+\DeclareMathOperator{\Aut}{\text{\rm Aut}}
+\DeclareMathOperator{\Inn}{\text{\rm Inn}}
+\DeclareMathOperator{\id}{\text{\rm id}}
+\newcommand{\F}{\mathbb{F}}
+
+
+
+
+\begin{document}
+	\maketitle
+	%\tableofcontents
+	\begin{proof}[Solution of problem $1$:]
+		We consider the operator $(\lambda^{-1}A-I)^{-1},$ for $\lambda \in \mathbb{C} \backslash \{0\}.$ This is equal to $ \sum_{n=0}^{\infty}A^{n} 
+		(\lambda^{-1})^n $ where the radius of convergence $R$ is $$\frac{1}{R} = \liminf_{n \to \infty} \norm{A^n}^{1/n}.$$ Thus we must have $ 
+		\abs{\lambda} >  \liminf_{n \to \infty} \norm{A^n}^{1/n}.$ 
+		
+		See that for $n > 1,$ we have 
+		\begin{align*}
+			A^n - \lambda^nI &= (A- \lambda) (A^{n-1}+ \dots + \lambda^{n-1}I)(A-\lambda I)\\
+			&= (A-\lambda I)(A^{n-1}+ \dots + \lambda^{n-1}I).
+		\end{align*} 
+	If $A^n-\lambda^nI $ were invertible, then $A-\lambda I$ would have a left and a right inverse, hence would be invertible. Now if $A- \lambda I$ were 
+	not invertible, $A^n-\lambda^n I$ would not be invertible. Thus, if $\lambda \in \sigma(A),$ we would have $\lambda^n \in \sigma(A^n).$ Thus 
+	$\abs{\lambda}^n \leq \norm{A^n},$ which gives us the other inequality.  
+	\end{proof}
+	\begin{proof}[Solution of problem $2$:]
+	\begin{enumerate}
+		\item We shall prove the contrapositive. Let us take $\lambda \in \rho (S+T).$ Then $(T+S -\lambda I)$ has a bounded inverse. If we assume that $S- 
+		\lambda I $ is injective, then we can show that $ (I-(T+S -\lambda I)^{-1}T )$ is injective. This is because if $S- \lambda I= (T+S -\lambda 
+		I)(I-(T+S -\lambda I)^{-1}T ),$ which proves it. Thus we know that $\lambda$ cannot lie in the point spectrum, if at all it lies in the spectrum. 
+		This is the required result. 
+		\item We have that $S+T \in \mathcal{B}(X),$ and $-T \in \mathcal{K}(X).$ Then replacing $S$ by $S+T$ and $S+T$ by $ (S+T) - T $ we get that $ 
+		\sigma(S+T) \backslash \sigma_p(S+T) \subseteq \sigma(S).$ Taking the union on both sides by the point spectrum of $S+T$ gives us the required 
+		answer.  
+	\end{enumerate}
+\end{proof}
+	\begin{proof}[Solution of problem $3$:]
+	\begin{enumerate}
+		\item 
+		\item If $\lambda \in \sigma_p(ST),$ then we have that for some $v \neq 0 \in X,$ $STv=\lambda v.$ 
+		Then see that $y=Tv$ is an eigenvector for $TS,$ such that $\lambda \in \sigma_p(TS)$.
+		\item Consider $D(x_1,\dots)= \left( x_1, \dots, \frac{x_n}{n}, \dots \right),$ and $R$ is the right shift operator. Then see that $RD(x_1, \dots)= 
+		( 0 , x_1, \frac{x_2}{2},\dots ),$ whose 
+	\end{enumerate}
+\end{proof}
+	\begin{proof}[Solution of problem $4$:]
+	If $p(0)=0$ then take a bounded sequence of values $(x_n).$ Now see that $p(T)$ is of the form $T(p'(T)),$ where $p'$ is some polynomial. 
+	Now we have that $(Tx_n)$ has a convergent subsequence, so see that $p(T)(x_n)= (Tx_n)(p'(T)(x_n)).$ If we consider $(x_{n_k}),$ the subsequence such 
+	that $ Tx_{n_k} $ converges, we have that $(Tx_{n_k})(p'(T)(x_{n_k}))$ must also converge, since $(x_n)$ is bounded, and $T$ is bounded, and $p'$ is a 
+	polynomial, we have that $(p'(T)(x_{n_k}))$ is bounded, hence $p(T)$ is compact. 
+	
+	Conversely, if $p(T)$ is compact, and assume that $p(0) \neq 0$ then we have that $p(T)-p(0)I$ must be compact, since it is zero for $T=0.$ Then we have 
+	that $ p(T)-p(0)I - p(T) $ must be compact, which implies that $I$ must be a compact operator, which is impossible. Thus $p(0)=0.$
+\end{proof}
+	\begin{proof}[Solution of problem $5$:]
+	Let $T$ be a compact operator. Take $\{u_n\}$ be an orthonormal basis. It is bounded, thus $\{Tu_n\}$ has a convergent subsequence. Using the next to 
+	next problem (all but the last part) we can see that $Tx= \sum_{i=1}^{\infty}c_i\gen{x,e_i}e_i,$ where $c_n:= \gen{Te_i,e_i}.$ This is a bounded 
+	operator, since $T$ is compact and it sends the unit ball (hence the orthonormal basis in particular) to a paracompact, hence bounded set. Moreover, 
+	$\{Tu_i\}$ has a convergent subsequence. 
+\end{proof}
+	\begin{proof}[Solution of problem $6$:]
+	\begin{enumerate}
+		\item Using Parseval's identity, we have $\sum_{\alpha \in \Lambda} \norm{Tu_{\alpha}}^2= \sum_{\alpha, \beta \in \Lambda} \abs{ \gen{ 
+		Tu_{\alpha},u_{\beta} } }^2= \sum_{\alpha, \beta \in \Lambda} \abs{ \gen{ u_{\alpha},T^*u_{\beta} } }^2= \sum_{\alpha \in \Lambda} 
+		\norm{T^*u_{\alpha}}^2.$
+		\item Take another orthonormal basis $\{v_\alpha\}.$ Since we have $$\sum_{\alpha \in \Lambda} \norm{Tu_{\alpha}}^2= \sum_{\alpha \in \Lambda} 
+		\norm{T^*u_{\alpha}}^2= \sum_{\alpha, \beta \in \Lambda} \abs{ \gen{ v_{\alpha},T^*u_{\beta} } }^2= \sum_{\alpha, \beta \in \Lambda} \abs{ \gen{ 
+		Tv_{\alpha},u_{\beta} } }^2=  \sum_{\alpha \in \Lambda} \norm{Tv_{\alpha}}^2,$$ which is the required result.
+		
+		\item We will approximate $T$ using a sequence of finite rank operators. Let $\{T_n\}$ be such that $T_n(e_i)= Te_i$ for $ i < n, $ and $0$ 
+		otherwise. These are clearly finite rank operators, and see that 
+		\begin{align*}
+			\norm{T_n - T} \leq \sum_{i=1}^{\infty} \norm{(T_n-T)u_{i}}^2 = \sqrt{\left( \sum_{i > n} \norm{Te_i}^2 \right)} \to 0,
+		\end{align*}
+	for $i \to \infty.$ 
+	\end{enumerate}
+\end{proof}
+	\begin{proof}[Solution of problem $7$:]
+	\begin{enumerate}
+		\item Let us see that for $n$ such that $\abs{\gen{ x,u_n }} < 1,$ we have $\abs{\gen{ x,u_n }}^2 < 1.$ We have 
+		\begin{align*}
+			\norm{Tx} &\leq \sum_{n=1}^{\infty} \abs{k_n} \abs{\gen{ x,u_n }} \\
+			& \leq M \sum_{n=1}^{\infty} \abs{\gen{ x,u_n }} \leq M \norm{x},
+		\end{align*}
+	since we can replace all those $n$ such that $\abs{\gen{ x,u_n }}<1$ by $0,$ and consider the norm of that. Thus this is a bounded operator.
+	
+	\item If $T$ is compact, then we must have that 
+	Conversely, if $\abs{k_n} \to 0,$ then we can approximate this operator by finite rank operator, and it is easy to see that the tail that $T_n-T$ gives 
+	must converge. Thus it is compact. 
+	
+	\item 
+	\end{enumerate}
+\end{proof}
+	\begin{proof}[Solution of problem $8$:]
+	If $\theta_1 \neq \theta_2,$ then if $ f(\theta_1)= f(\theta_2) $ we have $$ \sum_{k=0}^{n} c_k \left( e^{ik \theta_1}-e^{ik \theta_2} \right)=0, $$ and 
+	if we pick $f \in \mathcal{A}$ such that $c_k \neq 0$ for at least one nonzero value of $k,$ then by linear independence of $e^{ik\theta},$ we must have 
+	$\theta_1 = \theta_2,$ a contradiction. Thus $\mathcal{A}$ separates points on $K.$
+	
+	We can also show that for all $\theta,$ there is a $f \in \mathcal{A}$ such that $f(\theta) \neq 0.$ Clearly, any non-zero constant function defined on 
+	$\mathcal{A}$ does not disappear. 
+	
+	See that $ \iota(e^{i \theta})= e^{-i \theta} $ is a continuous function. However, no element of $\mathcal{A}$ can approximate it since all functions on 
+	it can only have positive $k.$
+\end{proof}
+
+\end{document}
